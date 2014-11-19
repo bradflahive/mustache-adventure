@@ -58,12 +58,17 @@ class Comment extends CustomModel {
 
 	}
 
-    public function getCommentBox() {
+    public function getBox() {
         $getPointsFromSql =<<<sql
         SELECT
-            points
-            comment_id
-            
+            comment_id,
+            message,
+            user_name,
+            SUM(points)
+        FROM comment
+            JOIN user USING (user_id)
+            JOIN man_point USING (comment_id)
+        GROUP BY comment_id;
 sql;
     }
 
