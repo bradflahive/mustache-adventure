@@ -1,8 +1,8 @@
 # Man Page
 
-##MVP
--Home page
--Profile page
+## MVP
+- Home page
+- Profile page
   - Logo
   - Profile info
     - Picture
@@ -12,5 +12,5 @@
   - Feed of everyone
   
   
-##Extras
+## Extras
 
