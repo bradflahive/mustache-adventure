@@ -13,7 +13,7 @@ USE mustache_adventure_db;
 --
 
 CREATE TABLE `user` (
-  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int unsigned NOT NULL AUTO_INCREMENT,
   `user_name` varchar(15) NOT NULL DEFAULT '',
   `email` varchar(100) NOT NULL DEFAULT '',
   `password` varchar(32) NOT NULL DEFAULT '',
@@ -34,8 +34,8 @@ INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `email`, `password`, `
 --
 
 CREATE TABLE `friend` (
-    `friend_id_1` int(10) unsigned NOT NULL,
-    `friend_id_2` int(10) unsigned NOT NULL,
+    `friend_id_1` int unsigned NOT NULL,
+    `friend_id_2` int unsigned NOT NULL,
     FOREIGN KEY (`friend_id_1`) REFERENCES user (`user_id`),
     FOREIGN KEY (`friend_id_2`) REFERENCES user (`user_id`)
 );
@@ -45,7 +45,7 @@ CREATE TABLE `friend` (
 --
 
 CREATE TABLE `comment_type` (
-    `comment_type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `comment_type_id` int unsigned NOT NULL AUTO_INCREMENT,
     `name` varchar(15),
     `description` varchar(255),
     PRIMARY KEY (`comment_type_id`)
@@ -56,10 +56,10 @@ CREATE TABLE `comment_type` (
 --
 
 CREATE TABLE `comment` (
-    `comment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-    `comment_to_user_id` int(10) unsigned NOT NULL,
-    `comment_from_user_id` int(10) unsigned NOT NULL,
-    `comment_type_id` int(10) unsigned NOT NULL,
+    `comment_id` int unsigned NOT NULL AUTO_INCREMENT,
+    `comment_to_user_id` int unsigned NOT NULL,
+    `comment_from_user_id` int unsigned NOT NULL,
+    `comment_type_id` int unsigned NOT NULL,
     `message` varchar(255) NOT NULL DEFAULT 'man up!',
     `timestamp` timestamp,
     PRIMARY KEY (`comment_id`),
@@ -73,9 +73,9 @@ CREATE TABLE `comment` (
 --
 
 CREATE TABLE `man_point` (
-    `give_user_id` int(10) unsigned NOT NULL,
-    `receive_user_id` int(10) unsigned NOT NULL,
-    `comment_id` int(10) unsigned NOT NULL,
+    `give_user_id` int unsigned NOT NULL,
+    `receive_user_id` int unsigned NOT NULL,
+    `comment_id` int unsigned NOT NULL,
     `points` int NOT NULL,
     `timestamp` timestamp,
     FOREIGN KEY (give_user_id) REFERENCES user (user_id),
@@ -88,8 +88,8 @@ CREATE TABLE `man_point` (
 --
 
 CREATE TABLE `give_point` (
-    `give_point_id` int(10) unsigned NOT NULL,
-    `user_id` int(10) unsigned NOT NULL,
+    `give_point_id` int unsigned NOT NULL,
+    `user_id` int unsigned NOT NULL,
     `points` int NOT NULL,
     `timestamp` timestamp,
     `description` varchar(255),
