@@ -27,5 +27,9 @@ header {
 }
 
 .signup {
-    
+    display: none;
+}
+
+.signup.expand {
+    display: block;
 }

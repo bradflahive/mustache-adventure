@@ -26,10 +26,8 @@ extract($controller->view->vars);
     <title>Home</title>
 
 <!-- for testing - remove after -->
-    <link rel="stylesheet" href="mockups/mark_styles.css">
-    <script src="mockup/mark_main.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <link rel="stylesheet" href="/mockups/mark_styles.css">
+    <script src="mockups/mark_main.js"></script>
 
 </head>
 <body>
@@ -41,11 +39,9 @@ extract($controller->view->vars);
         <h3>LOGIN</h3>
         <div class="login_form">
             <form action="/profile" method="">
-                <label>username: </label><input type="text" name="user_id" data-exp-name="text">
-                    <br>
-                <label>password: </label><input type="password" name="password" data-exp-name="password">
-                    <br>
-                <label class="signup">email: </label><input type="email" name="email" class="signup" data-exp-name="email">
+                <input type="text" name="user_id" data-exp-name="text" title="username">
+                <input type="password" name="password" data-exp-name="password" title="password">
+                <label class="signup">email</label><input type="email" class="signup" name="email" data-exp-name="email">
                 <br>
                 <a href="">sign up</a>
                 <button>submit</button>

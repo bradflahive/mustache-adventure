@@ -1,7 +1,7 @@
 $(function(){
 
-    $('body').on('click','a', function(){
-        $(this).parents().toggleClass('.signup');
+    $('.signup').on('click', function(){
+        $(this).toggleClass('.expand');
     });
 
 
