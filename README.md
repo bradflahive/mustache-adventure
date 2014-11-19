@@ -18,4 +18,11 @@
   
   
 ## Extras
+- Image for profile
+- Friends
+  - Filter feed based on friends
+- Bar showing how manly a status is
+- Account settings
+- Bar graph showing points
+- Ability to raz guys
 
