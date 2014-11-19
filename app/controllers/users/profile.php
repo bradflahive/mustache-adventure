@@ -18,7 +18,7 @@ extract($controller->view->vars);
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="/css/brad-style.css">

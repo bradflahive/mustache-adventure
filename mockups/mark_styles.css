@@ -9,6 +9,7 @@ header {
     background-color: lightgray;
     margin:0 auto;
     text-align: center;
+    position: relative;
 }
 
 .logo {
@@ -18,3 +19,17 @@ header {
     margin:0 auto;
 }
 
+.login_form {
+    position:absolute;
+    left: 50%;
+    margin-left: -100px;
+    text-align: right;
+}
+
+.signup {
+    display: none;
+}
+
+.signup.expand {
+    display: block;
+}
