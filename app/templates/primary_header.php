@@ -1,5 +1,4 @@
 <header>
-	<h1>RockIT Bootcamp</h1>
-	<?php echo $welcome; ?>
+    <h1>Man Points</h1>
 </header>
 <hr>

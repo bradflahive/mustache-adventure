@@ -1,0 +1,20 @@
+header {
+    backgroud-color: lightgreen;
+    text-align: center;
+}
+
+.page {
+    width: 960px;
+    height: 600px;
+    background-color: lightgray;
+    margin:0 auto;
+    text-align: center;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    background-color: lightblue;
+    margin:0 auto;
+}
+
