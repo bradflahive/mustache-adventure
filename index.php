@@ -3,13 +3,18 @@
 // Init
 include($_SERVER['DOCUMENT_ROOT'] . '/app/core/initialize.php');
 
-// Main Sections
+// Home/Login/Create account page
 Router::add('/', '/app/controllers/home.php');
 
-// Users
+//Users
+Router::add('/profile', '/app/controllers/users/profile.php');
+
+
+
+/*// Users
 Router::add('/users', '/app/controllers/users/list.php');
 Router::add('/users/register', '/app/controllers/users/register/form.php');
-Router::add('/users/register/process_form/', '/app/controllers/users/register/process_form.php');
+Router::add('/users/register/process_form/', '/app/controllers/users/register/process_form.php');*/
 
 // Issue Route
 Router::route();

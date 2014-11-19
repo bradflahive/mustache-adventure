@@ -1,5 +1,6 @@
 <?php
 
+//TODO to use???
 // Controller
 class Controller extends AppController {
 	protected function init() {
