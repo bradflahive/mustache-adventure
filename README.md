@@ -1,7 +1,7 @@
 # Man Page
 
 ## MVP
-- Home page
+- Home page/login/create account
 - Profile page
   - Logo
   - Profile info
@@ -10,6 +10,11 @@
     - Points awarded
   - Submit post
   - Feed of everyone
+    - Indiv post
+      - Who
+      - Picture
+      - Description
+      - Award points to someone
   
   
 ## Extras
