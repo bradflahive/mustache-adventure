@@ -1,12 +1,12 @@
 <?php
 
 /**
- * User
+ * Comment
  */
-class User extends CustomModel {
+class Comment extends CustomModel {
 
 	/**
-	 * Insert User
+	 * Insert Comment
 	 */
 	protected function insert($input) {
 
@@ -15,15 +15,15 @@ class User extends CustomModel {
 
 		// Prepare SQL Values
         $sql_values = Util::zip(
-            ['user_name', 'email', 'password'],
+            ['user_id', 'message'],
             $input
         );
 
 		// Ensure values are encompassed with quote marks
-		$sql_values = db::auto_quote($sql_values, ['datetime_added']);
+		$sql_values = db::auto_quote($sql_values);
 
 		// Insert
-		$results = db::insert('user', $sql_values);
+		$results = db::insert('comment', $sql_values);
 		
 		// Return the Insert ID
 		return $results->insert_id;
@@ -31,7 +31,7 @@ class User extends CustomModel {
 	}
 
 	/**
-	 * Update User
+	 * Update Comment
 	 */
 	public function update($input) {
 
@@ -40,19 +40,31 @@ class User extends CustomModel {
 
 		// Prepare SQL Values
         $sql_values = Util::zip(
-            ['user_id', 'user_name', 'email', 'password'],
+            ['user_id', 'comment_id',  'message'],
             $input
         );
 
 		// Ensure values are encompassed with quote marks
 		$sql_values = db::auto_quote($sql_values);
 
-		// Update
-		db::update('user', $sql_values, "WHERE user_id = {$this->user_id}");
+        db::update(
+            'comment',
+            $sql_values,
+            "WHERE comment_id = {$this->comment_id}"
+        );
 		
 		// Return a new instance of this user as an object
-		return new User($this->user_id);
+		return new Comment($this->comment_id);
 
 	}
+
+    public function getCommentBox() {
+        $getPointsFromSql =<<<sql
+        SELECT
+            points
+            comment_id
+            
+sql;
+    }
 
 }
