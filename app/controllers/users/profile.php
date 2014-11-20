@@ -16,35 +16,6 @@ extract($controller->view->vars);
 
 ?>
 
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>  
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="/css/brad-style.css">
-</head>
-<body>
-	<div class="page">
-		
-		<div class="primary-content">
-			<main>
-				<div class="user">
-					<div class="image">
-						Profile Pic
-						<img src="" >
-					</div>
-					<h3>USERNAME</h3>
-					<a href="">edit profile</a><br>
-					<p>MY MAN-POINTS: </p><span class="points">*Points*</span>
-				</div>
-			</main>
-			<aside>
-=======
-	<div class="primary-content">
-		<main>
->>>>>>> bb774dc35eeda6a57fd3d7b56cccc78b99c11ea2
-
 			<div class="user">
 				<img src="/images/profile-brad.jpg" >
 				<h3>USERNAME</h3>
