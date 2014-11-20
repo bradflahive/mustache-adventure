@@ -5,25 +5,37 @@
  */
 class Comment extends CustomModel {
 
+    protected static function validators() {
+        return [
+            comment_id  => [FILTER_VALIDATE_INT],
+            user_id     => [FILTER_VALIDATE_INT],
+            message     => [FILTER_CALLBACK, [options => function($value){
+                return (is_string($value) && strlen($value) > 0)
+                    ? $value : false;
+            }]],
+            user_id     => [FILTER_VALIDATE_INT],
+            points      => [FILTER_VALIDATE_INT]
+        ];
+    }
+
 	/**
 	 * Insert Comment
 	 */
 	protected function insert($input) {
 
-		// Note that Server Side validation is not being done here
-		// and should be implemented by you
-
 		// Prepare SQL Values
-        $sql_values = Util::zip(
+        $boundedValues = Util::zip(
             ['user_id', 'message'],
             $input
         );
 
+        $validatedValues = self::validate($boundedValues);
+
 		// Ensure values are encompassed with quote marks
-		$sql_values = db::auto_quote($sql_values);
+		$quotedValues = db::auto_quote($validatedValues);
 
 		// Insert
-		$results = db::insert('comment', $sql_values);
+		$results = db::insert('comment', $quotedValues);
 		
 		// Return the Insert ID
 		return $results->insert_id;
@@ -35,21 +47,20 @@ class Comment extends CustomModel {
 	 */
 	public function update($input) {
 
-		// Note that Server Side validation is not being done here
-		// and should be implemented by you
-
 		// Prepare SQL Values
-        $sql_values = Util::zip(
+        $boundedValues = Util::zip(
             ['user_id', 'comment_id',  'message'],
             $input
         );
 
+        $validatedValues = self::validate($boundedValues);
+
 		// Ensure values are encompassed with quote marks
-		$sql_values = db::auto_quote($sql_values);
+		$quotedValues = db::auto_quote($validatedValues);
 
         db::update(
             'comment',
-            $sql_values,
+            $quotedValues,
             "WHERE comment_id = {$this->comment_id}"
         );
 		
@@ -59,7 +70,7 @@ class Comment extends CustomModel {
 	}
 
     // return all comments with respective data 
-    public function getAll() {
+    public static function getAll() {
         $getPointsFromSql =<<<sql
         SELECT
             comment_id,
