@@ -22,7 +22,9 @@
 
 	// Do something when the AJAX request has returned in success
 	form.on('xhrSuccess', function(e, data) {
-		$('body').append('<p>Received Data: ' + JSON.stringify(data) + '</p>');
+		if(data.redirect){
+			location.href=data.redirect;
+		}
 	});
 
 	// Do something when the AJAX request has returned with an error

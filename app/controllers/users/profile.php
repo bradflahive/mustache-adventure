@@ -25,11 +25,7 @@ extract($controller->view->vars);
 </head>
 <body>
 	<div class="page">
-		<header>
-			<div class="logo">logo</div>
-			<h1>MANPOINT</h1>
-			<a class="logout" href="">Logout</a>
-		</header>
+		
 		<div class="primary-content">
 			<main>
 				<div class="user">
