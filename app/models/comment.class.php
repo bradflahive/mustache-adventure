@@ -59,7 +59,7 @@ class Comment extends CustomModel {
 	}
 
     // return all comments with respective data 
-    public function getBoxes() {
+    public function getAll() {
         $getPointsFromSql =<<<sql
         SELECT
             comment_id,
