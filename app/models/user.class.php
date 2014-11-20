@@ -5,6 +5,23 @@
  */
 class User extends CustomModel {
 
+    public static function isValid($input) {
+        // do server side validation
+        // validate user name
+        $sql_values = Util::zip(['user_name', 'password'], $input);
+        $sql_values = db::auto_quote($sql_values);
+        $sqlPasswordValidation =<<<sql
+            SELECT user_id
+            FROM user
+            WHERE password =
+            PASSWORD(CONCAT({$sql_values['user_name']},
+                            {$sql_values['password']}));
+sql;
+        $result = db::execute($sqlPasswordValidation);
+        $isValidPassword = (mysql_num_rows($result) == 1);
+        return $isValidPassword ? new User($result) : null;
+    }
+
 	/**
 	 * Insert User
 	 */
@@ -20,7 +37,7 @@ class User extends CustomModel {
         );
 
 		// Ensure values are encompassed with quote marks
-		$sql_values = db::auto_quote($sql_values, ['datetime_added']);
+		$sql_values = db::auto_quote($sql_values);
 
 		// Insert
 		$results = db::insert('user', $sql_values);

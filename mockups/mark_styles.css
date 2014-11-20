@@ -1,11 +1,11 @@
-header {
+/*header {
     backgroud-color: lightgreen;
     text-align: center;
 }
 
 .page {
     width: 960px;
-    height: 600px;
+    height: 500px;
     background-color: lightgray;
     margin:0 auto;
     text-align: center;
@@ -24,12 +24,12 @@ header {
     left: 50%;
     margin-left: -100px;
     text-align: right;
-}
-
+}*/
+/*
 .signup {
     display: none;
 }
 
 .signup.expand {
-    display: block;
-}
+    display: inline-block;
+}*/
