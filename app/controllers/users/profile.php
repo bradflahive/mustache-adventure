@@ -44,7 +44,7 @@ extract($controller->view->vars);
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">Mustache finally reached 4 inches!</div>
-					<form action=""></form>
+					<!-- <form action=""></form>
 						<select name="" id="">
 							<option value="0">0</option>
 							<option value="1">1</option>
@@ -54,15 +54,15 @@ extract($controller->view->vars);
 							<option value="5">5</option>
 						</select>
 						<button>Add</button>
-					</form>
+					</form> -->
 					<div class="display-points">1</div>
 				</div>
 			</div>
 
 			<div class="post">
-				<img src="/images/profile-brad.jpg">
+				<img src="/images/nathan.jpg">
 				<div class="body">
-					<div class="user_name">Brad Flahive</div>
+					<div class="user_name">Nathan Atkinson</div>
 					<div class="message">Just rode a horse bareback...</div>
 					<form action=""></form>
 						<select name="" id="">
@@ -80,9 +80,9 @@ extract($controller->view->vars);
 			</div>
 
 			<div class="post">
-				<img src="/images/profile-brad.jpg">
+				<img src="/images/jon.jpg">
 				<div class="body">
-					<div class="user_name">Brad Flahive</div>
+					<div class="user_name">Jon Nyman</div>
 					<div class="message">Just bought a cowboy hat</div>
 					<form action=""></form>
 						<select name="" id="">
@@ -100,10 +100,10 @@ extract($controller->view->vars);
 			</div>
 
 			<div class="post">
-				<img src="/images/profile-brad.jpg">
+				<img src="/images/mark.jpg">
 				<div class="body">
-					<div class="user_name">Brad Flahive</div>
-					<div class="message">I met Burt Reynolds today #boss</div>
+					<div class="user_name">Mark Ragno</div>
+					<div class="message">High-Five'd Burt Reynolds today</div>
 					<form action=""></form>
 						<select name="" id="">
 							<option value="0">0</option>
@@ -123,8 +123,8 @@ extract($controller->view->vars);
 				<img src="/images/profile-brad.jpg">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
-					<div class="message">I made soup in a loaf of bread today</div>
-					<form action=""></form>
+					<div class="message">Ate 2 NY strips last night</div>
+					<!-- <form action=""></form>
 						<select name="" id="">
 							<option value="0">0</option>
 							<option value="1">1</option>
@@ -134,7 +134,7 @@ extract($controller->view->vars);
 							<option value="5">5</option>
 						</select>
 						<button>Add</button>
-					</form>
+					</form> -->
 					<div class="display-points">1</div>
 				</div>
 			</div>

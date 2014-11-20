@@ -14,10 +14,6 @@ extract($controller->view->vars);
 <div class="login-content">
     <main class="login-main">
 
-        <!-- <div class="logo">
-            <img src="#">
-        </div> -->
-
         <h3>LOGIN</h3>
         <div class="login_form">
             <form action="/login">

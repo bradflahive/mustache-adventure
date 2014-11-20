@@ -8,6 +8,7 @@
 	
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="/bower_components/ReptileForms/dist/reptileforms.min.css">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/css/styles.css">
 
 	<!-- Modernizr -->
