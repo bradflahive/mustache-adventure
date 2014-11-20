@@ -44,17 +44,6 @@ extract($controller->view->vars);
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">Mustache finally reached 4 inches!</div>
-					<!-- <form action=""></form>
-						<select name="" id="">
-							<option value="0">0</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-						<button>Add</button>
-					</form> -->
 					<div class="display-points">1</div>
 				</div>
 			</div>
@@ -124,20 +113,10 @@ extract($controller->view->vars);
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">Ate 2 NY strips last night</div>
-					<!-- <form action=""></form>
-						<select name="" id="">
-							<option value="0">0</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-						<button>Add</button>
-					</form> -->
 					<div class="display-points">1</div>
 				</div>
 			</div>
 
 		</aside>
 	</div>
+	<p class="copyright">&copy Mustache-Adventures Co.</p>
