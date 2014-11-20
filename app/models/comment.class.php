@@ -13,8 +13,7 @@ class Comment extends CustomModel {
                 return (is_string($value) && strlen($value) > 0)
                     ? $value : false;
             }]],
-            user_id => [FILTER_VALIDATE_INT],
-            points => [FILTER_VALIDATE_INT]
+            'user_id' => [FILTER_VALIDATE_INT]
         ];
     }
 
