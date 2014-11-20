@@ -20,10 +20,14 @@ extract($controller->view->vars);
 		<main>
 
 			<div class="user">
-				<img src="/images/profile-brad.jpg" >
-				<h3>USERNAME</h3>
-				<a href="">edit profile</a><br>
-				<p>MY MAN-POINTS: </p><span class="points">*Points*</span>
+				<div>
+					<img src="/images/profile-brad.jpg" >
+					<h3>Brad Flahive</h3>
+					<p>Mustache Level: Pirate</p>
+				</div>
+				<div class="man-points">
+					<p>MY MAN-POINTS: <span class="points">*Points*</span></p>
+				</div>
 			</div>
 
 		</main>
@@ -39,14 +43,17 @@ extract($controller->view->vars);
 				<img src="">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
-					<div class="message">Message</div>
-					<select name="" id="">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
+					<div class="message">Mustache finally reached 4 inches!</div>
+					<form action=""></form>
+						<select name="" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+						<button>Add</button>
+					</form>
 					<div class="display-points">1</div>
 				</div>
 			</div>
@@ -55,14 +62,17 @@ extract($controller->view->vars);
 				<img src="">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
-					<div class="message">Message</div>
-					<select name="" id="">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
+					<div class="message">Just rode a horse bareback...</div>
+					<form action=""></form>
+						<select name="" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+						<button>Add</button>
+					</form>
 					<div class="display-points">1</div>
 				</div>
 			</div>
@@ -71,14 +81,55 @@ extract($controller->view->vars);
 				<img src="">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
-					<div class="message">Message</div>
-					<select name="" id="">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
+					<div class="message">Just bought a cowboy hat</div>
+					<form action=""></form>
+						<select name="" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+						<button>Add</button>
+					</form>
+					<div class="display-points">1</div>
+				</div>
+			</div>
+
+			<div class="post">
+				<img src="">
+				<div class="body">
+					<div class="user_name">Brad Flahive</div>
+					<div class="message">I met Burt Reynolds today #boss</div>
+					<form action=""></form>
+						<select name="" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+						<button>Add</button>
+					</form>
+					<div class="display-points">1</div>
+				</div>
+			</div>
+
+			<div class="post">
+				<img src="">
+				<div class="body">
+					<div class="user_name">Brad Flahive</div>
+					<div class="message">I made soup in a loaf of bread today</div>
+					<form action=""></form>
+						<select name="" id="">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+						<button>Add</button>
+					</form>
 					<div class="display-points">1</div>
 				</div>
 			</div>
