@@ -34,7 +34,7 @@
 
 })();
 
-$(function {
+$(function() {
 
 	//verifies that a button was clicked
 	$('body').on('click', 'button', function(e) {
@@ -45,14 +45,10 @@ $(function {
 
 
 	//adds e-mail field for signup when signup is pressed on home page.
-	$('body').on('click', 'sign-up', function(e) {
+	$('body').on('click', 'button.sign-up', function(e) {
 		e.preventDefault();
 		console.log('Sign-up pressed');
-		$(this).parents('form').append('<div class="field email text">
-											<div class="field-input">
-												<input type="email" class="signup" name="email">
-											</div>
-										</div> ');
+		$(this).parents('form').find('.sign-up').toggleClass('hidden');
 	});
 	
 
