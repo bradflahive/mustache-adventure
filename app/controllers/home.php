@@ -23,9 +23,9 @@ extract($controller->view->vars);
             <form action="/login">
                 <input type="text" name="user_name" data-exp-name="text" title="-Username-">
                 <input type="password" name="password" data-exp-name="password" title="-Password-">
-                <label class="signup">-Email-</label><input type="email" class="signup" name="email" data-exp-name="email">
+                <input class="sign-up hidden" type="email" name="email" data-exp-name="email" title="-E-mail-">
                 <br>
-                <a href="/">sign up</a>
+                <button class="sign-up">sign up</button>
                 <button>submit</button>
             </form>
         </div>
