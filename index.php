@@ -11,7 +11,6 @@ Router::add('/profile', '/app/controllers/users/profile.php');
 
 //Log In:
 Router::add('/login', '/mockups/login/login.php');
-Router::add('/create_user', '/mockups/login/create_user.php');
 Router::add('/process_login', '/mockups/login/process_login.php');
 Router::add('/account', '/mockups/login/account.php');
 Router::add('/logout', '/mockups/login/logout.php');
