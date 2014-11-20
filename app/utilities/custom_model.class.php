@@ -41,7 +41,7 @@ abstract class CustomModel extends Model {
     public static function validate($input) {
 
         // List of validatiors
-        $validators = self::validators();
+        $validators = static::validators();
         $validated = [];
         foreach ($input as $key => $value) {
 
