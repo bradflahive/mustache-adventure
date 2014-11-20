@@ -16,7 +16,10 @@ class User extends CustomModel {
             'password' => [FILTER_CALLBACK,
                 ['options' => function ($value) {
                     return (is_string($value) && strlen($value) > 6);
-            }]]
+            }]],
+            'points' => [FILTER_VALIDATE_INT,
+                ['min_range' => 0, 'max_range' => 5]],
+            'email' => [FILTER_VALIDATE_EMAIL]
         ];
     }
 
