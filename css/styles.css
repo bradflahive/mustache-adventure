@@ -221,6 +221,11 @@ aside > * + * {
 	text-align: center;
 }
 
+.copyright {
+	text-align: center;
+	font-family: 'PT Sans Caption', sans-serif;
+}
+
 /*LOGIN*/
 
 .login-content {
@@ -242,7 +247,9 @@ aside > * + * {
 	margin: 0 auto;
 }
 
-
+.hidden {
+	display: none;
+}
 
 
 
