@@ -20,7 +20,7 @@ extract($controller->view->vars);
 		<main>
 
 			<div class="user">
-				<div>
+				<div class="profile-info">
 					<img src="/images/profile-brad.jpg" >
 					<h3>Brad Flahive</h3>
 					<p>Mustache Level: Pirate</p>
@@ -35,17 +35,18 @@ extract($controller->view->vars);
 
 			<form class="compose">
 				<input type="text" name="foo">
-				<textarea name="new_post" placeholder="Compose new post...">eferfrf</textarea>
+				<textarea name="new_post" id="reptile" placeholder="Compose new post...">eferfrf</textarea>
 				<button>Post</button>
 			</form>
 					
 			<div class="post">
-				<img src="">
+				<img src="/images/profile-brad.jpg">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">Mustache finally reached 4 inches!</div>
 					<form action=""></form>
 						<select name="" id="">
+							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -59,12 +60,13 @@ extract($controller->view->vars);
 			</div>
 
 			<div class="post">
-				<img src="">
+				<img src="/images/profile-brad.jpg">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">Just rode a horse bareback...</div>
 					<form action=""></form>
 						<select name="" id="">
+							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -78,12 +80,13 @@ extract($controller->view->vars);
 			</div>
 
 			<div class="post">
-				<img src="">
+				<img src="/images/profile-brad.jpg">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">Just bought a cowboy hat</div>
 					<form action=""></form>
 						<select name="" id="">
+							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -97,12 +100,13 @@ extract($controller->view->vars);
 			</div>
 
 			<div class="post">
-				<img src="">
+				<img src="/images/profile-brad.jpg">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">I met Burt Reynolds today #boss</div>
 					<form action=""></form>
 						<select name="" id="">
+							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -116,12 +120,13 @@ extract($controller->view->vars);
 			</div>
 
 			<div class="post">
-				<img src="">
+				<img src="/images/profile-brad.jpg">
 				<div class="body">
 					<div class="user_name">Brad Flahive</div>
 					<div class="message">I made soup in a loaf of bread today</div>
 					<form action=""></form>
 						<select name="" id="">
+							<option value="0">0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>

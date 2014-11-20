@@ -10,11 +10,10 @@
 }
 
 header {
-	background-color: green;
+	background-color: rgb(189,189,189);
 	width: 100%;
-	/*height: 100px;*/
 	position: relative;
-	border: 2px solid rgb(192, 198, 201);
+	border: 2px solid rgb(75,75,75);
 	overflow: hidden;
 }
 
@@ -22,13 +21,7 @@ header img {
 	height: 100px;
 	width: 100px;
 	float: left;
-}
-
-.logo {
-	height: 100px;
-	width: 100px;
-	background-color: orange;
-	float: left;
+	border-right: 2px solid rgb(75,75,75);
 }
 
 header h1 {
@@ -45,39 +38,44 @@ header h1 {
 	right: 0;
 	margin: 10px;
 	color: red;
+	font-family: 'Orbitron', sans-serif;
 }
 
 .primary-content {
 	overflow: hidden;
 	background-color: rgb(237, 237, 237);
 	padding: 10px;
+	border: 2px solid rgb(75,75,75);
 }
 
 main {
 	height: 300px;
 	width: 400px;
-	background-color: lightblue;
+	background-color: rgb(189,189,189);
 	float: left;
 	margin-top: 20px;
 	padding: 1px;
-	border: 2px solid rgb(192, 198, 201);
+	border: 2px solid rgb(75,75,75);
 	border-radius: 5px;
 }
 
 main .user {
 	background-color: rgb(255, 255, 255);
-	padding: 1px;
 	margin: 10px;
-	border: 2px solid rgb(192, 198, 201);
+	border: 2px solid rgb(75,75,75);
 	border-radius: 5px;
+	position: relative;
 }
 
 .user img {
 	height: 80px;
 	width: 80px;
 	float: right;
+	top: 5px;
+	right: 0;
 	margin: 0 10px;
 	border-radius: 5px;
+	position: absolute;
 }
 
 .user h3 {
@@ -85,16 +83,12 @@ main .user {
 	margin-bottom: 0;
 }
 
-.user p {
+.profile-info p {
 	display: inline-block;
 	margin-bottom: 10px;
 	font-family: 'Iceland', cursive;
 	font-size: 16pt;
 }
-
-/*.points {
-	border: 2px solid black;
-}*/
 
 .user > div {
 	background-color: rgb(255, 255, 255);
@@ -102,16 +96,20 @@ main .user {
 }
 
 div.man-points {
-	background-color: rgb(237, 237, 237);
 	padding-left: 15px;
-	border-top: 2px solid rgb(192, 198, 201);
+	border-top: 2px solid rgb(75,75,75);
+	background-color: rgb(237, 237, 237);
+	padding-bottom: 1px;
+}
+
+.man-points p {
+	font-family: 'Iceland', cursive;
+	font-size: 16pt;
 }
 
 /*THREAD*/
 
 aside {
-	/*width: 500px;*/
-	height: 500px;
 	margin-left: 430px;
 	background-color: rgb(237, 237, 237);
 	margin-top: 20px;
@@ -120,11 +118,12 @@ aside {
 
 aside > * + * {
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .compose {
-	background-color: red;
-	border: 2px solid rgb(192, 198, 201);
+	background-color: white;
+	border: 2px solid rgb(75,75,75);
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -138,7 +137,7 @@ aside > * + * {
 .compose textarea {
 	border-radius: 3px;
 	background-color: #fff;
-	border: 1px solid #C0E1ED;
+	border: 1px solid rgb(75,75,75);
 	display: block;
 	width: 100%;
 	padding: 4px;
@@ -159,10 +158,10 @@ aside > * + * {
 .post {
 	overflow: hidden;
 	background-color: rgb(255, 255, 255);
-	border: 2px solid rgb(192, 198, 201);
+	border: 2px solid rgb(75,75,75);
 	padding: 10px;
 	position: relative;
-	border-right: 3px solid rgb(40, 146, 217);
+	border-left: 3px solid rgb(40, 146, 217);
 	border-radius: 5px;
 	padding-bottom: 20px;
 }
@@ -190,7 +189,8 @@ aside > * + * {
 
 .post .message {
 	margin-top: 5px;
-	border: 2px solid black;
+	border: 2px solid rgb(75,75,75);
+	border-radius: 5px;
 	font-family: 'Iceland', cursive;
 	padding: 3px;
 }
@@ -211,10 +211,12 @@ aside > * + * {
 
 .post .display-points {
 	width: 20px;
-	border: 2px solid black;
+	border: 2px solid rgb(75,75,75);
+	border-radius: 5px;
 	top: 5px;
-	right: 5px;
+	right: 10px;
 	position: absolute;
+	text-align: center;
 }
 
 
