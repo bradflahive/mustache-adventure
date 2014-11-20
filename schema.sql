@@ -56,8 +56,10 @@ CREATE TABLE man_point (
 INSERT INTO 
     user (user_name, email, `password`)
     VALUES 
-        ('LindseyGirl', 'lindsey@jones.com', PASSWORD('abc123')),
-        ('Smithy', 'dave@smith.com', PASSWORD('abc124'));
+        ('LindseyGirl', 'lindsey@jones.com',
+            PASSWORD(CONCAT('LindseyGirl', 'abc123'))),
+        ('Smithy', 'dave@smith.com',
+            PASSWORD(CONCAT('Smithy', 'abc124')));
 
 INSERT INTO
     comment (user_id, message)
