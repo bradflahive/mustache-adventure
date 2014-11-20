@@ -5,6 +5,7 @@
  */
 class User extends CustomModel {
 
+    // determine if the user's password and user name are correct.
     public static function isValid($input) {
         // do server side validation
         // validate user name
