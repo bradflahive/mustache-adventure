@@ -7,14 +7,14 @@ class Comment extends CustomModel {
 
     protected static function validators() {
         return [
-            comment_id  => [FILTER_VALIDATE_INT],
-            user_id     => [FILTER_VALIDATE_INT],
-            message     => [FILTER_CALLBACK, [options => function($value){
+            'comment_id' => [FILTER_VALIDATE_INT],
+            'user_id' => [FILTER_VALIDATE_INT],
+            'message' => [FILTER_CALLBACK, [options => function($value){
                 return (is_string($value) && strlen($value) > 0)
                     ? $value : false;
             }]],
-            user_id     => [FILTER_VALIDATE_INT],
-            points      => [FILTER_VALIDATE_INT]
+            user_id => [FILTER_VALIDATE_INT],
+            points => [FILTER_VALIDATE_INT]
         ];
     }
 
@@ -30,6 +30,8 @@ class Comment extends CustomModel {
         );
 
         $validatedValues = self::validate($boundedValues);
+
+        if (array_key_exists('failed', $validatedValues)) return null;
 
 		// Ensure values are encompassed with quote marks
 		$quotedValues = db::auto_quote($validatedValues);
@@ -54,6 +56,8 @@ class Comment extends CustomModel {
         );
 
         $validatedValues = self::validate($boundedValues);
+
+        if (array_key_exists('failed', $validatedValues)) return null;
 
 		// Ensure values are encompassed with quote marks
 		$quotedValues = db::auto_quote($validatedValues);
