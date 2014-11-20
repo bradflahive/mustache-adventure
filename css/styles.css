@@ -37,7 +37,7 @@ header h1 {
 	top: 0;
 	right: 0;
 	margin: 10px;
-	color: red;
+	color: rgb(203, 10, 10);
 	font-family: 'Orbitron', sans-serif;
 }
 
@@ -102,6 +102,7 @@ div.man-points {
 	padding-bottom: 1px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	border-left: 8px solid rgb(40, 146, 217);
 }
 
 .man-points p {
@@ -247,7 +248,7 @@ aside > * + * {
 	margin: 0 auto;
 }
 
-.hidden {
+.e-expand {
 	display: none;
 }
 
