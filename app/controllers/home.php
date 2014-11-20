@@ -7,7 +7,6 @@ class Controller extends AppController {
 }
 $controller = new Controller();
 
-// Extract Main Controller Vars
 extract($controller->view->vars);
 
 ?>

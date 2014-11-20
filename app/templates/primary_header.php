@@ -1,4 +1,6 @@
 <header>
-    <h1>Man Points</h1>
+	<img src="/images/logo.jpg">
+	<h1>MANPOINT</h1>
+	<a class="logout" href="">Logout</a>
 </header>
 <hr>

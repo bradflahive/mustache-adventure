@@ -16,6 +16,7 @@ extract($controller->view->vars);
 
 ?>
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>  
@@ -39,61 +40,74 @@ extract($controller->view->vars);
 				</div>
 			</main>
 			<aside>
+=======
+	<div class="primary-content">
+		<main>
+>>>>>>> bb774dc35eeda6a57fd3d7b56cccc78b99c11ea2
 
-				<form class="compose">
-					<textarea placeholder="Compose new post..."></textarea>
-					<button>Post</button>
-				</form>
-						
-				<div class="post">
-					<img src="">
-					<div class="body">
-						<div class="user_name">Brad Flahive</div>
-						<div class="message">Message</div>
-						<select name="" id="">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-						<div class="display-points">1</div>
-					</div>
-				</div>
-				<div class="post">
-					<img src="">
-					<div class="body">
-						<div class="user_name">Brad Flahive</div>
-						<div class="message">Message</div>
-						<select name="" id="">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-						<div class="display-points">1</div>
-					</div>
-				</div>
-				<div class="post">
-					<img src="">
-					<div class="body">
-						<div class="user_name">Brad Flahive</div>
-						<div class="message">Message</div>
-						<select name="" id="">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-						<div class="display-points">1</div>
-					</div>
-				</div>
+			<div class="user">
+				<img src="/images/profile-brad.jpg" >
+				<h3>USERNAME</h3>
+				<a href="">edit profile</a><br>
+				<p>MY MAN-POINTS: </p><span class="points">*Points*</span>
+			</div>
 
-			</aside>
-		</div>
+		</main>
+		<aside>
+
+			<form class="compose">
+				<input type="text" name="foo">
+				<textarea name="new_post" placeholder="Compose new post...">eferfrf</textarea>
+				<button>Post</button>
+			</form>
+					
+			<div class="post">
+				<img src="">
+				<div class="body">
+					<div class="user_name">Brad Flahive</div>
+					<div class="message">Message</div>
+					<select name="" id="">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<div class="display-points">1</div>
+				</div>
+			</div>
+
+			<div class="post">
+				<img src="">
+				<div class="body">
+					<div class="user_name">Brad Flahive</div>
+					<div class="message">Message</div>
+					<select name="" id="">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<div class="display-points">1</div>
+				</div>
+			</div>
+
+			<div class="post">
+				<img src="">
+				<div class="body">
+					<div class="user_name">Brad Flahive</div>
+					<div class="message">Message</div>
+					<select name="" id="">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<div class="display-points">1</div>
+				</div>
+			</div>
+
+		</aside>
 	</div>
-</body>
-</html>
-
