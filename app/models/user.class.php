@@ -5,18 +5,35 @@
  */
 class User extends CustomModel {
 
+    protected static function validators() {
+        return [
+            'user_name' => [FILTER_CALLBACK,
+                ['options' => function ($value) {
+                    return (is_string($value) && strlen($value) > 3)
+                        ? $value : false;
+            }]],
+            'user_id' => [FILTER_VALIDATE_INT],
+            'password' => [FILTER_CALLBACK,
+                ['options' => function ($value) {
+                    return (is_string($value) && strlen($value) > 6);
+            }]]
+        ];
+    }
+
     // determine if the user's password and user name are correct.
     public static function isValid($input) {
-        // do server side validation
+
         // validate user name
-        $sql_values = Util::zip(['user_name', 'password'], $input);
-        $sql_values = db::auto_quote($sql_values);
+        $boundedValues = Util::zip(['user_name', 'password'], $input);
+        $validatedValues = self::validate($boundedValues);
+        if (array_key_exists('failed', $validatedValues)) return null;
+        $quotedValues = db::auto_quote($validatedValues);
         $sqlPasswordValidation =<<<sql
             SELECT user_id
             FROM user
             WHERE password =
-            PASSWORD(CONCAT({$sql_values['user_name']},
-                            {$sql_values['password']}));
+            PASSWORD(CONCAT({$quotedValues['user_name']},
+                            {$quotedValues['password']}));
 sql;
         $result = db::execute($sqlPasswordValidation);
         $isValidPassword = (mysql_num_rows($result) == 1);
@@ -28,20 +45,20 @@ sql;
 	 */
 	protected function insert($input) {
 
-		// Note that Server Side validation is not being done here
-		// and should be implemented by you
-
 		// Prepare SQL Values
-        $sql_values = Util::zip(
+        $boundedValues = Util::zip(
             ['user_name', 'email', 'password'],
             $input
         );
 
+        $validatedValues = self::validate($boundedValues);
+        if (array_key_exists('failed', $validatedValues)) return null;
+
 		// Ensure values are encompassed with quote marks
-		$sql_values = db::auto_quote($sql_values);
+		$quotedValues = db::auto_quote($validatedValues);
 
 		// Insert
-		$results = db::insert('user', $sql_values);
+		$results = db::insert('user', $quotedValues);
 		
 		// Return the Insert ID
 		return $results->insert_id;
@@ -53,20 +70,24 @@ sql;
 	 */
 	public function update($input) {
 
-		// Note that Server Side validation is not being done here
-		// and should be implemented by you
-
 		// Prepare SQL Values
-        $sql_values = Util::zip(
+        $boundedValues = Util::zip(
             ['user_id', 'user_name', 'email', 'password'],
             $input
         );
 
+        $validatedValues = self::validate($boundedValues);
+        if (array_key_exists('failed', $validatedValues)) return null;
+
 		// Ensure values are encompassed with quote marks
-		$sql_values = db::auto_quote($sql_values);
+		$quotedValues = db::auto_quote($validatedValues);
 
 		// Update
-		db::update('user', $sql_values, "WHERE user_id = {$this->user_id}");
+        db::update(
+            'user',
+            $quotedValues,
+            "WHERE user_id = {$this->user_id}"
+        );
 		
 		// Return a new instance of this user as an object
 		return new User($this->user_id);
