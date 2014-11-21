@@ -39,7 +39,7 @@ extract($controller->view->vars);
 			<div class="body">
 				<div class="user_name">Brad Flahive</div>
 				<div class="message">Mustache finally reached 4 inches!</div>
-				<div class="display-points">1</div>
+				<div class="display-points">7</div>
 			</div>
 		</div>
 
@@ -59,7 +59,7 @@ extract($controller->view->vars);
 					</select>
 					<button>Add</button>
 				</form>
-				<div class="display-points">1</div>
+				<div class="display-points">6</div>
 			</div>
 		</div>
 
@@ -79,7 +79,7 @@ extract($controller->view->vars);
 					</select>
 					<button>Add</button>
 				</form>
-				<div class="display-points">1</div>
+				<div class="display-points">9</div>
 			</div>
 		</div>
 
@@ -99,7 +99,7 @@ extract($controller->view->vars);
 					</select>
 					<button>Add</button>
 				</form>
-				<div class="display-points">1</div>
+				<div class="display-points">42</div>
 			</div>
 		</div>
 
@@ -108,7 +108,7 @@ extract($controller->view->vars);
 			<div class="body">
 				<div class="user_name">Brad Flahive</div>
 				<div class="message">Ate 2 NY strips last night</div>
-				<div class="display-points">1</div>
+				<div class="display-points">11</div>
 			</div>
 		</div>
 
