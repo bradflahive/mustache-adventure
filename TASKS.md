@@ -4,11 +4,13 @@
 
 # HTML/CSS
 - [ ] Home page/login/create account
-  - [ ] Dynamically switch between login/create acct
-- [ ] Profile page
+  - [X] Dynamically switch between login/create acct
+  - [ ] Validate info from selected form
+  - [ ] Present any errors to users in friendly way
+- [x] Profile page
   - [x] Logo
-  - [ ] Profile info
-    - [ ] CSS
+  - [x] Profile info
+    - [x] CSS
       - [x] Picture
       - [x] Contact info
       - [x] Points awarded

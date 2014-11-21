@@ -28,11 +28,16 @@ extract($controller->view->vars);
 	</main>
 	<aside>
 
-		<form class="compose">
+		<div class="post">
+			<!-- <input type="text" name="new_post" placeholder="Compose new comment..."> -->
+			<textarea name="new_post" id="reptile" placeholder="Compose new post...">eferfrf</textarea>
+			<button>Post</button>			
+		</div>
+		<!-- <form class="compose">
 			<input type="text" name="foo">
 			<textarea name="new_post" id="reptile" placeholder="Compose new post...">eferfrf</textarea>
 			<button>Post</button>
-		</form>
+		</form> -->
 				
 		<div class="post">
 			<img src="/images/profile-brad.jpg">

@@ -266,4 +266,8 @@ aside > * + * {
 
 
 
+/*Temp? fix until reptile forms issue is resolved */
 
+div.post > textarea {
+	width: 85%;
+}
