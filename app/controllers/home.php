@@ -16,7 +16,7 @@ extract($controller->view->vars);
 
         <h3>LOGIN</h3>
         <div class="login_form">
-            <form action="/login">
+            <form action="/login" method="POST">
                 <input type="text" name="user_name" data-exp-name="text" title="-Username-">
                 <input type="password" name="password" data-exp-name="password" title="-Password-">
                 <br>

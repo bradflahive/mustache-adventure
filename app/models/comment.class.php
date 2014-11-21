@@ -5,7 +5,9 @@
  */
 class Comment extends CustomModel {
 
-    protected static function validators() {
+    use Validation;
+
+    protected function validators() {
         return [
             'comment_id' => [FILTER_VALIDATE_INT],
             'user_id' => [FILTER_VALIDATE_INT],
@@ -15,6 +17,10 @@ class Comment extends CustomModel {
             }]],
             'user_id' => [FILTER_VALIDATE_INT]
         ];
+    }
+
+    protected function validateId($id) {
+        return $this->validate(['comment_id' => $id]);
     }
 
 	/**
@@ -28,7 +34,7 @@ class Comment extends CustomModel {
             $input
         );
 
-        $validatedValues = self::validate($boundedValues);
+        $validatedValues = $this->validate($boundedValues);
 
         if (array_key_exists('failed', $validatedValues)) return null;
 
@@ -54,7 +60,7 @@ class Comment extends CustomModel {
             $input
         );
 
-        $validatedValues = self::validate($boundedValues);
+        $validatedValues = $this->validate($boundedValues);
 
         if (array_key_exists('failed', $validatedValues)) return null;
 
