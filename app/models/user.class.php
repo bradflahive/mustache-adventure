@@ -5,7 +5,9 @@
  */
 class User extends CustomModel {
 
-    protected static function validators() {
+    use Validation;
+
+    protected function validators() {
         return [
             'user_name' => [FILTER_CALLBACK,
                 ['options' => function ($value) {
@@ -23,12 +25,16 @@ class User extends CustomModel {
         ];
     }
 
+    protected function validateId($id) {
+        return $this->validate(['user_id' => $id]);
+    }
+
     // determine if the user's password and user name are correct.
     public static function isValid($input) {
 
         // validate user name
         $boundedValues = Util::zip(['user_name', 'password'], $input);
-        $validatedValues = self::validate($boundedValues);
+        $validatedValues = $this->validate($boundedValues);
         if (array_key_exists('failed', $validatedValues)) return null;
         $quotedValues = db::auto_quote($validatedValues);
         $sqlPasswordValidation =<<<sql
@@ -54,7 +60,7 @@ sql;
             $input
         );
 
-        $validatedValues = self::validate($boundedValues);
+        $validatedValues = $this->validate($boundedValues);
         if (array_key_exists('failed', $validatedValues)) return null;
 
 		// Ensure values are encompassed with quote marks
@@ -79,7 +85,7 @@ sql;
             $input
         );
 
-        $validatedValues = self::validate($boundedValues);
+        $validatedValues = $this->validate($boundedValues);
         if (array_key_exists('failed', $validatedValues)) return null;
 
 		// Ensure values are encompassed with quote marks
