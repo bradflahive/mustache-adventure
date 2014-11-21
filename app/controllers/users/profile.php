@@ -21,7 +21,7 @@ extract($controller->view->vars);
 				<p>Mustache Level: Pirate</p>
 			</div>
 			<div class="man-points">
-				<p>MY MAN-POINTS: <span class="points">*Points*</span></p>
+				<p>MY MAN-POINTS: <span class="points">*18 Points*</span></p>
 			</div>
 		</div>
 
@@ -30,7 +30,7 @@ extract($controller->view->vars);
 
 		<div class="post">
 			<!-- <input type="text" name="new_post" placeholder="Compose new comment..."> -->
-			<textarea name="new_post" id="reptile" placeholder="Compose new post...">eferfrf</textarea>
+			<textarea name="new_post" id="reptile" placeholder="Compose new post..."></textarea>
 			<button>Post</button>			
 		</div>
 		<!-- <form class="compose">
@@ -62,7 +62,7 @@ extract($controller->view->vars);
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
-					<button>Add</button>
+					<!-- <button>Add</button> -->
 				</form>
 				<div class="display-points">6</div>
 			</div>
@@ -76,13 +76,13 @@ extract($controller->view->vars);
 				<form action=""></form>
 					<select name="" id="">
 						<option value="0">0</option>
-						<option value="1">1</option>
+						<option value="1" selected>1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
-					<button>Add</button>
+					<!-- <button>Add</button> -->
 				</form>
 				<div class="display-points">9</div>
 			</div>
@@ -100,9 +100,9 @@ extract($controller->view->vars);
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
-						<option value="5">5</option>
+						<option value="5" selected>5</option>
 					</select>
-					<button>Add</button>
+					<!-- <button>Add</button> -->
 				</form>
 				<div class="display-points">42</div>
 			</div>
