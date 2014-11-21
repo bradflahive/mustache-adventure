@@ -48,7 +48,9 @@ $(function() {
 	$('body').on('click', 'button.sign-up', function(e) {
 		e.preventDefault();
 		console.log('Sign-up pressed');
-		$(this).parents('form').find('.sign-up').toggleClass('hidden');
+		$(this).parents('.login-content').find('form').toggleClass('e-expand');
+		$(this).parents('.login-content').find('button.sign-up').toggleClass('e-expand');
+
 	});
 	
 
