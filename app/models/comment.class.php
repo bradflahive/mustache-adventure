@@ -29,7 +29,8 @@ class Comment extends CustomModel {
 	/**
 	 * Insert Comment
 	 */
-	protected function insert($input) {
+    //renamed from insert to newCommentTODO -Nate also made public
+	public function newComment($input) {
 
 		// Prepare SQL Values
         $boundedValues = Util::zip(
@@ -65,6 +66,7 @@ class Comment extends CustomModel {
             $input
         );
 
+        // What is "$this" and the validate method?
         $validatedValues = $this->validate($boundedValues);
 
         if (array_key_exists('failed', $validatedValues)) return null;
@@ -94,20 +96,17 @@ class Comment extends CustomModel {
         FROM comment
             JOIN user USING (user_id)
             JOIN man_point USING (comment_id)
-        GROUP BY comment_id;
+        GROUP BY comment_id
+        ORDER BY comment_id DESC;
 sql;
 
         //returns the comments
         return db::execute($getPointsFromSql);
     }
 
-
-    protected function givePoints($input) {
-
-
-
-        // INSERT INTO `mustache_adventure_db`.`man_point` (`user_id`, `comment_id`, `points`, `timestamp`) VALUES ('3', '2', '-1000', CURRENT_TIMESTAMP);
-
+    //TODO Jon-wrote this trying to match your style.  Feel free to change/correct as needed. -Nate
+    //currently public, should probably make protected
+    public function givePoints($input) {
 
         // Prepare SQL Values
         $boundedValues = Util::zip(
@@ -115,7 +114,9 @@ sql;
             $input
         );
 
-        $validatedValues = $this->validate($boundedValues);
+        // What is "$this" and the validate method? TODO
+        // $validatedValues = $this->validate($boundedValues);
+        $validatedValues = $boundedValues;
 
         if (array_key_exists('failed', $validatedValues)) return null;
 
@@ -124,10 +125,15 @@ sql;
 
         // Insert
         $results = db::insert('man_point', $quotedValues);
-        
+
         // Return the Insert ID
         return $results->insert_id;
-
     }
+
+
+
+
+
+     
 
 }
