@@ -8,7 +8,10 @@ Router::add('/', '/app/controllers/home.php');
 
 //Users
 Router::add('/profile', '/app/controllers/users/profile.php');
-Router::add('/award_points', '/app/controllers/users/update_points.php');
+Router::add('/update_points', '/app/controllers/update_points.php');
+
+// Comments
+Router::add('/new_comment', '/app/controllers/new_comment');
 
 
 //Log In:
