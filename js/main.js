@@ -54,8 +54,18 @@ $(function() {
 	});
 	
 
+/*
+	$('select').change(function( ) {
+		console.log('select changed:');
+		console.log($(this).val());
+		var points = $(this).val();
+		var update_points = $(this);
+		var user_id;
+		
+		// need to get values from this and send to update_points.php
 
 
+	});*/
 
 
 

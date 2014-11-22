@@ -33,7 +33,7 @@ header h1 {
 }
 
 .logout {
-	float: right;
+	/*float: right;*/
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -170,7 +170,7 @@ aside > * + * {
 /*POST*/
 
 .post {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	background-color: rgb(255, 255, 255);
 	border: 2px solid rgb(75,75,75);
 	padding: 10px;
@@ -181,7 +181,7 @@ aside > * + * {
 }
 
 .post > img {
-	display: block;
+	/*display: block;*/
 	float: left;
 	width: 60px;
 	height: 60px;
@@ -202,36 +202,40 @@ aside > * + * {
 }
 
 .post .message {
-	margin-top: 5px;
+	/*margin-top: 5px;*/
 	border: 2px solid rgb(75,75,75);
 	border-radius: 5px;
 	font-family: 'PT Sans Caption', sans-serif;
-	padding: 3px;
+	padding: 5px;
+	margin: 3px;
 }
 
 .post select {
-	right: 40px;
+	right: 0px;
+	bottom: 10px;
 	position: absolute;
+	float: right;
 	margin-right: 10px;
 	margin-top: 5px;
 }
 
 .post button {
-	right: 0;
-	position: absolute;
+	/*right: 0;*/
+	/*position: absolute;*/
 	margin-right: 10px;
 	margin-top: 5px;
-	padding-bottom: 25px;
+	/*padding-bottom: 25px;*/
 }
 
 .post .display-points {
-	width: 20px;
+	min-width: 20px;
 	border: 2px solid rgb(75,75,75);
 	border-radius: 5px;
 	top: 5px;
-	right: 10px;
+	right: 13px;
 	position: absolute;
 	text-align: center;
+	padding: 1px 5px;
 }
 
 .copyright {

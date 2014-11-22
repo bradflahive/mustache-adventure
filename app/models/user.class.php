@@ -34,25 +34,35 @@ class User extends CustomModel {
         // validate user name
         $boundedValues = Util::zip(['user_name', 'password'], $input);
         $validatedValues = $this->validate($boundedValues);
-        if (array_key_exists('failed', $validatedValues)) return null;
+        if (array_key_exists('failed', $validatedValues)) {
+            return null;
+        }
         $quotedValues = db::auto_quote($validatedValues);
-        $sqlPasswordValidation =<<<sql
+        // when setting up user, user's name & pw are not being hashed
+        //TODO
+        /*$sqlPasswordValidation =<<<sql
             SELECT user_id
             FROM user
             WHERE user_name = {$quotedValues['user_name']}
             AND `password` =
             PASSWORD(CONCAT({$quotedValues['user_name']},
                             {$quotedValues['password']}));
+sql;*/
+        $sqlPasswordValidation =<<<sql
+            SELECT user_id
+            FROM user
+            WHERE user_name = {$quotedValues['user_name']}
+            AND `password` = {$quotedValues['password']};
 sql;
 
         $result = db::execute($sqlPasswordValidation);
         $user = null;
-        while ($row = $result->fetch_assoc()) {
+        if ($row = $result->fetch_assoc()) {
             $user = new User($row['user_id']);
             // throw new Exception($row['user_id']);
-            break;
+            // break;
         }
-        return $user ? $user : null;
+        return $user /*? $user : null*/;
     }
 
 	/**

@@ -70,11 +70,11 @@ INSERT INTO
         (1, 'How many points can a WOman get on this forum!'),
         (2, 'Scaled mount everest in a speedo...'),
         (2, 'Ate steel for breakfast this morning'),
+        (3, 'Hacked the website');
         -- doesn't like the below line.  Like seems to be a reserved word? Also, punctuation
         -- (1, 'I don't like to brag but...'),
-        (3, 'Hacked the website');
 
 INSERT INTO
     man_point (user_id, comment_id, points)
     VALUES
-        (1, 3, 5), (1, 4, 5), (1, 1, 5), (2, 1, -5), (3, 2, -25), (2, 2, 5000);
+        (1, 3, 5), (1, 4, 5), (1, 1, 5), (2, 1, -5), (3, 2, -25), (3, 5, 5000);

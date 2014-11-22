@@ -12,11 +12,12 @@
 	protected function init() {
 
 		// if(isset($_POST['points_awarded']) == 1) {
+			$points_awarded = $_POST['points_awarded'];
+			$points_awarded = $_POST['user_id'];
+			$points_awarded = $_POST['comment_id'];
+			
 
-		
-
-
-			$this->view['points_awarded'] = $points_awarded;
+			$this->view['points_awarded'] = json_encode($points_awarded);
 			
 		// In the case of the Ajax Controller, the view is an array
 		// which can can be accessed as follows. This array will be

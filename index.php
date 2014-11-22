@@ -8,6 +8,8 @@ Router::add('/', '/app/controllers/home.php');
 
 //Users
 Router::add('/profile', '/app/controllers/users/profile.php');
+Router::add('/award_points', '/app/controllers/users/update_points.php');
+
 
 //Log In:
 Router::add('/login', '/mockups/login/login.php');
@@ -16,10 +18,7 @@ Router::add('/account', '/mockups/login/account.php');
 Router::add('/logout', '/mockups/login/logout.php');
 
 
-/*// Users
-Router::add('/users', '/app/controllers/users/list.php');
-Router::add('/users/register', '/app/controllers/users/register/form.php');
-Router::add('/users/register/process_form/', '/app/controllers/users/register/process_form.php');*/
+
 
 // Issue Route
 Router::route();
