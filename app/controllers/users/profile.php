@@ -3,6 +3,21 @@
 class Controller extends AppController {
 	protected function init() {
 
+
+		//gets comments from the database
+		$results = Comment::getAll();
+		//processes comments and puts them into the view.
+		$comments = new CommentViewFragment;
+		while ($comment = $results->fetch_assoc()) {
+			$comments->comment_id = $comment['comment_id'];
+			$comments->user_name = $comment['user_name'];
+			$comments->message = $comment['message'];
+			$comments->total = $comment['total'];
+			$this->view->comments .= $comments->render();
+		}
+
+
+
 	}
 }
 $controller = new Controller();
@@ -37,8 +52,10 @@ extract($controller->view->vars);
 			<textarea name="new_post" id="reptile" placeholder="Compose new post..."></textarea>
 			<button>Post</button>
 		</form>
+
+		<?php echo $comments ?>
 				
-		<div class="post">
+		<!-- <div class="post">
 			<img src="/images/profile-brad.jpg">
 			<div class="body">
 				<div class="user_name">Brad Flahive</div>
@@ -46,7 +63,7 @@ extract($controller->view->vars);
 				<div class="display-points">7</div>
 			</div>
 		</div>
-
+		
 		<div class="post">
 			<img src="/images/nathan.jpg">
 			<div class="body">
@@ -61,12 +78,12 @@ extract($controller->view->vars);
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
-					<!-- <button>Add</button> -->
+					<button>Add</button>
 				</form>
 				<div class="display-points">6</div>
 			</div>
 		</div>
-
+		
 		<div class="post">
 			<img src="/images/jon.jpg">
 			<div class="body">
@@ -81,12 +98,12 @@ extract($controller->view->vars);
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
-					<!-- <button>Add</button> -->
+					<button>Add</button>
 				</form>
 				<div class="display-points">9</div>
 			</div>
 		</div>
-
+		
 		<div class="post">
 			<img src="/images/mark.jpg">
 			<div class="body">
@@ -101,12 +118,12 @@ extract($controller->view->vars);
 						<option value="4">4</option>
 						<option value="5" selected>5</option>
 					</select>
-					<!-- <button>Add</button> -->
+					<button>Add</button>
 				</form>
 				<div class="display-points">42</div>
 			</div>
 		</div>
-
+		
 		<div class="post">
 			<img src="/images/profile-brad.jpg">
 			<div class="body">
@@ -114,7 +131,7 @@ extract($controller->view->vars);
 				<div class="message">Ate 2 NY strips last night</div>
 				<div class="display-points">11</div>
 			</div>
-		</div>
+		</div> -->
 
 	</aside>
 </div>

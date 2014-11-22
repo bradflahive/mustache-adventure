@@ -17,13 +17,15 @@
       - [x] Ratings system
 
   - [ ] Submit post
+    - [x] figure out issue with reptile forms or plan new strategy
+    - [ ] test for issues with punctuation ' and " and \ and / in comments
   - [x] Feed of everyone
     - [x] Each post
       - [x] Who
       - [x] Picture
       - [x] Description
-      - [ ] Award points to someone (dropdown 0-5)
-      - [ ] Total points awarded so far.
+      - [x] Award points to someone (dropdown 0-5)
+      - [x] Total points awarded so far.
   
   - [ ] Misc tasks:
     - [ ] Review of other code to increase understanding
@@ -46,7 +48,7 @@
       - [ ] Pull info in for feed.  Populate feed with info from comment and man_points tables
       - [ ] Post/submit button should create new post.
       - [ ] ability ot delete own post
-      - [ ] AJAX to insert post to page and insert into DB
+      - [ ] AlJAX to insert post to page and insert into DB
       - [ ] Ability to update points given to someone for a post?
       - [ ] Delete posts?
       - [ ] Retrieve number of points that have been given to the post.
@@ -55,17 +57,31 @@
       - [ ] Check against DB
       - [ ] If correct, send to profile
       - [ ] If incorrect, give prompt to user for correct info.
+    - [ ] Comments
+      - [x] Pull in comments from DB and populate profile page
+      - [ ] ability to update points given to someone for a post.
 
 
  # View     
-    - [ ] Output escaping (XSS)
-      - [ ] Writing of class/function.
-      - [ ] Implementation of class/function.
+  - [ ] Output escaping (XSS)
+    - [ ] Writing of class/function.
+    - [ ] Implementation of class/function.
     
   - [ ] Validation
     - [ ] Utilize reptile forms to make sure that it's working as expected
     - [ ] Deal with response data in user friendly way
     - [ ] Validation - php built-ins
+
+# JS
+  [ ] Profile page
+    [ ] Post new comment
+      [ ] Needs to grab content in text area/input and appened to top of feed
+      [ ] Enforce a # character limit?
+    [ ] Comments in feed
+      [ ] Comment will need to be updated with points total when page is loaded
+      [ ] When voting, pull vote #, insert to DB, update points total
+
+
 
 
   

@@ -7,6 +7,9 @@ class Comment extends CustomModel {
 
     use Validation;
 
+
+    // FILTER_VALIDATE_INT and FILTER_CALLBACK are built in validators to PHP
+    // FILTER_CALLBACK uses a user defined function (defined below)
     protected function validators() {
         return [
             'comment_id' => [FILTER_VALIDATE_INT],
@@ -79,18 +82,22 @@ class Comment extends CustomModel {
 	}
 
     // return all comments with respective data 
+    // need to fix query so that it 
     public static function getAll() {
         $getPointsFromSql =<<<sql
         SELECT
             comment_id,
             message,
             user_name,
-            SUM(points)
+            SUM(points) as total
         FROM comment
             JOIN user USING (user_id)
             JOIN man_point USING (comment_id)
         GROUP BY comment_id;
 sql;
+
+        //returns the comments
+        return db::execute($getPointsFromSql);
     }
 
 }
