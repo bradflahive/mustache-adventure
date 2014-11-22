@@ -52,6 +52,8 @@ class Comment extends CustomModel {
 
 	}
 
+
+
 	/**
 	 * Update Comment
 	 */
@@ -81,8 +83,7 @@ class Comment extends CustomModel {
 
 	}
 
-    // return all comments with respective data 
-    // need to fix query so that it 
+    // return all comments 
     public static function getAll() {
         $getPointsFromSql =<<<sql
         SELECT
@@ -98,6 +99,35 @@ sql;
 
         //returns the comments
         return db::execute($getPointsFromSql);
+    }
+
+
+    protected function givePoints($input) {
+
+
+
+        // INSERT INTO `mustache_adventure_db`.`man_point` (`user_id`, `comment_id`, `points`, `timestamp`) VALUES ('3', '2', '-1000', CURRENT_TIMESTAMP);
+
+
+        // Prepare SQL Values
+        $boundedValues = Util::zip(
+            ['user_id', 'comment_id', 'points'],
+            $input
+        );
+
+        $validatedValues = $this->validate($boundedValues);
+
+        if (array_key_exists('failed', $validatedValues)) return null;
+
+        // Ensure values are encompassed with quote marks
+        $quotedValues = db::auto_quote($validatedValues);
+
+        // Insert
+        $results = db::insert('man_point', $quotedValues);
+        
+        // Return the Insert ID
+        return $results->insert_id;
+
     }
 
 }

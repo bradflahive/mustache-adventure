@@ -48,7 +48,7 @@
       - [ ] Pull info in for feed.  Populate feed with info from comment and man_points tables
       - [ ] Post/submit button should create new post.
       - [ ] ability ot delete own post
-      - [ ] AlJAX to insert post to page and insert into DB
+      - [ ] AJAX to insert post to page and insert into DB
       - [ ] Ability to update points given to someone for a post?
       - [ ] Delete posts?
       - [ ] Retrieve number of points that have been given to the post.
