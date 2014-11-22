@@ -4,6 +4,9 @@ class Controller extends AppController {
 	protected function init() {
 
 
+		//dummy user id currently TODO
+		$user_id = 2;
+
 		//gets comments from the database
 		$results = Comment::getAll();
 		//processes comments and puts them into the view.
@@ -13,6 +16,8 @@ class Controller extends AppController {
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
 			$comments->total = $comment['total'];
+			//TODO
+			$comments->user_id = $user_id;
 			$this->view->comments .= $comments->render();
 		}
 

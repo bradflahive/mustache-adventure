@@ -54,18 +54,50 @@ $(function() {
 	});
 	
 
-/*
+	//when a select is changed from one value to another, gets that value, user id, and comment_id
+	//and sends and inserts that info to the man_point database via /update_points. On success, needs
+	//to update the value for the total amount in that comment.
 	$('select').change(function( ) {
 		console.log('select changed:');
-		console.log($(this).val());
 		var points = $(this).val();
-		var update_points = $(this);
-		var user_id;
+		console.log('points: ' + $(this).val());
+		var user_id = $(this).parents('.post').find("input[name = 'user_id']").val();
+		console.log('user_id: ' + user_id);
+		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
+		console.log('comment_id: ' + comment_id);
 		
-		// need to get values from this and send to update_points.php
+		$array = $.ajax({
+				url: '/update_points',
+				type: 'POST',
+				dataType: 'json',
+				cache: false,
+				data: {points: points, user_id: user_id, comment_id: comment_id},
+				// async: false,
+				success: function(data){
+					console.log('success');
+					console.log(data);
+					var points = data.points;
+
+					//not getting the value of the display points div.  Need TODO
+					//After that, can set the total points w/o a DB call. (Would in future?)
+					/*var total = $(this).parents('.post').find('.display-points').text();
+					console.log ($(this).parents('.post'));
+					console.log($(this).parents('.post').find('.display-points'));
+					console.log(total);
+					total += points;
+					console.log('total' + total);
+					$(this).parents('.post').find('.display-points').text(total);*/
 
 
-	});*/
+				},
+				error: function(){
+					console.log('error');
+				}
+
+		});
+
+
+	});
 
 
 
