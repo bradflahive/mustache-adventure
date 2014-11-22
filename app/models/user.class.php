@@ -11,13 +11,12 @@ class User extends CustomModel {
         return [
             'user_name' => [FILTER_CALLBACK,
                 ['options' => function ($value) {
-                    return (is_string($value) && strlen($value) > 3)
-                        ? $value : false;
+                    return (strlen($value) > 3) ? $value : false;
             }]],
             'user_id' => [FILTER_VALIDATE_INT],
             'password' => [FILTER_CALLBACK,
                 ['options' => function ($value) {
-                    return (is_string($value) && strlen($value) > 6);
+                    return (strlen($value) > 5) ? $value : false;
             }]],
             'points' => [FILTER_VALIDATE_INT,
                 ['min_range' => 0, 'max_range' => 5]],
@@ -30,7 +29,7 @@ class User extends CustomModel {
     }
 
     // determine if the user's password and user name are correct.
-    public static function isValid($input) {
+    public function isValid($input) {
 
         // validate user name
         $boundedValues = Util::zip(['user_name', 'password'], $input);
@@ -40,13 +39,20 @@ class User extends CustomModel {
         $sqlPasswordValidation =<<<sql
             SELECT user_id
             FROM user
-            WHERE password =
+            WHERE user_name = {$quotedValues['user_name']}
+            AND `password` =
             PASSWORD(CONCAT({$quotedValues['user_name']},
                             {$quotedValues['password']}));
 sql;
+
         $result = db::execute($sqlPasswordValidation);
-        $isValidPassword = (mysql_num_rows($result) == 1);
-        return $isValidPassword ? new User($result) : null;
+        $user = null;
+        while ($row = $result->fetch_assoc()) {
+            $user = new User($row['user_id']);
+            // throw new Exception($row['user_id']);
+            break;
+        }
+        return $user ? $user : null;
     }
 
 	/**

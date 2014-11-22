@@ -23,7 +23,7 @@ abstract class CustomModel extends Model {
             }
 
             //otherwise get the record with value of $id
-            if ($this->validateId($id)) parent::__construct($id);
+            if (is_array($this->validateId($id))) parent::__construct($id);
         }
 	}
 

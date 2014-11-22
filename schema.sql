@@ -16,7 +16,7 @@ CREATE TABLE user (
   user_id int unsigned NOT NULL AUTO_INCREMENT,
   user_name varchar(15) NOT NULL DEFAULT '',
   email varchar(100) NOT NULL DEFAULT '',
-  `password` varchar(32) NOT NULL DEFAULT '',
+  `password` char(41) NOT NULL DEFAULT '',
   `timestamp` timestamp NOT NULL,
   PRIMARY KEY (user_id)
 );

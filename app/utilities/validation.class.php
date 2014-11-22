@@ -30,10 +30,8 @@ trait Validation {
                 $this->addNullFlag($validators[$key]);
 
             // use filter_var function 
-            $isValid = 
-                call_user_func(
-                    'filter_var',
-                    array_unshift($validators[$key], $value));
+            $isValid = call_user_func_array(
+                'filter_var', array_merge([$value], $validators[$key]));
 
             // return name of failed key if it didn't pass
             // "fail early, fail fast"
