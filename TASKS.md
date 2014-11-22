@@ -60,6 +60,7 @@
     - [ ] Comments
       - [x] Pull in comments from DB and populate profile page
       - [ ] ability to update points given to someone for a post.
+      - [ ] Track already existing vote from the user
 
 
  # View     
