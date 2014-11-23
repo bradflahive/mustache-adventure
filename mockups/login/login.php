@@ -2,7 +2,7 @@
 
 class Controller extends AjaxController {
     protected function init() {
-        if(isset($_POST['email'])){
+        if($_POST['email']){
             $user = new User($_POST);
         } 
         else {

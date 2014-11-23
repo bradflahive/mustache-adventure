@@ -40,7 +40,6 @@ $(function() {
 	$('body').on('click', 'button', function(e) {
 		// e.preventDefault();
 		console.log('Button pressed');
-
 	});
 
     // hides the e-mail input on load.

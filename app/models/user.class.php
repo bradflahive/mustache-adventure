@@ -40,19 +40,13 @@ class User extends CustomModel {
         $quotedValues = db::auto_quote($validatedValues);
         // when setting up user, user's name & pw are not being hashed
         //TODO
-        /*$sqlPasswordValidation =<<<sql
+        $sqlPasswordValidation =<<<sql
             SELECT user_id
             FROM user
             WHERE user_name = {$quotedValues['user_name']}
             AND `password` =
             PASSWORD(CONCAT({$quotedValues['user_name']},
                             {$quotedValues['password']}));
-sql;*/
-        $sqlPasswordValidation =<<<sql
-            SELECT user_id
-            FROM user
-            WHERE user_name = {$quotedValues['user_name']}
-            AND `password` = {$quotedValues['password']};
 sql;
 
         $result = db::execute($sqlPasswordValidation);
