@@ -9,6 +9,7 @@ Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites
 - [ ] main.js - Submit scores upon dropdown change (was working, may be working after cleanInput fix)
 - [ ] fix login (hash creation of new users)
 - [ ] sort out issues with Ajax Controllers in returning non-objects.
+- [ ] login and use of sessions
 
 # HTML/CSS
 - [ ] Home page/login/create account
