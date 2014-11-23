@@ -65,6 +65,8 @@ $(function() {
 		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
 		console.log('comment_id: ' + comment_id);
 		
+		//sends data to update_points which will use points, user_id, and comment_id to increase
+		//total of points and also update the total for the comment.
 		$array = $.ajax({
 				url: '/update_points',
 				type: 'POST',
@@ -97,7 +99,7 @@ $(function() {
 	});
 
 	
-	//on click of new_post button, submits post to DB and adds to page.
+	//on click of new_post button, submits post to DB and adds to the page.
 	$('form').on('click', 'button', function(){
 		var message = $(this).parents('.compose').find("textarea[name='new_comment']").val();
 		console.log(message);
