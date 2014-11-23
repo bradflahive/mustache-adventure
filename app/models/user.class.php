@@ -62,13 +62,20 @@ sql;
 		// Prepare SQL Values
         $cleanedInput = $this->cleanInput(
             ['user_name', 'email', 'password'],
-            $input
+            $input, ['password']
         );
 
         if (is_string($cleanedInput)) return null;
 
+        $passwordInsert =<<<sql
+        INSERT INTO 
+        user (user_name, email, `password`)
+        VALUES ({$cleanedInput['user_name']}, {$cleanedInput['email']},
+        PASSWORD(CONCAT({$cleanedInput['user_name']}, {$cleanedInput['password']})));
+sql;
+
 		// Insert
-		$results = db::insert('user', $cleanedInput);
+		$results = db::execute('user', $cleanedInput);
 		
 		// Return the Insert ID
 		return $results->insert_id;
