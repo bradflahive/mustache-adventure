@@ -2,6 +2,14 @@
 
 ## MVP
 
+## Priority
+- [ ] cleanInput - increase understanding/fix.  Example error when trying to submit: 
+Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites/mustache-adventure/app/models/comment.class.php on line 36
+- [ ] main.js - append new comment to aside (may be working after cleanInput fix)
+- [ ] main.js - Submit scores upon dropdown change (was working, may be working after cleanInput fix)
+- [ ] fix login (hash creation of new users)
+- [ ] sort out issues with Ajax Controllers in returning non-objects.
+
 # HTML/CSS
 - [ ] Home page/login/create account
   - [X] Dynamically switch between login/create acct

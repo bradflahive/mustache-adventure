@@ -9,6 +9,7 @@ class CommentViewFragment extends ViewFragment {
 	//This template takes input from the controller and plugs it into the template below.
 	//After the values are passed, they're rendered (returns a string)
 								// <div class="date_added">{{date_added}}</div>
+									// <button>Add-NEEDED?</button>
 	private $template = '<div class="post" data-comment-id="{{comment_id}}">
 							<input type="hidden" name="comment_id" value="{{comment_id}}">
 							<img src="/images/profile-brad.jpg">
@@ -25,7 +26,6 @@ class CommentViewFragment extends ViewFragment {
 										<option value="4">4</option>
 										<option value="5">5</option>
 									</select>
-									<button>Add-NEEDED?</button>
 								</form>
 								<div class="display-points">{{total}}</div>
 							</div>
