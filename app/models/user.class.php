@@ -5,7 +5,7 @@
  */
 class User extends CustomModel {
 
-    use Validation;
+    use ModelUtils;
 
     protected function validators() {
         return [
@@ -32,21 +32,16 @@ class User extends CustomModel {
     public function isValid($input) {
 
         // validate user name
-        $boundedValues = Util::zip(['user_name', 'password'], $input);
-        $validatedValues = $this->validate($boundedValues);
-        if (array_key_exists('failed', $validatedValues)) {
-            return null;
-        }
-        $quotedValues = db::auto_quote($validatedValues);
-        // when setting up user, user's name & pw are not being hashed
-        //TODO
+        $cleanedInput = $this->cleanInput(['user_name', 'password'], $input);
+        if (is_string($cleanedInput)) return null;
+
         $sqlPasswordValidation =<<<sql
             SELECT user_id
             FROM user
-            WHERE user_name = {$quotedValues['user_name']}
+            WHERE user_name = {$cleanedInput['user_name']}
             AND `password` =
-            PASSWORD(CONCAT({$quotedValues['user_name']},
-                            {$quotedValues['password']}));
+            PASSWORD(CONCAT({$cleanedInput['user_name']},
+                            {$cleanedInput['password']}));
 sql;
 
         $result = db::execute($sqlPasswordValidation);
@@ -65,19 +60,15 @@ sql;
 	protected function insert($input) {
 
 		// Prepare SQL Values
-        $boundedValues = Util::zip(
+        $cleanedInput = $this->cleanInput(
             ['user_name', 'email', 'password'],
             $input
         );
 
-        $validatedValues = $this->validate($boundedValues);
-        if (array_key_exists('failed', $validatedValues)) return null;
-
-		// Ensure values are encompassed with quote marks
-		$quotedValues = db::auto_quote($validatedValues);
+        if (is_string($cleanedInput)) return null;
 
 		// Insert
-		$results = db::insert('user', $quotedValues);
+		$results = db::insert('user', $cleanedInput);
 		
 		// Return the Insert ID
 		return $results->insert_id;
@@ -90,21 +81,17 @@ sql;
 	public function update($input) {
 
 		// Prepare SQL Values
-        $boundedValues = Util::zip(
+        $cleanedInput = $this->cleanInput(
             ['user_id', 'user_name', 'email', 'password'],
             $input
         );
 
-        $validatedValues = $this->validate($boundedValues);
-        if (array_key_exists('failed', $validatedValues)) return null;
-
-		// Ensure values are encompassed with quote marks
-		$quotedValues = db::auto_quote($validatedValues);
+        if (is_string($cleanedInput)) return null;
 
 		// Update
         db::update(
             'user',
-            $quotedValues,
+            $cleanedInput,
             "WHERE user_id = {$this->user_id}"
         );
 		

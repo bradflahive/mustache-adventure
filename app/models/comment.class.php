@@ -5,7 +5,7 @@
  */
 class Comment extends CustomModel {
 
-    use Validation;
+    use ModelUtils;
 
 
     // FILTER_VALIDATE_INT and FILTER_CALLBACK are built in validators to PHP
@@ -33,20 +33,15 @@ class Comment extends CustomModel {
 	public function newComment($input) {
 
 		// Prepare SQL Values
-        $boundedValues = Util::zip(
+        $cleanedInput = $this->cleanInput(
             ['user_id', 'message'],
             $input
         );
 
-        $validatedValues = $this->validate($boundedValues);
-
-        if (array_key_exists('failed', $validatedValues)) return null;
-
-		// Ensure values are encompassed with quote marks
-		$quotedValues = db::auto_quote($validatedValues);
+        if (is_string($cleanedInput)) return null;
 
 		// Insert
-		$results = db::insert('comment', $quotedValues);
+		$results = db::insert('comment', $cleanedInput);
 		
 		// Return the Insert ID
 		return $results->insert_id;
@@ -61,22 +56,16 @@ class Comment extends CustomModel {
 	public function update($input) {
 
 		// Prepare SQL Values
-        $boundedValues = Util::zip(
+        $cleanedInput = $this->cleanInput(
             ['user_id', 'comment_id',  'message'],
             $input
         );
 
-        // What is "$this" and the validate method?
-        $validatedValues = $this->validate($boundedValues);
-
-        if (array_key_exists('failed', $validatedValues)) return null;
-
-		// Ensure values are encompassed with quote marks
-		$quotedValues = db::auto_quote($validatedValues);
+        if (is_string($cleanedInput)) return null;
 
         db::update(
             'comment',
-            $quotedValues,
+            $cleanedInput,
             "WHERE comment_id = {$this->comment_id}"
         );
 		
@@ -109,31 +98,18 @@ sql;
     public function givePoints($input) {
 
         // Prepare SQL Values
-        $boundedValues = Util::zip(
+        $cleanedInput = $this->cleanInput(
             ['user_id', 'comment_id', 'points'],
             $input
         );
 
-        // What is "$this" and the validate method? TODO
-        // $validatedValues = $this->validate($boundedValues);
-        $validatedValues = $boundedValues;
-
-        if (array_key_exists('failed', $validatedValues)) return null;
-
-        // Ensure values are encompassed with quote marks
-        $quotedValues = db::auto_quote($validatedValues);
+        if (is_string($cleanedInput)) return null;
 
         // Insert
-        $results = db::insert('man_point', $quotedValues);
+        $results = db::insert('man_point', $cleanedInput);
 
         // Return the Insert ID
         return $results->insert_id;
     }
-
-
-
-
-
-     
 
 }
