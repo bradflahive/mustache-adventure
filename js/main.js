@@ -43,14 +43,14 @@ $(function() {
 
 	});
 
+    // hides the e-mail input on load.
+    $('.login-form .email').attr('hidden', '');
 
 	//adds e-mail field for signup when signup is pressed on home page.
-	$('body').on('click', 'button.sign-up', function(e) {
+	$('.login-form').on('click', 'button.sign-up', function(e) {
 		e.preventDefault();
 		console.log('Sign-up pressed');
-		$(this).parents('.login-content').find('form').toggleClass('e-expand');
-		$(this).parents('.login-content').find('button.sign-up').toggleClass('e-expand');
-
+        $('.login-form .email').toggle();
 	});
 	
 

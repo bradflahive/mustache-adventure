@@ -264,13 +264,6 @@ aside > * + * {
 	margin: 0 auto;
 }
 
-.e-expand {
-	display: none;
-}
-
-
-
-
 /*Temp? fix until reptile forms issue is resolved */
 
 div.post > textarea {
