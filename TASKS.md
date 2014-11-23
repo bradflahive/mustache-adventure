@@ -36,18 +36,17 @@
     - [ ] Review naming conventions in code, make sure consistent (minimize refactoring)
     - [ ] Code reviews?
 
-
   - [ ] Models
     - [ ] User
-      - [ ] create user
-      - [ ] Pull info for profile, populate profile page with profile info (user_id table)
-      - [ ] (LATER) Ability to update user (CRUD)
+      - [x] create user
+      - [x] Pull info for profile, populate profile page with profile info (user_id table)
+      - [x] (LATER) Ability to update user (CRUD)
       - [ ] (LATER) Delete user (if don't do friends...need delete in CRUD)
       - [ ] Retrieve number of points total for user
     - [ ] Feed
-      - [ ] Pull info in for feed.  Populate feed with info from comment and man_points tables
+      - [x] Pull info in for feed.  Populate feed with info from comment and man_points tables
       - [ ] Post/submit button should create new post.
-      - [ ] ability ot delete own post
+      - [ ] ability to delete own post
       - [ ] AJAX to insert post to page and insert into DB
       - [ ] Ability to update points given to someone for a post?
       - [ ] Delete posts?
