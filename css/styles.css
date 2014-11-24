@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 	font-family: 'Lato', sans-serif;
+	color: #FFFFF0;
 }
 
 .page {
@@ -12,10 +13,11 @@
 /*PRIMARY HEADER*/
 
 header {
-	background-color: rgb(189,189,189);
+	background: url("/images/wood2.jpg");
+	/*background-color: rgb(58, 64, 79);*/
 	width: 100%;
 	position: relative;
-	border: 2px solid rgb(75,75,75);
+	border: 2px solid black;
 	overflow: hidden;
 }
 
@@ -23,7 +25,7 @@ header img {
 	height: 100px;
 	width: 100px;
 	float: left;
-	border-right: 2px solid rgb(75,75,75);
+	border-right: 2px solid black;
 }
 
 header h1 {
@@ -31,6 +33,7 @@ header h1 {
 	font-family: 'Orbitron', sans-serif;
 	padding-top: 35px;
 	padding-left: 105px;
+	color: rgb(237, 225, 208);
 }
 
 .logout {
@@ -39,7 +42,7 @@ header h1 {
 	top: 0;
 	right: 0;
 	margin: 10px;
-	color: rgb(203, 10, 10);
+	color: rgb(237, 225, 208);
 	font-family: 'Orbitron', sans-serif;
 }
 
@@ -47,16 +50,20 @@ header h1 {
 	font-family: 'Orbitron', sans-serif;
 	padding-left: 180px;
 	margin: 0;
+	color: rgb(237, 225, 208);
 }
 
 /*PRIMARY CONTENT*/
 
 .primary-content {
 	overflow: hidden;
-	background-color: rgb(23, 21, 21);
+	background: url("/images/wood2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*background-color: rgb(23, 21, 21);*/
 	/*background-color: rgb(237, 237, 237);*/
 	padding: 10px;
-	border: 2px solid rgb(75,75,75);
+	/*border: 2px solid rgb(75,75,75);*/
 }
 
 /*USER INFO*/
@@ -64,10 +71,10 @@ header h1 {
 main {
 	height: 300px;
 	width: 400px;
-	background-color: rgb(23, 21, 21);
+	background-color: transparent;
 	/*background-color: rgb(189,189,189);*/
 	float: left;
-	margin-top: 8px;
+	margin-top: 9px;
 	padding: 1px;
 	/*border: 2px solid rgb(75,75,75);*/
 	border-radius: 5px;
@@ -75,7 +82,7 @@ main {
 }
 
 main .user {
-	background-color: rgb(58, 64, 79);
+	background-color: rgb(45, 52, 68);
 	/*background-color: rgb(255, 255, 255);*/
 	margin: 10px;
 	border: 2px solid rgb(23, 21, 21);
@@ -97,23 +104,23 @@ main .user {
 .user h3 {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-	color: white;
+	/*color: white;*/
 	/*font-family: 'PT Sans Caption', sans-serif;*/
 	margin-bottom: 0;
 }
 
 .profile-info p {
 	display: inline-block;
-	margin-bottom: 14px;
+	margin-bottom: 16px;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-	color: white;
+	/*color: white;*/
 	/*font-family: 'PT Sans Caption', sans-serif;*/
 	font-size: 12pt;
 }
 
 .user > div {
-	background-color: rgb(58, 64, 79);
+	background-color: rgb(45, 52, 68);
 	/*background-color: rgb(255, 255, 255);*/
 	padding-left: 15px;
 }
@@ -121,7 +128,7 @@ main .user {
 div.man-points {
 	padding-left: 15px;
 	border-top: 2px solid rgb(23, 21, 21);
-	background-color: rgb(58, 64, 79);
+	background-color: rgb(45, 52, 68);
 	/*background-color: rgb(237, 237, 237);*/
 	padding-bottom: 1px;
 	border-bottom-left-radius: 2px;
@@ -132,15 +139,15 @@ div.man-points {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	/*font-family: 'Iceland', cursive;*/
-	font-size: 16pt;
-	color: white;
+	font-size: 12pt;
+	/*color: white;*/
 }
 
 /*THREAD*/
 
 aside {
 	margin-left: 430px;
-	background-color: rgb(23, 21, 21);
+	background-color: transparent;
 	/*background-color: rgb(237, 237, 237);*/
 	margin-top: 20px;
 	padding: 1px;
@@ -153,7 +160,7 @@ aside > * + * {
 .compose {
 	/*background-color: white;*/
 	background-color: rgb(45, 52, 68);
-	/*border: 2px solid rgb(75,75,75);*/
+	border: 2px solid black;
 	padding: 10px;
 	border-radius: 3px;
 }
@@ -181,15 +188,16 @@ aside > * + * {
 
 .compose button {
 	margin-top: 5px;
+	color: black;
 }
 
 /*POST*/
 
 .post {
 	/*overflow: hidden;*/
-	background-color: rgb(58, 64, 79);
+	background-color: rgb(45, 52, 68);
 	/*background-color: rgb(255, 255, 255);*/
-	/*border: 2px solid rgb(75,75,75);*/
+	border: 2px solid black;
 	padding: 10px;
 	position: relative;
 	border-left: 3px solid rgb(40, 146, 217);
@@ -214,7 +222,7 @@ aside > * + * {
 .post .user_name {
 	font-weight: 700;
 	/*color: #333;*/
-	color: rgb(251, 251, 251);
+	/*color: rgb(251, 251, 251);*/
 	/*font-family: 'PT Sans Caption', sans-serif;*/
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
@@ -232,7 +240,7 @@ aside > * + * {
 	padding-left: 0;
 	margin: 3px;
 	margin-left: 0;
-	color: white;
+	/*color: white;*/
 }
 
 .post select {
@@ -262,7 +270,7 @@ aside > * + * {
 	text-align: center;
 	padding: 1px 5px;
 	font-family: 'Lato', sans-serif;
-	color: white;
+	/*color: white;*/
 	font-weight: 300;
 }
 
@@ -275,7 +283,10 @@ aside > * + * {
 
 .login-content {
 	overflow: hidden;
-	background-color: rgb(237, 237, 237);
+	background: url("/images/wood2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*background-color: rgb(237, 237, 237);*/
 	padding: 10px;
 	border: 2px solid rgb(75,75,75);
 	text-align: center;
@@ -284,12 +295,19 @@ aside > * + * {
 .login-main {
 	height: 250px;
 	width: 400px;
-	background-color: rgb(189,189,189);
+	background-color: rgb(58, 64, 79);
+	/*background-color: rgb(189,189,189);*/
 	padding: 1px;
 	float: none;
-	border: 2px solid rgb(75,75,75);
+	border: 2px solid black;
 	border-radius: 5px;
 	margin: 0 auto;
+	/*color: white;*/
+	font-weight: 300;
+}
+
+.login-main h3 {
+	font-weight: 300;
 }
 
 /*Temp? fix until reptile forms issue is resolved */
