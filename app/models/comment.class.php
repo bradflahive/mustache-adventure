@@ -18,7 +18,8 @@ class Comment extends CustomModel {
                 return (is_string($value) && strlen($value) > 0)
                     ? $value : false;
             }]],
-            'user_id' => [FILTER_VALIDATE_INT]
+            'points' => [FILTER_VALIDATE_INT,
+                ['min_range' => 0, 'max_range' => 5]]
         ];
     }
 
@@ -98,6 +99,8 @@ sql;
     //after cleaned input implemented, no longer inserts into DB TODO
     public function givePoints($input) {
 
+        print_r($input);
+
         // Prepare SQL Values
         $cleanedInput = $this->cleanInput(
             ['user_id', 'comment_id', 'points'],
@@ -107,7 +110,18 @@ sql;
         if (is_string($cleanedInput)) return null;
 
         // Insert
-        $results = db::insert_duplicate_key_update('man_point', $cleanedInput);
+        // $results = db::insert_duplicate_key_update('man_point', $cleanedInput);
+        $updatePoints =<<<sql
+        REPLACE INTO
+            man_point (user_id, comment_id, points)
+            VALUES (
+                {$cleanedInput['user_id']},
+                {$cleanedInput['comment_id']},
+                {$cleanedInput['points']});
+sql;
+
+        print_r($cleanedInput);
+        $results = db::execute($updatePoints);
 
         // Return the Insert ID
         return $results->insert_id;
