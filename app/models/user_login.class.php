@@ -2,10 +2,8 @@
 
 class UserLogin{
 
-    public static function logIn ($user_id){
-        // session_start();
+    public static function logIn ($user_id){    
         $_SESSION['logged_user'] = $user_id;
-        // print_r($_SESSION);
     }
 
     public static function isLogged(){

@@ -173,8 +173,7 @@ aside > * + * {
 
 .compose textarea {
 	border-radius: 3px;
-	background-color: #fff;
-	border: 1px solid rgb(75,75,75);
+	background-color: #FFFFF0;
 	display: block;
 	width: 100%;
 	padding: 4px;
@@ -189,7 +188,11 @@ aside > * + * {
 
 .compose button {
 	margin-top: 5px;
+	background-color: #FFFFF0;
+	border-color: transparent;
 	color: black;
+	border-radius: 5px;
+	border: 0;
 }
 
 /*POST*/
@@ -203,6 +206,8 @@ aside > * + * {
 	position: relative;
 	border-left: 3px solid rgb(40, 146, 217);
 	border-radius: 3px;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
 	padding-bottom: 20px;
 }
 
@@ -251,6 +256,9 @@ aside > * + * {
 	float: right;
 	margin-right: 10px;
 	margin-top: 5px;
+	color: black;
+	background-color: #FFFFF0;
+	border-color: transparent;
 }
 
 .post button {
@@ -278,6 +286,7 @@ aside > * + * {
 .copyright {
 	text-align: center;
 	font-family: 'PT Sans Caption', sans-serif;
+	color: black;
 }
 
 /*LOGIN*/
@@ -294,9 +303,8 @@ aside > * + * {
 }
 
 .login-main {
-	height: 250px;
 	width: 400px;
-	background-color: rgb(58, 64, 79);
+	background-color: rgb(45, 52, 68);
 	/*background-color: rgb(189,189,189);*/
 	padding: 1px;
 	float: none;
@@ -313,6 +321,10 @@ aside > * + * {
 
 .login-main button {
 	color: black;
+}
+
+.login-main input {
+	color:black;
 }
 
 /*Temp? fix until reptile forms issue is resolved */
