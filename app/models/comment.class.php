@@ -95,6 +95,7 @@ sql;
 
     //TODO Jon-wrote this trying to match your style.  Feel free to change/correct as needed. -Nate
     //currently public, should probably make protected
+    //after cleaned input implemented, no longer inserts into DB TODO
     public function givePoints($input) {
 
         // Prepare SQL Values

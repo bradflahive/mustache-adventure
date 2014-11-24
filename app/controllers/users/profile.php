@@ -20,6 +20,7 @@ class Controller extends AppController {
 			$comments->user_id = $user_id;
 			$this->view->comments .= $comments->render();
 		}
+		$this->view->user_id = $user_id;
 
 
 
@@ -54,8 +55,9 @@ extract($controller->view->vars);
 		<!-- 	<button>Post</button>			 -->
 		<!-- </div> -->
 		<form class="compose" method='POST'>
-			<textarea name="new_post" id="reptile" placeholder="Compose new post..."></textarea>
-			<button>Post</button>
+			<input type="hidden" name="user_id" value="<?php echo $user_id ?>">
+			<textarea name="new_comment" id="reptile" placeholder="Compose new post..."></textarea>
+			<button class="new_comment">Post</button>
 		</form>
 
 		<?php echo $comments ?>

@@ -14,9 +14,12 @@
 			$input['user_id'] = $_POST['user_id'];
 			$input['message'] = $_POST['message'];
 
-			Comment::newComment($input);
+			$comment_id = Comment::newComment($input);
 
-			$this->view['message'] = json_encode($points_awarded);
+			$this->view['message'] = $input['message'];
+			$this->view['comment_id'] = $comment_id;
+
+
 			
 		// In the case of the Ajax Controller, the view is an array
 		// which can can be accessed as follows. This array will be

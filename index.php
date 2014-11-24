@@ -11,7 +11,7 @@ Router::add('/profile', '/app/controllers/users/profile.php');
 Router::add('/update_points', '/app/controllers/update_points.php');
 
 // Comments
-Router::add('/new_comment', '/app/controllers/new_comment');
+Router::add('/new_comment', '/app/controllers/new_comment.php');
 
 
 //Log In:

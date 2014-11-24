@@ -65,6 +65,8 @@ $(function() {
 		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
 		console.log('comment_id: ' + comment_id);
 		
+		//sends data to update_points which will use points, user_id, and comment_id to increase
+		//total of points and also update the total for the comment.
 		$array = $.ajax({
 				url: '/update_points',
 				type: 'POST',
@@ -91,12 +93,61 @@ $(function() {
 				},
 				error: function(){
 					console.log('error');
+					console.log('data: ' + data);
 				}
+		});
+	});
 
+	
+	//on click of new_post button, submits post to DB and adds to the page.
+	$('form').on('click', 'button', function(){
+		var message = $(this).parents('.compose').find("textarea[name='new_comment']").val();
+		console.log(message);
+		var user_id = $(this).parents('.compose').find("input[name='user_id']").val();
+		console.log(user_id);
+
+		$array = $.ajax({
+				url: '/new_comment',
+				type: 'POST',
+				dataType: 'json',
+				cache: false,
+				data: {message: message, user_id: user_id},
+				// async: false,
+				success: function(data){
+					console.log('success');
+					console.log(data);
+					var message = data.message;
+					var comment_id = data.comment_id;
+					// var points = data.points;
+					var user_name = 'user_name would go here';
+
+
+
+
+					/*// building of new post...  how can we reuse CommentViewFragment here w/i JS?TODO
+					var build_new_comment = new CommentViewFragment;
+					$build_new_comment->comment_id = comment_id;
+					$build_new_comment->message = message;
+					$build_new_comment->user_name = user_name;
+					$build_new_comment->total = 0;
+					// how to pass user_id from above as a variable to useTODO
+					// $build_new_comment->user_id = user_id;
+					new_comment = $build_new_comment->render();*/
+
+					$('aside').find('form').after('new_comment');
+
+
+				},
+				error: function(){
+					console.log('error');
+					console.log('data: ' + data);
+				}
 		});
 
 
-	});
+	})
+
+
 
 
 

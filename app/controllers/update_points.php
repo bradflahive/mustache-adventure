@@ -21,7 +21,7 @@
 			//need to get properly working
 			// TODO  need to fix so that null isn't returned
 			// $this->view['points'] = json_encode($points);
-			$this->view['points'] = 5;
+			$this->view['points'] = json_encode(5);
 			
 
 		// In the case of the Ajax Controller, the view is an array
