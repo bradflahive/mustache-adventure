@@ -48,10 +48,8 @@ sql;
         $user = null;
         if ($row = $result->fetch_assoc()) {
             $user = new User($row['user_id']);
-            // throw new Exception($row['user_id']);
-            // break;
         }
-        return $user /*? $user : null*/;
+        return $user;
     }
 
 	/**
@@ -65,7 +63,9 @@ sql;
             $input, ['password']
         );
 
-        if (is_string($cleanedInput)) return null;
+        if (is_string($cleanedInput)) {
+            return null;
+        }
 
         $passwordInsert =<<<sql
         INSERT INTO 
@@ -75,8 +75,8 @@ sql;
 sql;
 
 		// Insert
-		$results = db::execute('user', $cleanedInput);
-		
+		$results = db::execute($passwordInsert);
+
 		// Return the Insert ID
 		return $results->insert_id;
 
