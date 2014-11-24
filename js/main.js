@@ -15,10 +15,17 @@
 		$('body').append('<p>Errors: ' + JSON.stringify(err) + '</p>');
 	});
 
+// ******************************************************************************
 	// Do something after validation is successful, but before the form submits.
 	form.on('beforeSubmit', function() {
-		$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
+		$('.errormsg').html('<p>Unable to match the Username and Password.<br>Please check your entries and try again.</p>');
 	});
+
+	// // Do something after validation is successful, but before the form submits.
+	// form.on('beforeSubmit', function() {
+	// 	$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
+	// });
+// ******************************************************************************
 
 	// Do something when the AJAX request has returned in success
 	form.on('xhrSuccess', function(e, data) {
@@ -58,26 +65,13 @@ $(function() {
 	//to update the value for the total amount in that comment.
 	$('select').change(function( ) {
 		console.log('select changed:');
-		var points = parseInt($(this).val(), 10);
+		var points = $(this).val();
 		console.log('points: ' + $(this).val());
 		var user_id = $(this).parents('.post').find("input[name = 'user_id']").val();
 		console.log('user_id: ' + user_id);
 		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
 		console.log('comment_id: ' + comment_id);
 		
-
-		// ideally would have upon successTODO
-		//finds value of the points field
-		// parseInt means that the value grabbed will be dealt with as an integer, base 10 (2nd param).
-		var total = parseInt($(this).parents('.post').find('.display-points').text(), 10);
-		console.log('total: ' + total);
-		total += points;
-		console.log('total: ' + total);
-		$(this).parents('.post').find('.display-points').text(total);
-		//================================================
-
-
-
 		//sends data to update_points which will use points, user_id, and comment_id to increase
 		//total of points and also update the total for the comment.
 		$array = $.ajax({
@@ -89,9 +83,19 @@ $(function() {
 				// async: false,
 				success: function(data){
 					console.log('success');
-					// console.log(data);	
+					console.log(data);
 					var points = data.points;
-					//TODO would update the points for post here
+
+					//not getting the value of the display points div.  Need TODO
+					//After that, can set the total points w/o a DB call. (Would in future?)
+					/*var total = $(this).parents('.post').find('.display-points').text();
+					console.log ($(this).parents('.post'));
+					console.log($(this).parents('.post').find('.display-points'));
+					console.log(total);
+					total += points;
+					console.log('total' + total);
+					$(this).parents('.post').find('.display-points').text(total);*/
+
 
 				},
 				error: function(){
@@ -103,7 +107,7 @@ $(function() {
 
 	
 	//on click of new_post button, submits post to DB and adds to the page.
-	$('form.compose').on('click', 'button', function(){
+	$('form').on('click', 'button', function(){
 		var message = $(this).parents('.compose').find("textarea[name='new_comment']").val();
 		console.log(message);
 		var user_id = $(this).parents('.compose').find("input[name='user_id']").val();
@@ -137,8 +141,7 @@ $(function() {
 					// $build_new_comment->user_id = user_id;
 					new_comment = $build_new_comment->render();*/
 
-					$('aside').find('form.compose').after(message);
-					$('form.compose').find('textarea').val('');
+					$('aside').find('form').after('new_comment');
 
 
 				},

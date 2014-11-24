@@ -23,6 +23,11 @@ extract($controller->view->vars);
             <button class="sign-up">sign up</button>
             <button>submit</button>
         </form>
+
+
+<div class="errormsg"></div>
+
+
     </main>
 </div>
 

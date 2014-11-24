@@ -315,6 +315,12 @@ aside > * + * {
 	color: black;
 }
 
+.errormsg {
+	color: #D8000C;
+	background-color: #FFBABA;
+	border-radius: 5px;
+}
+
 /*Temp? fix until reptile forms issue is resolved */
 
 div.post > textarea {
