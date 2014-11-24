@@ -304,7 +304,6 @@ aside > * + * {
 }
 
 .login-main {
-	height: 250px;
 	width: 400px;
 	background-color: rgb(58, 64, 79);
 	/*background-color: rgb(189,189,189);*/
