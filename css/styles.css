@@ -180,6 +180,7 @@ aside > * + * {
 	padding: 4px;
 	resize: none;
 	height: 1.8em;
+	color: black;
 }
 
 .compose textarea:focus {
@@ -310,8 +311,13 @@ aside > * + * {
 	font-weight: 300;
 }
 
+.login-main button {
+	color: black;
+}
+
 /*Temp? fix until reptile forms issue is resolved */
 
 div.post > textarea {
 	width: 85%;
+	color: black;
 }
