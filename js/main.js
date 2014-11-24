@@ -58,13 +58,26 @@ $(function() {
 	//to update the value for the total amount in that comment.
 	$('select').change(function( ) {
 		console.log('select changed:');
-		var points = $(this).val();
+		var points = parseInt($(this).val(), 10);
 		console.log('points: ' + $(this).val());
 		var user_id = $(this).parents('.post').find("input[name = 'user_id']").val();
 		console.log('user_id: ' + user_id);
 		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
 		console.log('comment_id: ' + comment_id);
 		
+
+		// ideally would have upon successTODO
+		//finds value of the points field
+		// parseInt means that the value grabbed will be dealt with as an integer, base 10 (2nd param).
+		var total = parseInt($(this).parents('.post').find('.display-points').text(), 10);
+		console.log('total: ' + total);
+		total += points;
+		console.log('total: ' + total);
+		$(this).parents('.post').find('.display-points').text(total);
+		//================================================
+
+
+
 		//sends data to update_points which will use points, user_id, and comment_id to increase
 		//total of points and also update the total for the comment.
 		$array = $.ajax({
@@ -75,22 +88,10 @@ $(function() {
 				data: {points: points, user_id: user_id, comment_id: comment_id},
 				// async: false,
 				success: function(data){
-					console.log('testing');
 					console.log('success');
-					console.log(data);
+					// console.log(data);	
 					var points = data.points;
-					console.log('points: ' + points);
-					//not getting the value of the display points div.  Need TODO
-					//After that, can set the total points w/o a DB call. (Would in future?)
-					var total = $(this).parents('post').find('display-points').text();
-					console.log ($(this).parents('post').text());
-					console.log('total: ' + total);
-					console.log($(this).parents('.post').find('.display-points'));
-					console.log(total);
-					total += points;
-					console.log('total' + total);
-					$(this).parents('.post').find('.display-points').text(total);
-					
+					//TODO would update the points for post here
 
 				},
 				error: function(){
@@ -102,7 +103,7 @@ $(function() {
 
 	
 	//on click of new_post button, submits post to DB and adds to the page.
-	$('form').on('click', 'button', function(){
+	$('form.compose').on('click', 'button', function(){
 		var message = $(this).parents('.compose').find("textarea[name='new_comment']").val();
 		console.log(message);
 		var user_id = $(this).parents('.compose').find("input[name='user_id']").val();
