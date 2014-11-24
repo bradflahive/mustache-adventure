@@ -15,10 +15,10 @@ Router::add('/new_comment', '/app/controllers/new_comment.php');
 
 
 //Log In:
-Router::add('/login', '/mockups/login/login.php');
-Router::add('/process_login', '/mockups/login/process_login.php');
-Router::add('/account', '/mockups/login/account.php');
-Router::add('/logout', '/mockups/login/logout.php');
+Router::add('/login', '/app/controllers/login/login.php');
+Router::add('/process_login', '/app/controllers/login/process_login.php');
+Router::add('/account', '/app/controllers/login/account.php');
+Router::add('/logout', '/app/controllers/login/logout.php');
 
 
 
