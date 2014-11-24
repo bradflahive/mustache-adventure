@@ -109,16 +109,20 @@ $(function() {
 		var user_id = $(this).parents('.compose').find("input[name='user_id']").val();
 		console.log(user_id);
 
+
+		// switched type from json to html.  Switching new_comment.php to an AppController
+		//instead of Ajax.
 		$array = $.ajax({
 				url: '/new_comment',
 				type: 'POST',
-				dataType: 'json',
+				dataType: 'html',
 				cache: false,
 				data: {message: message, user_id: user_id},
 				// async: false,
 				success: function(data){
 					console.log('success');
 					console.log(data);
+					var new_comment = data.new_comment;
 					var message = data.message;
 					var comment_id = data.comment_id;
 					// var points = data.points;
@@ -128,16 +132,18 @@ $(function() {
 
 
 					/*// building of new post...  how can we reuse CommentViewFragment here w/i JS?TODO
-					var build_new_comment = new CommentViewFragment;
+					var build_new_comment = new CommentViewFragment();
 					$build_new_comment->comment_id = comment_id;
-					$build_new_comment->message = message;
+					$build_new_comment->new_comment = new_comment;
 					$build_new_comment->user_name = user_name;
 					$build_new_comment->total = 0;
 					// how to pass user_id from above as a variable to useTODO
 					// $build_new_comment->user_id = user_id;
 					new_comment = $build_new_comment->render();*/
 
-					$('aside').find('form.compose').after(message);
+					// $('aside').find('form.compose').after(new_comment);
+					// $('aside').find('form.compose').after(message);
+					$('aside').find('form.compose').after(data);
 					$('form.compose').find('textarea').val('');
 
 

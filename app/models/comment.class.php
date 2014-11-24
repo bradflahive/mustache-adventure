@@ -29,8 +29,8 @@ class Comment extends CustomModel {
 	/**
 	 * Insert Comment
 	 */
-    //renamed from insert to newCommentTODO -Nate also made public
-	public function newComment($input) {
+    //TODO -Nate  made public
+	public function insert($input) {
 
 		// Prepare SQL Values
         $cleanedInput = $this->cleanInput(
