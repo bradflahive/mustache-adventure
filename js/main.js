@@ -75,20 +75,22 @@ $(function() {
 				data: {points: points, user_id: user_id, comment_id: comment_id},
 				// async: false,
 				success: function(data){
+					console.log('testing');
 					console.log('success');
 					console.log(data);
 					var points = data.points;
-
+					console.log('points: ' + points);
 					//not getting the value of the display points div.  Need TODO
 					//After that, can set the total points w/o a DB call. (Would in future?)
-					/*var total = $(this).parents('.post').find('.display-points').text();
-					console.log ($(this).parents('.post'));
+					var total = $(this).parents('post').find('display-points').text();
+					console.log ($(this).parents('post').text());
+					console.log('total: ' + total);
 					console.log($(this).parents('.post').find('.display-points'));
 					console.log(total);
 					total += points;
 					console.log('total' + total);
-					$(this).parents('.post').find('.display-points').text(total);*/
-
+					$(this).parents('.post').find('.display-points').text(total);
+					
 
 				},
 				error: function(){

@@ -1,6 +1,9 @@
 <?php
 
 class Controller extends AppController {
+
+
+
 	protected function init() {
 
 
