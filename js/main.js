@@ -137,7 +137,8 @@ $(function() {
 					// $build_new_comment->user_id = user_id;
 					new_comment = $build_new_comment->render();*/
 
-					$('aside').find('form').after('new_comment');
+					$('aside').find('form.compose').after(message);
+					$('form.compose').find('textarea').val('');
 
 
 				},

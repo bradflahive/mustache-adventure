@@ -107,7 +107,7 @@ sql;
         if (is_string($cleanedInput)) return null;
 
         // Insert
-        $results = db::insert('man_point', $cleanedInput);
+        $results = db::insert_duplicate_key_update('man_point', $cleanedInput);
 
         // Return the Insert ID
         return $results->insert_id;

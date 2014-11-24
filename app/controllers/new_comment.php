@@ -14,7 +14,9 @@
 			$input['user_id'] = $_POST['user_id'];
 			$input['message'] = $_POST['message'];
 
-			$comment_id = Comment::newComment($input);
+			$comment = new Comment($input['comment_id']);
+			$comment_id = $comment->newComment($input);
+			// $comment_id = $comment->comment_id;
 
 			$this->view['message'] = $input['message'];
 			$this->view['comment_id'] = $comment_id;
