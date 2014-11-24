@@ -10,8 +10,8 @@ class Controller extends AjaxController {
         }
 
         if($user){
-            $this->view['redirect'] = '/profile?user_id='.$user->user_id;
-            UserLogin::logIn($_POST['user_name'], $_POST['password']);
+            $this->view['redirect'] = '/profile?user_id='. $user->user_id;
+            UserLogin::logIn($user->user_id);
         } else {
             $this->view['message'] = 
                 'Please enter a valid User Name and Password.';

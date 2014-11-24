@@ -48,10 +48,8 @@ sql;
         $user = null;
         if ($row = $result->fetch_assoc()) {
             $user = new User($row['user_id']);
-            // throw new Exception($row['user_id']);
-            // break;
         }
-        return $user /*? $user : null*/;
+        return $user;
     }
 
 	/**
@@ -62,14 +60,23 @@ sql;
 		// Prepare SQL Values
         $cleanedInput = $this->cleanInput(
             ['user_name', 'email', 'password'],
-            $input
+            $input, ['password']
         );
 
-        if (is_string($cleanedInput)) return null;
+        if (is_string($cleanedInput)) {
+            return null;
+        }
+
+        $passwordInsert =<<<sql
+        INSERT INTO 
+        user (user_name, email, `password`)
+        VALUES ({$cleanedInput['user_name']}, {$cleanedInput['email']},
+        PASSWORD(CONCAT({$cleanedInput['user_name']}, {$cleanedInput['password']})));
+sql;
 
 		// Insert
-		$results = db::insert('user', $cleanedInput);
-		
+		$results = db::execute($passwordInsert);
+
 		// Return the Insert ID
 		return $results->insert_id;
 
