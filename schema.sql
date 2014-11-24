@@ -81,11 +81,6 @@ INSERT INTO
         (1, 3, 5), (1, 4, 5), (1, 1, 5), (2, 1, -5), (3, 2, -25), (3, 5, 5000);
 
 
-INSERT INTO 
-    man_point (user_id, comment_id, points)
-    VALUES (3, 5, 2000)
-    ON DUPLICATE KEY UPDATE;
-
 REPLACE INTO
     man_point (user_id, comment_id, points)
     VALUES (3, 5, 2000);
