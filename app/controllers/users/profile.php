@@ -8,7 +8,8 @@ class Controller extends AppController {
 
 
 		//dummy user id currently TODO
-		$user_id = 2;
+		// $user_id = $_SESSION['user_id'];
+		$user_id = 3;
 
 		//gets comments from the database
 		$results = Comment::getAll();
@@ -26,25 +27,21 @@ class Controller extends AppController {
 		$this->view->user_id = $user_id;
 
 		$user = new User($user_id);
-		$this->view->totalpoints = $user->userPoints();
-
-
-
+		$this->view->totalpoints = $user->getUserPoints();
+		$this->view->user_name = $user->getUserName();
 	}
 }
 $controller = new Controller();
 
 extract($controller->view->vars);
-
 ?>
 
 <div class="primary-content">
 	<main>
-
 		<div class="user">
 			<div class="profile-info">
 				<img src="/images/profile-brad.jpg" >
-				<h3>Brad Flahive</h3>
+				<h3><?php echo $user_name ?></h3>
 				<p>Mustache Level: Pirate</p>
 			</div>
 			<div class="man-points">
