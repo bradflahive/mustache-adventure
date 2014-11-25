@@ -4,6 +4,7 @@ class ViewFragment {
 	
 	// Fill Template
 	public static function fill($record, $template) {
+		// echo('vf1');
 		$search_keys = array_keys($record);
 		array_walk($search_keys, ['self', 'fixKeys']);
 		$values = array_values($record);

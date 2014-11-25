@@ -13,7 +13,7 @@ class Controller extends AppController {
 		//gets comments from the database
 		$results = Comment::getAll();
 		//processes comments and puts them into the view.
-		$comments = new CommentViewFragment;
+		$comments = new CommentViewFragment();
 		while ($comment = $results->fetch_assoc()) {
 			$comments->comment_id = $comment['comment_id'];
 			$comments->user_name = $comment['user_name'];

@@ -119,7 +119,7 @@ $(function() {
 		$array = $.ajax({
 				url: '/new_comment',
 				type: 'POST',
-				dataType: 'html',
+				dataType: 'json',
 				cache: false,
 				data: {message: message, user_id: user_id},
 				// async: false,
@@ -132,25 +132,13 @@ $(function() {
 					// var points = data.points;
 					var user_name = 'user_name would go here';
 
-
-
-
-					/*// building of new post...  how can we reuse CommentViewFragment here w/i JS?TODO
-					var build_new_comment = new CommentViewFragment();
-					$build_new_comment->comment_id = comment_id;
-					$build_new_comment->new_comment = new_comment;
-					$build_new_comment->user_name = user_name;
-					$build_new_comment->total = 0;
-					// how to pass user_id from above as a variable to useTODO
-					// $build_new_comment->user_id = user_id;
-					new_comment = $build_new_comment->render();*/
-
 					// $('aside').find('form.compose').after(new_comment);
 					// $('aside').find('form.compose').after(message);
-					$('aside').find('form.compose').after(data);
+					$('aside').find('form.compose').after(data.new_comment);
 					$('form.compose').find('textarea').val('');
-					$('aside').find('form').after('new_comment');
-
+					// $('aside').find('form').after(new_comment);
+					// $('aside').find('form').after(data.test_comment);
+					// console.log(data.test_comment);
 
 				},
 				error: function(){
