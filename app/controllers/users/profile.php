@@ -12,6 +12,7 @@ class Controller extends AppController {
 
 		//gets comments from the database
 		$results = Comment::getAll();
+
 		//processes comments and puts them into the view.
 		$comments = new CommentViewFragment();
 		while ($comment = $results->fetch_assoc()) {
@@ -19,7 +20,6 @@ class Controller extends AppController {
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
 			$comments->total = $comment['total'];
-			//TODO
 			$comments->user_id = $user_id;
 			$this->view->comments .= $comments->render();
 		}

@@ -4,11 +4,6 @@
 class CommentViewFragment extends ViewFragment {
 
 
-	/*public function __construct() {
-		echo 'constructor';
-	}*/
-
-
 	private $template = '<div class="post" data-comment-id="{{comment_id}}">
 							<input type="hidden" name="comment_id" value="{{comment_id}}">
 							<img src="/images/profile-brad.jpg">
@@ -44,7 +39,6 @@ class CommentViewFragment extends ViewFragment {
 
 	//This returns a string.  For this to work, will have to have passed key/value pairs.
 	public function render() {
-		// echo('comment');
 		return parent::fill($this->values, $this->template);
 	}
 }
