@@ -257,9 +257,9 @@ aside > * + * {
 	float: right;
 	margin-right: 10px;
 	margin-top: 5px;
-	color: black;
 	background-color: #FFFFF0;
 	border-color: transparent;
+	color: black;
 }
 
 .post button {
