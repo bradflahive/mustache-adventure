@@ -14,6 +14,7 @@ class Controller extends AppController {
 
 		$user_id = UserLogin::getUserID();
 
+
 		//gets comments from the database
 		$results = Comment::getAll();
 
@@ -36,7 +37,8 @@ class Controller extends AppController {
 		//gets comments from the database
 		$results = Comment::getAll();
 		while ($comment = $results->fetch_assoc()) {
-      		$isSameUser = ($user_id === $comment['user_id']);
+
+	    	$isSameUser = ($user_id === $comment['user_id']);
 			$comments->comment_id = $comment['comment_id'];
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
@@ -46,16 +48,9 @@ class Controller extends AppController {
       		$comments->points_hidden = $isSameUser ? 'hidden' : '';
 			$this->view->comments .= $comments->render();
 
-			//could have put an array like...
-			// $votes [] = [comment_id => 5, p => 2],
-			// And then the obj passed back would be an array
-			//of obj which could be easier looped over.
-			//
 		}
 		$this->view->user_id = $user_id;
 
-		//query DB here for votes that this user has voted on and the # of points they've given
-		//TODO
 
 		//pass the results to payload so that jQuery can use them to select the dropdowns.
 		Payload::add('votes', $votes);
