@@ -43,6 +43,50 @@
 
 $(function() {
 
+	// using payload to populate an object that can be looped over to select comment and already
+	//selected vote.  Will then add 'selected' attribute to the already chosen vote value.
+	console.log(app.settings.votes);
+	var votes = app.settings.votes;
+
+
+	for (var vote in votes){
+		console.log(vote);
+		console.log(votes[vote]);
+		var comment_id = votes[vote].comment_id;
+		console.log('comment id: ' + comment_id);
+		var points = votes[vote].points;
+		console.log('points: ' + points);
+
+
+		// console.log(votes);
+
+		//can't use votes.i...because it's a variable. Have to access is with [i]
+		$("div[data-comment-id='" + comment_id + "']").find("select option[value='" + points + "']").prop('selected', true);
+		
+	}
+
+	//gets size/length of the votes object
+	/*var count = Object.keys(app.settings.votes).length;
+	console.log(count);
+	for (var i = 1; i < count; i++){
+		var comment_id = i;
+		console.log('comment id: ' + comment_id);
+
+		// console.log(votes);
+
+		//can't use votes.i...because it's a variable. Have to access is with [i]
+		var points = votes[i];
+		console.log('points: ' + points);
+
+
+
+		$("div[data-comment-id='" + comment_id + "']").find("select option[value='" + points + "']").prop('selected', true);
+		// console.log($("div[data-comment-id='" + comment_id + "']").html());
+		// console.log($("select option[value='" + points + "']").val());
+	}*/
+
+
+
 	//verifies that a button was clicked
 	$('body').on('click', 'button', function(e) {
 		// e.preventDefault();
@@ -64,7 +108,7 @@ $(function() {
 	//when a select is changed from one value to another, gets that value, user id, and comment_id
 	//and sends and inserts that info to the man_point database via /update_points. On success, needs
 	//to update the value for the total amount in that comment.
-	$('select').change(function( ) {
+	$('.post select').change(function( ) {
 		console.log('select changed:');
 		var points = $(this).val();
 		console.log('points: ' + $(this).val());
@@ -72,6 +116,7 @@ $(function() {
 		console.log('user_id: ' + user_id);
 		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
 		console.log('comment_id: ' + comment_id);
+
 		
 		//sends data to update_points which will use points, user_id, and comment_id to increase
 		//total of points and also update the total for the comment.

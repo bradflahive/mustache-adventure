@@ -57,14 +57,14 @@
     - [ ] Feed
       - [x] Pull info in for feed.  Populate feed with info from comment and man_points tables
       - [x] Post/submit button should create new post.
-      - [ ] ability to delete own post
+      - [ ] ability to delete own post?
       - [x] AJAX to insert post to page and insert into DB
       - [x] Ability to update points given to someone for a post?
       - [ ] Delete posts?
       - [x] Retrieve number of points that have been given to the post.
     - [ ] Login helper
-      - [ ] Get data
-      - [ ] Check against DB
+      - [x] Get data
+      - [x] Check against DB
       - [ ] If correct, send to profile
       - [ ] If incorrect, give prompt to user for correct info.
     - [ ] Comments
