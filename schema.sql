@@ -72,6 +72,7 @@ INSERT INTO
         (2, 'Scaled mount everest in a speedo...'),
         (2, 'Ate steel for breakfast this morning'),
         (3, 'Hacked the website');
+        (3, 'Cut my toenails with a chainsaw');
 
 INSERT INTO
     man_point (user_id, comment_id, points)

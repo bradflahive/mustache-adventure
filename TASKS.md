@@ -3,16 +3,17 @@
 ## MVP
 
 ## Priority
-- [x] cleanInput - increase understanding/fix.  Example error when trying to submit: 
-Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites/mustache-adventure/app/models/comment.class.php on line 36
+- [x] cleanInput - increase understanding/fix.
 - [x] main.js - append new comment to aside (may be working after cleanInput fix)
-- [ ] main.js - Submit scores upon dropdown change
+- [x] main.js - Submit scores upon dropdown change
 - [ ] fix login (hash creation of new users) (and also creation of users)
 - [x] sort out issues with Ajax Controllers in returning non-objects.
 - [ ] login and use of sessions
 - [ ] ability to delete own comments (or user?)
-- [ ] fetch comments from DB that have 0 points
-- [ ] Retrieve number of points total for user
+- [x] fetch comments from DB that have 0 points
+- [x] Retrieve number of points total for user
+- [ ] can't vote on own post
+- [ ] keep track of past votes and have selected already in drop down.
 
 # HTML/CSS
 - [x] Home page/login/create account
@@ -50,15 +51,15 @@ Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites
     - [ ] User
       - [x] create user
       - [x] Pull info for profile, populate profile page with profile info (user_id table)
-      - [x] (LATER) Ability to update user (CRUD)
+      - [ ] (LATER) Ability to update user (CRUD)
       - [ ] (LATER) Delete user (if don't do friends...need delete in CRUD)
-      - [ ] Retrieve number of points total for user
+      - [x] Retrieve number of points total for user
     - [ ] Feed
       - [x] Pull info in for feed.  Populate feed with info from comment and man_points tables
       - [x] Post/submit button should create new post.
       - [ ] ability to delete own post
       - [x] AJAX to insert post to page and insert into DB
-      - [ ] Ability to update points given to someone for a post?
+      - [x] Ability to update points given to someone for a post?
       - [ ] Delete posts?
       - [x] Retrieve number of points that have been given to the post.
     - [ ] Login helper
@@ -68,7 +69,8 @@ Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites
       - [ ] If incorrect, give prompt to user for correct info.
     - [ ] Comments
       - [x] Pull in comments from DB and populate profile page
-      - [ ] ability to update points given to someone for a post.
+      - [x] ability to update points given to someone for a post.
+      - [ ] Show user what they've voted in the past
       - [ ] Track already existing vote from the user
 
 

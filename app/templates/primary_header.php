@@ -5,4 +5,4 @@
 	<!-- <marquee class="scroll" scrollamount="100" behavior="slide" direction="left">For Men, By Men</marquee> -->
 	<p class="scroll">For Men, By Men</p>
 </header>
-<hr>
+<!-- <hr> -->

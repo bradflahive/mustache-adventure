@@ -107,7 +107,7 @@ sql;
 
 	}
 
-    public function userPoints() {
+    public function getUserPoints() {
 
         $userPoints =<<<sql
         SELECT SUM(points) AS total
@@ -123,6 +123,66 @@ sql;
             $total = $result['total'];
         }
         return $total;
+    }
+
+    public function getUserRank() {
+
+        $userPoints =<<<sql
+        SELECT SUM(points) AS total
+        FROM man_point
+        WHERE user_id = {$this->user_id}
+        GROUP BY user_id;
+sql;
+
+        $results = db::execute($userPoints);
+
+        $total = null;
+        if ($result = $results->fetch_assoc()) {
+            $total = $result['total'];
+        }
+
+        if($total < 10){
+            $rank = 'Baby Face'; 
+        } elseif ($total >= 10 && $total < 20) {
+            $rank = 'The Shadow';
+        } elseif ($total >= 20 && $total < 30) {
+            $rank = 'The Pushbroom';
+        } elseif ($total >= 30 && $total < 40) {
+            $rank = 'The Burnside';
+        } elseif ($total >= 40 && $total < 50) {
+            $rank = 'The Western Walrus';
+        } elseif ($total >= 50 && $total < 60) {
+            $rank = 'The Monopoly Man';
+        } elseif ($total >= 60 && $total < 70) {
+            $rank = 'The Handlebar';
+        } elseif ($total >= 70 && $total < 80) {
+            $rank = 'The Fu Manchu';
+        } elseif ($total >= 80 && $total < 90) {
+            $rank = 'The Super Mario';
+        } elseif ($total >= 90 && $total < 100) {
+            $rank = 'The Selleck';
+        } elseif ($total >= 100) {
+            $rank = 'The Chuck Norris';
+        }
+        return $rank;
+    }
+
+    public function getUserName() {
+
+        //unable to access $this->user_id, so passing as param.
+        $getUserName =<<<sql
+        SELECT user_name
+        FROM user
+        WHERE user_id = {$this->user_id};
+sql;
+
+        $results = db::execute($getUserName);
+
+        $user_name = null;
+        if ($result = $results->fetch_assoc()) {
+            $user_name = $result['user_name'];
+        }
+        return $user_name;
     }
 
 }
