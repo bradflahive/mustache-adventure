@@ -34,7 +34,7 @@ class CommentViewFragment extends ViewFragment {
 
 	public function __set($property_name, $value) {
 		$this->values[$property_name] = $value;
-
+		
 	}
 
 	//This returns a string.  For this to work, will have to have passed key/value pairs.
