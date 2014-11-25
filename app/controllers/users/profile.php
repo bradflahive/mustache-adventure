@@ -9,8 +9,6 @@ class Controller extends AppController {
 
 		//dummy user id currently TODO
 		$user_id = UserLogin::getUserID();
-		// $user_id = 3;
-		print_r($_SESSION);
 
 		//gets comments from the database
 		$results = Comment::getAll();
