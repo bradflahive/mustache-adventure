@@ -92,12 +92,12 @@ sql;
         return db::execute($getPointsFromSql);
     }
 
-    public function getPoints($comment_id) {
+    public function getPoints() {
 
         $getPoints =<<<sql
         SELECT SUM(points) AS total
         FROM man_point
-        WHERE comment_id = $comment_id
+        WHERE comment_id = {$this->comment_id}
         GROUP BY comment_id;
 sql;
 
@@ -119,7 +119,7 @@ sql;
 
         // Prepare SQL Values
         $cleanedInput = $this->cleanInput(
-            ['user_id', 'comment_id', 'points'],
+            ['user_id', 'points'],
             $input
         );
 
@@ -132,7 +132,7 @@ sql;
             man_point (user_id, comment_id, points)
             VALUES (
                 {$cleanedInput['user_id']},
-                {$cleanedInput['comment_id']},
+                {$this->comment_id},
                 {$cleanedInput['points']});
 sql;
 
