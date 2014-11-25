@@ -49,8 +49,6 @@ class Comment extends CustomModel {
 
 	}
 
-
-
 	/**
 	 * Update Comment
 	 */
@@ -94,12 +92,30 @@ sql;
         return db::execute($getPointsFromSql);
     }
 
+    public function getPoints($comment_id) {
+
+        $getPoints =<<<sql
+        SELECT SUM(points) AS total
+        FROM man_point
+        WHERE comment_id = $comment_id
+        GROUP BY comment_id;
+sql;
+
+        $results = db::execute($getPoints);
+
+        $total = null;
+        if ($result = $results->fetch_assoc()) {
+            $total = $result['total'];
+        }
+
+        return $total;
+
+    }
+
     //TODO Jon-wrote this trying to match your style.  Feel free to change/correct as needed. -Nate
     //currently public, should probably make protected
     //after cleaned input implemented, no longer inserts into DB TODO
     public function givePoints($input) {
-
-        print_r($input);
 
         // Prepare SQL Values
         $cleanedInput = $this->cleanInput(
@@ -120,8 +136,9 @@ sql;
                 {$cleanedInput['points']});
 sql;
 
-        print_r($cleanedInput);
         $results = db::execute($updatePoints);
+
+        return $this->getPoints($cleanedInput['comment_id']);
 
         // Return the Insert ID
         return $results->insert_id;
