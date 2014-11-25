@@ -3,13 +3,7 @@
 
 class CommentViewFragment extends ViewFragment {
 
-//CHANGED FROM post to comment (class)  TODO change CSS appropriately
-	//still need to implement the changes in profile.php
 
-	//This template takes input from the controller and plugs it into the template below.
-	//After the values are passed, they're rendered (returns a string)
-								// <div class="date_added">{{date_added}}</div>
-									// <button>Add-NEEDED?</button>
 	private $template = '<div class="post" data-comment-id="{{comment_id}}">
 							<input type="hidden" name="comment_id" value="{{comment_id}}">
 							<img src="/images/profile-brad.jpg">
@@ -48,12 +42,6 @@ class CommentViewFragment extends ViewFragment {
 		return parent::fill($this->values, $this->template);
 	}
 }
-
-
-
-
-?>
-
 
 
 

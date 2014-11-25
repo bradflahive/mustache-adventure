@@ -3,19 +3,22 @@
 ## MVP
 
 ## Priority
-- [ ] cleanInput - increase understanding/fix.  Example error when trying to submit: 
+- [x] cleanInput - increase understanding/fix.  Example error when trying to submit: 
 Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites/mustache-adventure/app/models/comment.class.php on line 36
-- [ ] main.js - append new comment to aside (may be working after cleanInput fix)
-- [ ] main.js - Submit scores upon dropdown change (was working, may be working after cleanInput fix)
-- [ ] fix login (hash creation of new users)
-- [ ] sort out issues with Ajax Controllers in returning non-objects.
+- [x] main.js - append new comment to aside (may be working after cleanInput fix)
+- [ ] main.js - Submit scores upon dropdown change
+- [ ] fix login (hash creation of new users) (and also creation of users)
+- [x] sort out issues with Ajax Controllers in returning non-objects.
 - [ ] login and use of sessions
+- [ ] ability to delete own comments (or user?)
+- [ ] fetch comments from DB that have 0 points
+- [ ] Retrieve number of points total for user
 
 # HTML/CSS
-- [ ] Home page/login/create account
+- [x] Home page/login/create account
   - [X] Dynamically switch between login/create acct
-  - [ ] Validate info from selected form
-  - [ ] Present any errors to users in friendly way
+  - [x] Validate info from selected form
+  - [x] Present any errors to users in friendly way
 - [x] Profile page
   - [x] Logo
   - [x] Profile info
@@ -37,11 +40,9 @@ Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites
       - [x] Total points awarded so far.
   
   - [ ] Misc tasks:
-    - [ ] Review of other code to increase understanding
-    - [ ] Review of MVC in general
     - [ ] Check code for repeats, consolidate to DRY
     - [ ] Add notes to code indicating what's needed to input and the expected output
-    - [ ] Check view templates
+    - [x] Check view templates
     - [ ] Review naming conventions in code, make sure consistent (minimize refactoring)
     - [ ] Code reviews?
 
@@ -54,12 +55,12 @@ Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites
       - [ ] Retrieve number of points total for user
     - [ ] Feed
       - [x] Pull info in for feed.  Populate feed with info from comment and man_points tables
-      - [ ] Post/submit button should create new post.
+      - [x] Post/submit button should create new post.
       - [ ] ability to delete own post
-      - [ ] AJAX to insert post to page and insert into DB
+      - [x] AJAX to insert post to page and insert into DB
       - [ ] Ability to update points given to someone for a post?
       - [ ] Delete posts?
-      - [ ] Retrieve number of points that have been given to the post.
+      - [x] Retrieve number of points that have been given to the post.
     - [ ] Login helper
       - [ ] Get data
       - [ ] Check against DB
@@ -76,15 +77,15 @@ Fatal error: Call to undefined method Controller::cleanInput() in /home/na/Sites
     - [ ] Writing of class/function.
     - [ ] Implementation of class/function.
     
-  - [ ] Validation
-    - [ ] Utilize reptile forms to make sure that it's working as expected
-    - [ ] Deal with response data in user friendly way
-    - [ ] Validation - php built-ins
+  - [x] Validation
+    - [x] Utilize reptile forms to make sure that it's working as expected
+    - [x] Deal with response data in user friendly way
+    - [x] Validation - php built-ins
 
 # JS
-  [ ] Profile page
-    [ ] Post new comment
-      [ ] Needs to grab content in text area/input and appened to top of feed
+  [x] Profile page
+    [x] Post new comment
+      [x] Needs to grab content in text area/input and appened to top of feed
       [ ] Enforce a # character limit?
     [ ] Comments in feed
       [ ] Comment will need to be updated with points total when page is loaded
