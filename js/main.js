@@ -56,7 +56,8 @@ $(function() {
 	$('.login-form').on('click', 'button.sign-up', function(e) {
 		e.preventDefault();
 		console.log('Sign-up pressed');
-        $('.login-form .email').toggle();
+		$(this).hide();
+        $('.login-form .email').toggle(); 
 	});
 	
 
