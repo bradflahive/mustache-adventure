@@ -108,7 +108,7 @@ $(function() {
 
 	
 	//on click of new_post button, submits post to DB and adds to the page.
-	$('form').on('click', 'button', function(){
+	$('form.compose').on('click', 'button', function(){
 		var message = $(this).parents('.compose').find("textarea[name='new_comment']").val();
 		console.log(message);
 		var user_id = $(this).parents('.compose').find("input[name='user_id']").val();
