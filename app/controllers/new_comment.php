@@ -11,7 +11,8 @@
 	 */
 	protected function init() {
 			$this->view['test_comment'] = 'test comment';
-
+			$user_name = "joey standin";
+			// $user_name = $_SESSION['user_name'];
 			$user_id = $input['user_id'] = $_POST['user_id'];
 			$message = $input['message'] = $_POST['message'];
 			$comment = new Comment($input);
@@ -29,9 +30,6 @@
 			$build_new_comment->user_id = $user_id;
 
 			$this->view['new_comment'] = $build_new_comment->render();
-			// $this->view['test_comment'] = 'test comment';
-
-
 			
 		// In the case of the Ajax Controller, the view is an array
 		// which can can be accessed as follows. This array will be
