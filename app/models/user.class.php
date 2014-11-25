@@ -141,7 +141,7 @@ sql;
             $total = $result['total'];
         }
 
-        if($total < 10){
+        if($total >= 0 && $total < 10){
             $rank = 'Baby Face'; 
         } elseif ($total >= 10 && $total < 20) {
             $rank = 'The Shadow';
@@ -163,7 +163,10 @@ sql;
             $rank = 'The Selleck';
         } elseif ($total >= 100) {
             $rank = 'The Chuck Norris';
+        } elseif ($total < 0) {
+            $rank = 'Woman';
         }
+
         return $rank;
     }
 

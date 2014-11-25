@@ -62,27 +62,31 @@ INSERT INTO
         ('Smithy', 'dave@smith.com',
             PASSWORD(CONCAT('Smithy', 'abc124'))),
         ('H4X0R', 'hkd@l33t.com',
-            PASSWORD(CONCAT('H4X0R', 'abc124')));
+            PASSWORD(CONCAT('H4X0R', 'abc124'))),
+        ('Brad', 'bwestfall@glitter.com',
+            PASSWORD(CONCAT('David', 'password'))),
+        ('John', 'John@cox.com',
+            PASSWORD(CONCAT('John', 'password')));
 
 INSERT INTO
     comment (user_id, message)
     VALUES
         (1, 'I love manly men!'),
-        (1, 'How many points can a Woman get on this forum!'),
+        (1, 'How many points can a WOman get on this forum!'),
         (2, 'Scaled mount everest in a speedo...'),
         (2, 'Ate steel for breakfast this morning'),
-        (3, 'Hacked the website');
-        (3, 'Cut my toenails with a chainsaw');
-        -- (3, 'Spent a weekend on Broke Back Mountain and still able to hear my farts'),
-        -- (3, 'Called Chuck Norris a wimp and survived. Doctors say there is a possibility I will have feeling below my neck again someday');
+        (3, 'Hacked the website'),
+        (3, 'Cut my toenails with a chainsaw'),
+        (4, 'Spent a weekend on Broke Back Mountain and still able to hear my farts'),
+        (5, 'Called Chuck Norris a wuss and survived. Doctors are hopeful I will regain feeling below my neck again someday');
         -- doesn't like the below line.  Like seems to be a reserved word? Also, punctuation
         -- (1, 'I don't like to brag but...'),
 
 INSERT INTO
     man_point (user_id, comment_id, points)
     VALUES
-        (1, 3, 5), (1, 4, 5), (1, 1, 5), (2, 1, -5), (3, 2, -25), (3, 5, 5000);
+        (1, 3, 5), (1, 4, 45), (1, 1, 35), (2, 1, 15), (3, 2, 25), (4, 5, 40);
 
 REPLACE INTO
     man_point (user_id, comment_id, points)
-    VALUES (3, 5, 2000);
+    VALUES (3, 5, 15);

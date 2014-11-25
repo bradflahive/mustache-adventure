@@ -15,6 +15,6 @@ class UserLogin{
     }
 
     public static function getUserID(){
-        return $this->$_SESSION['user_id'];
+        return $_SESSION['logged_user'];
     }
 }
