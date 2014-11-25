@@ -6,20 +6,12 @@ class Controller extends AppController {
 
 	protected function init() {
 
-<<<<<<< HEAD
-		$session = $_SESSION;
-		//dummy user id currently TODO
-		// $user_id = $_SESSION['user_id'];
-		// $user_name = $_SESSION['user_name'];
-		$user_id = 1;
-		
-		
-=======
-		$user_id = UserLogin::getUserID();
+	
+		// $user_id = UserLogin::getUserID();
+		$user_id = 2;
 
 		//gets comments from the database
 		$results = Comment::getAll();
->>>>>>> e9e3de8305b5978502ba53e71e467f0e6939f3c1
 
 		//processes comments and puts them into the view.
 		$comments = new CommentViewFragment();
@@ -40,30 +32,20 @@ class Controller extends AppController {
 		//gets comments from the database
 		$results = Comment::getAll();
 		while ($comment = $results->fetch_assoc()) {
-<<<<<<< HEAD
-			$i++;
-=======
-      $isSameUser = ($user_id === $comment['user_id']);
->>>>>>> e9e3de8305b5978502ba53e71e467f0e6939f3c1
+			// $i++;
+	    	$isSameUser = ($user_id === $comment['user_id']);
 			$comments->comment_id = $comment['comment_id'];
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
 			$comments->total = $comment['total'];
 			$comments->user_id = $user_id;
-      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
-      $comments->points_hidden = $isSameUser ? 'hidden' : '';
+      		$comments->remove_hidden = $isSameUser ? '' : 'hidden';
+      		$comments->points_hidden = $isSameUser ? 'hidden' : '';
 			$this->view->comments .= $comments->render();
 
-			//could have put an array like...
-			// $votes [] = [comment_id => 5, p => 2],
-			// And then the obj passed back would be an array
-			//of obj which could be easier looped over.
-			//
 		}
 		$this->view->user_id = $user_id;
 
-		//query DB here for votes that this user has voted on and the # of points they've given
-		//TODO
 
 		//pass the results to payload so that jQuery can use them to select the dropdowns.
 		Payload::add('votes', $votes);
