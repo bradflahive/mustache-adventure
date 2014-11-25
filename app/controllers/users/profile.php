@@ -67,6 +67,7 @@ $controller = new Controller();
 extract($controller->view->vars);
 ?>
 
+<a class="logout" href="/logout">Logout</a>
 <div class="primary-content">
 	<main>
 	<?php print_r($session) ?>

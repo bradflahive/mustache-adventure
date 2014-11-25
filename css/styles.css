@@ -11,16 +11,17 @@
 }
 
 body {
-	background-color: rgb(163, 161, 161);
+	background: url("/images/wood2.jpg");
+	/*background-color: rgb(163, 161, 161);*/
 }
 
 /*PRIMARY HEADER*/
 
 header {
-	background: url("/images/wood2.jpg");
+	/*background: url("/images/wood2.jpg");*/
 	width: 100%;
 	position: relative;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	overflow: hidden;
 }
 
@@ -41,8 +42,8 @@ header h1 {
 
 .logout {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 10px;
+	right: 10px;
 	margin: 10px;
 	color: rgb(237, 225, 208);
 	font-family: 'Orbitron', sans-serif;
@@ -59,10 +60,10 @@ header h1 {
 
 .primary-content {
 	overflow: hidden;
-	background: url("/images/wood2.jpg");
+	/*background: url("/images/wood2.jpg");*/
 	padding: 10px;
-	border: 2px solid black;
-	border-top: 0;
+	/*border: 2px solid black;*/
+	/*border-top: 0;*/
 }
 
 /*USER INFO*/
@@ -221,17 +222,19 @@ aside > * + * {
 	padding-left: 0;
 	margin: 3px;
 	margin-left: 0;
+	width: 350px;
 }
 
 .post select, .post .remove {
 	right: 2px;
-	bottom: 3px;
+	top: 30px;
+	/*bottom: 3px;*/
 	position: absolute;
 	float: right;
 	margin-right: 10px;
-	margin-top: 5px;
+	/*margin-top: 5px;*/
 	border-color: transparent;
-	margin-bottom: 5px;
+/*	margin-bottom: 5px;*/
 	background-color: #FFFFF0;
 	color: black;
 }
@@ -259,20 +262,19 @@ aside > * + * {
 
 .copyright {
 	text-align: center;
-	font-family: 'PT Sans Caption', sans-serif;
-	color: black;
+	font-weight: 300;
 }
 
 /*LOGIN*/
 
 .login-content {
 	overflow: hidden;
-	background: url("/images/wood2.jpg");
+	/*background: url("/images/wood2.jpg");*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 10px;
 	text-align: center;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	border-top: 0;
 }
 
