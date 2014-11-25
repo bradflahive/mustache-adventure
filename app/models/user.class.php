@@ -107,4 +107,22 @@ sql;
 
 	}
 
+    public function userPoints() {
+
+        $userPoints =<<<sql
+        SELECT SUM(points) AS total
+        FROM man_point
+        WHERE user_id = {$this->user_id}
+        GROUP BY user_id;
+sql;
+
+        $results = db::execute($userPoints);
+
+        $total = null;
+        if ($result = $results->fetch_assoc()) {
+            $total = $result['total'];
+        }
+        return $total;
+    }
+
 }

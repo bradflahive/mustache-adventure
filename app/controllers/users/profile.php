@@ -25,6 +25,9 @@ class Controller extends AppController {
 		}
 		$this->view->user_id = $user_id;
 
+		$user = new User($user_id);
+		$this->view->totalpoints = $user->userPoints();
+
 
 
 	}
@@ -45,7 +48,7 @@ extract($controller->view->vars);
 				<p>Mustache Level: Pirate</p>
 			</div>
 			<div class="man-points">
-				<p>MY MAN-POINTS: <span class="points">*18 Points*</span></p>
+				<p>MY MAN-POINTS: <span class="points">*<?php echo $totalpoints ?> Points*</span></p>
 			</div>
 		</div>
 
