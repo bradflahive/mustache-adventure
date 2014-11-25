@@ -153,7 +153,7 @@ sql;
 
         if (is_string($cleanedInput)) return null;
 
-        $votes =<<<sql 
+        $votes =<<<sql
             SELECT *
             FROM 
             man_point
