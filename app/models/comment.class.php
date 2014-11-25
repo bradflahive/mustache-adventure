@@ -43,7 +43,7 @@ class Comment extends CustomModel {
 
 		// Insert
 		$results = db::insert('comment', $cleanedInput);
-		
+
 		// Return the Insert ID
 		return $results->insert_id;
 
@@ -126,7 +126,6 @@ sql;
         if (is_string($cleanedInput)) return null;
 
         // Insert
-        // $results = db::insert_duplicate_key_update('man_point', $cleanedInput);
         $updatePoints =<<<sql
         REPLACE INTO
             man_point (user_id, comment_id, points)

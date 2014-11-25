@@ -90,3 +90,4 @@ INSERT INTO
 REPLACE INTO
     man_point (user_id, comment_id, points)
     VALUES (3, 5, 15);
+
