@@ -16,7 +16,7 @@ class Controller extends AppController {
 		//processes comments and puts them into the view.
 		$comments = new CommentViewFragment();
 		while ($comment = $results->fetch_assoc()) {
-			$comments->comment_id = $comment['comment_id'];
+			$comments->comment_id = htmlentities($comment['comment_id']);
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
 			$comments->total = $comment['total'];
