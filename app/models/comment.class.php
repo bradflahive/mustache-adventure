@@ -75,11 +75,12 @@ class Comment extends CustomModel {
 
     // return all comments 
     public static function getAll() {
-        $getPointsFromSql =<<<sql
+        $getComments =<<<sql
         SELECT
             comment_id,
             message,
             user_name,
+            comment.user_id,
             SUM(points) as total
         FROM comment
             JOIN user USING (user_id)
@@ -89,7 +90,7 @@ class Comment extends CustomModel {
 sql;
 
         //returns the comments
-        return db::execute($getPointsFromSql);
+        return db::execute($getComments);
     }
 
     public function getPoints() {
@@ -140,7 +141,31 @@ sql;
         return $this->getPoints($cleanedInput['comment_id']);
 
         // Return the Insert ID
-        return $results->insert_id;
+        // return $results->insert_id;
+    }
+
+    public function getVotes($input) {
+
+        $cleanedInput = $this->cleanInput(
+            ['user_id'],
+            $input
+        );
+
+        if (is_string($cleanedInput)) return null;
+
+        $votes =<<<sql
+            SELECT *
+            FROM 
+            man_point
+            WHERE user_id = {$cleanedInput['user_id']};
+sql;
+            $results = db::execute($votes);
+
+            return $this->getVotes($cleanedInput['user_id']);
+
+            // Return the Insert ID
+            // return $results->insert_id;
+
     }
 
 }
