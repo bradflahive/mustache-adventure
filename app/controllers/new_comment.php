@@ -10,31 +10,38 @@
 	 * converted to JSON upon render
 	 */
 	protected function init() {
+<<<<<<< HEAD
 			$this->view['test_comment'] = 'test comment';
 			$user_name = "joey standin";
 			// $user_name = $_SESSION['user_name'];
 			$user_id = $input['user_id'] = $_POST['user_id'];
 			$message = $input['message'] = $_POST['message'];
 			$comment = new Comment($input);
+=======
 
-			//may not need this passed back
-			$this->view['message'] = $input['message'];
-			$this->view['comment_id'] = $comment_id;
-			$this->view['user_id'] = $user_id;
+      $user = new User($_SESSION['logged_user']);
+      $_POST['user_id'] = $user->user_id;
+>>>>>>> e9e3de8305b5978502ba53e71e467f0e6939f3c1
+
+      $comment = new Comment($_POST);
+      $total = $comment->givePoints([
+        'points'  => 0,
+        'user_id' => $user->user_id
+      ]);
+
+      $isSameUser = ($user->user_id === $comment->user_id);
 
 			$build_new_comment = new CommentViewFragment();
-			$build_new_comment->comment_id = $comment_id;
-			$build_new_comment->message = $message;
-			$build_new_comment->user_name = $user_name;
+			$build_new_comment->comment_id = htmlentities($comment->comment_id);
+			$build_new_comment->message = htmlentities($comment->message);
+			$build_new_comment->user_name = htmlentities($user->user_name);
 			$build_new_comment->total = 0;
-			$build_new_comment->user_id = $user_id;
+			$build_new_comment->user_id = htmlentities($user->user_id);
+      $build_new_comment->remove_hidden = $isSameUser ? '' : 'hidden';
+      $build_new_comment->points_hidden = $isSameUser ? 'hidden' : '';
 
 			$this->view['new_comment'] = $build_new_comment->render();
 			
-		// In the case of the Ajax Controller, the view is an array
-		// which can can be accessed as follows. This array will be
-		// converted to JSON when this script ends and sent to the client
-		// automatically
 	}
 }
 $controller = new Controller();

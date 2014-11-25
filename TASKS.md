@@ -8,7 +8,7 @@
 - [x] main.js - Submit scores upon dropdown change
 - [ ] fix login (hash creation of new users) (and also creation of users)
 - [x] sort out issues with Ajax Controllers in returning non-objects.
-- [ ] login and use of sessions
+- [x] login and use of sessions
 - [ ] ability to delete own comments (or user?)
 - [x] fetch comments from DB that have 0 points
 - [x] Retrieve number of points total for user
@@ -29,9 +29,9 @@
       - [x] Points awarded
       - [x] Ratings system
 
-  - [ ] Submit post
+  - [x] Submit post
     - [x] figure out issue with reptile forms or plan new strategy
-    - [ ] test for issues with punctuation ' and " and \ and / in comments
+    - [x] test for issues with punctuation ' and " and \ and / in comments
   - [x] Feed of everyone
     - [x] Each post
       - [x] Who
@@ -48,7 +48,7 @@
     - [ ] Code reviews?
 
   - [ ] Models
-    - [ ] User
+    - [x] User
       - [x] create user
       - [x] Pull info for profile, populate profile page with profile info (user_id table)
       - [ ] (LATER) Ability to update user (CRUD)
@@ -65,8 +65,8 @@
     - [ ] Login helper
       - [x] Get data
       - [x] Check against DB
-      - [ ] If correct, send to profile
-      - [ ] If incorrect, give prompt to user for correct info.
+      - [x] If correct, send to profile
+      - [x] If incorrect, give prompt to user for correct info.
     - [ ] Comments
       - [x] Pull in comments from DB and populate profile page
       - [x] ability to update points given to someone for a post.
@@ -94,9 +94,6 @@
       [ ] When voting, pull vote #, insert to DB, update points total
 
 
-
-
-  
 ## Extras
 - [ ] Image for profile
 - [ ] Friends
@@ -108,4 +105,3 @@
 - [ ] Contact page
 - [ ] FAQ page
 - [ ] Find new logo
-

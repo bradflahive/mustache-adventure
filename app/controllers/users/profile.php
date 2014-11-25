@@ -6,6 +6,7 @@ class Controller extends AppController {
 
 	protected function init() {
 
+<<<<<<< HEAD
 		$session = $_SESSION;
 		//dummy user id currently TODO
 		// $user_id = $_SESSION['user_id'];
@@ -13,6 +14,12 @@ class Controller extends AppController {
 		$user_id = 1;
 		
 		
+=======
+		$user_id = UserLogin::getUserID();
+
+		//gets comments from the database
+		$results = Comment::getAll();
+>>>>>>> e9e3de8305b5978502ba53e71e467f0e6939f3c1
 
 		//processes comments and puts them into the view.
 		$comments = new CommentViewFragment();
@@ -33,12 +40,18 @@ class Controller extends AppController {
 		//gets comments from the database
 		$results = Comment::getAll();
 		while ($comment = $results->fetch_assoc()) {
+<<<<<<< HEAD
 			$i++;
+=======
+      $isSameUser = ($user_id === $comment['user_id']);
+>>>>>>> e9e3de8305b5978502ba53e71e467f0e6939f3c1
 			$comments->comment_id = $comment['comment_id'];
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
 			$comments->total = $comment['total'];
 			$comments->user_id = $user_id;
+      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
+      $comments->points_hidden = $isSameUser ? 'hidden' : '';
 			$this->view->comments .= $comments->render();
 
 			//could have put an array like...
@@ -58,6 +71,8 @@ class Controller extends AppController {
 		$user = new User($user_id);
 		$this->view->totalpoints = $user->getUserPoints();
 		$this->view->user_name = $user->getUserName();
+		$this->view->user_rank = $user->getUserRank();
+
 	}
 }
 $controller = new Controller();
@@ -72,7 +87,7 @@ extract($controller->view->vars);
 			<div class="profile-info">
 				<img src="/images/profile-brad.jpg" >
 				<h3><?php echo $user_name ?></h3>
-				<p>Mustache Level: Pirate</p>
+				<p>Mustache Level: <?php echo $user_rank ?></p>
 			</div>
 			<div class="man-points">
 				<p>MY MAN-POINTS: <span class="points">*<?php echo $totalpoints ?> Points*</span></p>

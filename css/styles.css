@@ -10,6 +10,10 @@
 	padding: 10px;
 }
 
+body {
+	background-color: rgb(242, 242, 242);
+}
+
 /*PRIMARY HEADER*/
 
 header {
@@ -57,6 +61,8 @@ header h1 {
 	overflow: hidden;
 	background: url("/images/wood2.jpg");
 	padding: 10px;
+	border: 2px solid black;
+	border-top: 0;
 }
 
 /*USER INFO*/
@@ -217,17 +223,21 @@ aside > * + * {
 	margin-left: 0;
 }
 
-.post select {
+.post select, .post .remove {
 	right: 2px;
 	bottom: 3px;
 	position: absolute;
 	float: right;
 	margin-right: 10px;
 	margin-top: 5px;
-	background-color: #FFFFF0;
 	border-color: transparent;
-	color: black;
 	margin-bottom: 5px;
+	background-color: #FFFFF0;
+	color: black;
+}
+
+.post .remove {
+  cursor: pointer;
 }
 
 .post button {
@@ -262,6 +272,8 @@ aside > * + * {
 	background-size: cover;
 	padding: 10px;
 	text-align: center;
+	border: 2px solid black;
+	border-top: 0;
 }
 
 .login-main {
