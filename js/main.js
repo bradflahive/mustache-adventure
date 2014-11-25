@@ -138,7 +138,7 @@ $(function() {
 					$('form.compose').find('textarea').val('');
 					// $('aside').find('form').after(new_comment);
 					// $('aside').find('form').after(data.test_comment);
-					// console.log(data.test_comment);
+					console.log(data.test_comment);
 
 				},
 				error: function(){
