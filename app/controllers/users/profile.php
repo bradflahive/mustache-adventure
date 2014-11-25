@@ -6,11 +6,9 @@ class Controller extends AppController {
 
 	protected function init() {
 
-		// $session = $_SESSION;
-		// //dummy user id currently TODO
+
 		// // $user_id = $_SESSION['user_id'];
 		// // $user_name = $_SESSION['user_name'];
-		// $user_id = 1;
 
 		$user_id = UserLogin::getUserID();
 
@@ -37,12 +35,11 @@ class Controller extends AppController {
 		//gets comments from the database
 		$results = Comment::getAll();
 		while ($comment = $results->fetch_assoc()) {
-
-	    	$isSameUser = ($user_id === $comment['user_id']);
-			$comments->comment_id = $comment['comment_id'];
-			$comments->user_name = $comment['user_name'];
-			$comments->message = $comment['message'];
-			$comments->total = $comment['total'];
+	    	$isSameUser = ($user_id === htmlentities($comment['user_id']));
+			$comments->comment_id = htmlentities($comment['comment_id']);
+			$comments->user_name = htmlentities($comment['user_name']);
+			$comments->message = htmlentities($comment['message']);
+			$comments->total = htmlentities($comment['total']);
 			$comments->user_id = $user_id;
       		$comments->remove_hidden = $isSameUser ? '' : 'hidden';
       		$comments->points_hidden = $isSameUser ? 'hidden' : '';
@@ -69,7 +66,6 @@ extract($controller->view->vars);
 
 <div class="primary-content">
 	<main>
-	<?php print_r($session) ?>
 		<div class="user">
 			<div class="profile-info">
 				<img src="/images/profile-brad.jpg" >
