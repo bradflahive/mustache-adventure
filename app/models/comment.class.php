@@ -80,6 +80,7 @@ class Comment extends CustomModel {
             comment_id,
             message,
             user_name,
+            comment.user_id,
             SUM(points) as total
         FROM comment
             JOIN user USING (user_id)

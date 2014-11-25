@@ -6,10 +6,7 @@ class Controller extends AppController {
 
 	protected function init() {
 
-
-		//dummy user id currently TODO
-		// $user_id = $_SESSION['user_id'];
-		$user_id = 3;
+		$user_id = $_SESSION['logged_user'];
 
 		//gets comments from the database
 		$results = Comment::getAll();
@@ -17,11 +14,14 @@ class Controller extends AppController {
 		//processes comments and puts them into the view.
 		$comments = new CommentViewFragment();
 		while ($comment = $results->fetch_assoc()) {
+      $isSameUser = ($user_id === $comment['user_id']);
 			$comments->comment_id = $comment['comment_id'];
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
 			$comments->total = $comment['total'];
 			$comments->user_id = $user_id;
+      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
+      $comments->points_hidden = $isSameUser ? 'hidden' : '';
 			$this->view->comments .= $comments->render();
 		}
 		$this->view->user_id = $user_id;
