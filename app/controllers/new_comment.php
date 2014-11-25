@@ -10,9 +10,18 @@
 	 * converted to JSON upon render
 	 */
 	protected function init() {
+<<<<<<< HEAD
+			$this->view['test_comment'] = 'test comment';
+			$user_name = "joey standin";
+			// $user_name = $_SESSION['user_name'];
+			$user_id = $input['user_id'] = $_POST['user_id'];
+			$message = $input['message'] = $_POST['message'];
+			$comment = new Comment($input);
+=======
 
       $user = new User($_SESSION['logged_user']);
       $_POST['user_id'] = $user->user_id;
+>>>>>>> e9e3de8305b5978502ba53e71e467f0e6939f3c1
 
       $comment = new Comment($_POST);
       $total = $comment->givePoints([
