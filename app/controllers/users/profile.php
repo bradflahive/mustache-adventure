@@ -6,25 +6,54 @@ class Controller extends AppController {
 
 	protected function init() {
 
+		// $session = $_SESSION;
+		// //dummy user id currently TODO
+		// // $user_id = $_SESSION['user_id'];
+		// // $user_name = $_SESSION['user_name'];
+		// $user_id = 1;
+
 		$user_id = UserLogin::getUserID();
+
 
 		//gets comments from the database
 		$results = Comment::getAll();
 
 		//processes comments and puts them into the view.
 		$comments = new CommentViewFragment();
+		$votes = [];
+		$i = 0;
+
+		$sql = "SELECT * FROM man_point where user_id = '{$user_id}'";
+		$results = db::execute($sql);
+		while ($row = $results->fetch_assoc()){
+			$votes[] = ['comment_id'=>$row['comment_id'], 'points'=>$row['points']];
+
+			/*$votes[$comment['comment_id']] = $row['comment_id'];
+			$votes[$comment['points']] = $row['points'];*/
+		}
+
+
+
+		//gets comments from the database
+		$results = Comment::getAll();
 		while ($comment = $results->fetch_assoc()) {
-      $isSameUser = ($user_id === $comment['user_id']);
+
+	    	$isSameUser = ($user_id === $comment['user_id']);
 			$comments->comment_id = $comment['comment_id'];
 			$comments->user_name = $comment['user_name'];
 			$comments->message = $comment['message'];
 			$comments->total = $comment['total'];
 			$comments->user_id = $user_id;
-      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
-      $comments->points_hidden = $isSameUser ? 'hidden' : '';
+      		$comments->remove_hidden = $isSameUser ? '' : 'hidden';
+      		$comments->points_hidden = $isSameUser ? 'hidden' : '';
 			$this->view->comments .= $comments->render();
+
 		}
 		$this->view->user_id = $user_id;
+
+
+		//pass the results to payload so that jQuery can use them to select the dropdowns.
+		Payload::add('votes', $votes);
 
 		$user = new User($user_id);
 		$this->view->totalpoints = $user->getUserPoints();
@@ -40,6 +69,7 @@ extract($controller->view->vars);
 
 <div class="primary-content">
 	<main>
+	<?php print_r($session) ?>
 		<div class="user">
 			<div class="profile-info">
 				<img src="/images/profile-brad.jpg" >
@@ -66,7 +96,7 @@ extract($controller->view->vars);
 		</form>
 
 		<?php echo $comments ?>
-				
+
 		<!-- <div class="post">
 			<img src="/images/profile-brad.jpg">
 			<div class="body">
@@ -75,7 +105,7 @@ extract($controller->view->vars);
 				<div class="display-points">7</div>
 			</div>
 		</div>
-		
+
 		<div class="post">
 			<img src="/images/nathan.jpg">
 			<div class="body">
@@ -95,7 +125,7 @@ extract($controller->view->vars);
 				<div class="display-points">6</div>
 			</div>
 		</div>
-		
+
 		<div class="post">
 			<img src="/images/jon.jpg">
 			<div class="body">
@@ -115,7 +145,7 @@ extract($controller->view->vars);
 				<div class="display-points">9</div>
 			</div>
 		</div>
-		
+
 		<div class="post">
 			<img src="/images/mark.jpg">
 			<div class="body">
@@ -135,7 +165,7 @@ extract($controller->view->vars);
 				<div class="display-points">42</div>
 			</div>
 		</div>
-		
+
 		<div class="post">
 			<img src="/images/profile-brad.jpg">
 			<div class="body">

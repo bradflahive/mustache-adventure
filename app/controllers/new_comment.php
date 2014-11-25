@@ -11,7 +11,7 @@
 	 */
 	protected function init() {
 
-      $user = new User($_SESSION['logged_user']);
+      $user_id = new User(UserLogin::getUserID());
       $_POST['user_id'] = $user->user_id;
 
       $comment = new Comment($_POST);

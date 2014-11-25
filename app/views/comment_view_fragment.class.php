@@ -12,7 +12,7 @@ class CommentViewFragment extends ViewFragment {
       <div class="body">
         <div class="user_name">{{user_name}}</div>
         <div class="message">{{message}}</div>
-        <div class="remove" {{remove_hidden}} >X</div>
+        <button class="remove" {{remove_hidden}} >X</button>
         <form {{points_hidden}} action="">
           <select name="points_awarded" id="">
             <option value="0">0</option>
