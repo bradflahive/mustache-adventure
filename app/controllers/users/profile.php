@@ -29,6 +29,8 @@ class Controller extends AppController {
 		$user = new User($user_id);
 		$this->view->totalpoints = $user->getUserPoints();
 		$this->view->user_name = $user->getUserName();
+		$this->view->user_rank = $user->getUserRank();
+
 	}
 }
 $controller = new Controller();
@@ -42,7 +44,7 @@ extract($controller->view->vars);
 			<div class="profile-info">
 				<img src="/images/profile-brad.jpg" >
 				<h3><?php echo $user_name ?></h3>
-				<p>Mustache Level: Pirate</p>
+				<p>Mustache Level: <?php echo $user_rank ?></p>
 			</div>
 			<div class="man-points">
 				<p>MY MAN-POINTS: <span class="points">*<?php echo $totalpoints ?> Points*</span></p>

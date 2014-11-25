@@ -10,8 +10,10 @@
 - [x] sort out issues with Ajax Controllers in returning non-objects.
 - [ ] login and use of sessions
 - [ ] ability to delete own comments (or user?)
-- [ ] fetch comments from DB that have 0 points
+- [x] fetch comments from DB that have 0 points
 - [x] Retrieve number of points total for user
+- [ ] can't vote on own post
+- [ ] keep track of past votes and have selected already in drop down.
 
 # HTML/CSS
 - [x] Home page/login/create account
@@ -51,13 +53,13 @@
       - [x] Pull info for profile, populate profile page with profile info (user_id table)
       - [ ] (LATER) Ability to update user (CRUD)
       - [ ] (LATER) Delete user (if don't do friends...need delete in CRUD)
-      - [ ] Retrieve number of points total for user
+      - [x] Retrieve number of points total for user
     - [ ] Feed
       - [x] Pull info in for feed.  Populate feed with info from comment and man_points tables
       - [x] Post/submit button should create new post.
       - [ ] ability to delete own post
       - [x] AJAX to insert post to page and insert into DB
-      - [ ] Ability to update points given to someone for a post?
+      - [x] Ability to update points given to someone for a post?
       - [ ] Delete posts?
       - [x] Retrieve number of points that have been given to the post.
     - [ ] Login helper
