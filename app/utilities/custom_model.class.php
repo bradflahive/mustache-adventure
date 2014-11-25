@@ -15,15 +15,19 @@ abstract class CustomModel extends Model {
                 if (@$id[$this->get_table_id()] &&
                         method_exists($this, 'update')) {
                     $id = $this->update($id);
+                    parent::__construct($id);
 
                 //when no table id is given call the insert method
                 } else if (method_exists($this, 'insert')) {
                     $id = $this->insert($id);
+                    parent::__construct($id);
                 }
             }
 
             //otherwise get the record with value of $id
-            if (is_array($this->validateId($id))) parent::__construct($id);
+            if ($this->validateId($id)) {
+              parent::__construct($id);
+            };
         }
 	}
 
