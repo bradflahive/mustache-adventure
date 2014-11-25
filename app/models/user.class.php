@@ -107,7 +107,7 @@ sql;
 
 	}
 
-    public function userPoints() {
+    public function getUserPoints() {
 
         $userPoints =<<<sql
         SELECT SUM(points) AS total
@@ -123,6 +123,24 @@ sql;
             $total = $result['total'];
         }
         return $total;
+    }
+
+    public function getUserName() {
+
+        //unable to access $this->user_id, so passing as param.
+        $getUserName =<<<sql
+        SELECT user_name
+        FROM user
+        WHERE user_id = {$this->user_id};
+sql;
+
+        $results = db::execute($getUserName);
+
+        $user_name = null;
+        if ($result = $results->fetch_assoc()) {
+            $user_name = $result['user_name'];
+        }
+        return $user_name;
     }
 
 }
