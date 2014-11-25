@@ -72,8 +72,9 @@ INSERT INTO
         (2, 'Scaled mount everest in a speedo...'),
         (2, 'Ate steel for breakfast this morning'),
         (3, 'Hacked the website');
-        -- (5, 'Spent a weekend on Broke Back Mountain and still able to hear my farts'),
-        -- (5, 'Called Chuck Norris a wimp and survived. Doctors say there is a possibility I will have feeling below my neck again someday');
+        (3, 'Cut my toenails with a chainsaw');
+        -- (3, 'Spent a weekend on Broke Back Mountain and still able to hear my farts'),
+        -- (3, 'Called Chuck Norris a wimp and survived. Doctors say there is a possibility I will have feeling below my neck again someday');
         -- doesn't like the below line.  Like seems to be a reserved word? Also, punctuation
         -- (1, 'I don't like to brag but...'),
 
