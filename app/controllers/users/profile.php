@@ -6,7 +6,7 @@ class Controller extends AppController {
 
 	protected function init() {
 
-		$user_id = $_SESSION['logged_user'];
+		$user_id = UserLogin::getUserID();
 
 		//gets comments from the database
 		$results = Comment::getAll();
