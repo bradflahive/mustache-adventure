@@ -22,7 +22,7 @@ trait Validation {
         foreach ($input as $key => $value) {
 
             // skip key if not in list of validators
-            if (!@$validators[$key]) continue;
+            if ($validators[$key] === null) continue;
 
             // if boolean is validated I don't want
             // false return so return null for all failures
@@ -35,7 +35,7 @@ trait Validation {
 
             // return name of failed key if it didn't pass
             // "fail early, fail fast"
-            if ($isValid == null) {
+            if ($isValid === null) {
                 return ['failed' => $key];
             }
 
