@@ -1,15 +1,16 @@
 <?php
 
-/**
+/*
  * Comment
  */
 class Comment extends CustomModel {
 
     use ModelUtils;
 
-
-    // FILTER_VALIDATE_INT and FILTER_CALLBACK are built in validators to PHP
-    // FILTER_CALLBACK uses a user defined function (defined below)
+    /* 
+    * FILTER_VALIDATE_INT and FILTER_CALLBACK are built in validators to PHP
+    * FILTER_CALLBACK uses a user defined function (defined below)
+    */
     protected function validators() {
         return [
             'comment_id' => [FILTER_VALIDATE_INT],
@@ -30,7 +31,6 @@ class Comment extends CustomModel {
 	/**
 	 * Insert Comment
 	 */
-    //TODO -Nate  made public
 	public function insert($input) {
 
 		// Prepare SQL Values
@@ -73,7 +73,9 @@ class Comment extends CustomModel {
 
 	}
 
-    // return all comments 
+    /*
+    * return all comments 
+    */ 
     public static function getAll() {
         $getComments =<<<sql
         SELECT
@@ -89,10 +91,13 @@ class Comment extends CustomModel {
         ORDER BY comment_id DESC;
 sql;
 
-        //returns the comments
         return db::execute($getComments);
     }
 
+
+    /*
+    * gets points 
+    */
     public function getPoints() {
 
         $getPoints =<<<sql
@@ -113,9 +118,9 @@ sql;
 
     }
 
-    //TODO Jon-wrote this trying to match your style.  Feel free to change/correct as needed. -Nate
-    //currently public, should probably make protected
-    //after cleaned input implemented, no longer inserts into DB TODO
+    /*
+    * when voting, gives points to the user who made the comment.
+    */
     public function givePoints($input) {
 
         // Prepare SQL Values
@@ -126,7 +131,6 @@ sql;
 
         if (is_string($cleanedInput)) return null;
 
-        // Insert
         $updatePoints =<<<sql
         REPLACE INTO
             man_point (user_id, comment_id, points)
@@ -140,10 +144,12 @@ sql;
 
         return $this->getPoints($cleanedInput['comment_id']);
 
-        // Return the Insert ID
-        // return $results->insert_id;
     }
 
+
+    /*
+    * gets past votes made by the user
+    */
     public function getVotes($input) {
 
         $cleanedInput = $this->cleanInput(
@@ -163,21 +169,12 @@ sql;
 
             return $this->getVotes($cleanedInput['user_id']);
 
-            // Return the Insert ID
-            // return $results->insert_id;
-
     }
 
-    //takes a comment id and removes all data tied to that comment_id
-    //TODO look to see if anything needs to be changed for this to work.
+    /*
+    * takes a comment id and removes all data tied to that comment_id
+    */
     public function deleteComment() {
-
-        // $cleanedInput = $this->cleanInput(
-        //     ['comment_id'],
-        //     $input
-        // );
-
-        // if (is_string($cleanedInput)) return null;
 
         // have to remove from this table first because it uses comment_id as a foreign key
         $remove_from_man_point =<<<sql
@@ -189,10 +186,6 @@ sql;
         
         $results = db::execute($remove_from_man_point);
 
-
-        //check results for an error?
-
-
         $remove_from_comment =<<<sql
             DELETE 
             FROM 
@@ -202,8 +195,6 @@ sql;
 sql;
         $results = db::execute($remove_from_comment);
 
-            //return success?
-            // return $this->getVotes($cleanedInput['user_id']);
     }
 
 }
