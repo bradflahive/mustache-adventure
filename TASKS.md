@@ -88,13 +88,13 @@
     - [x] Validation - php built-ins
 
 # JS
-  [x] Profile page
-    [x] Post new comment
-      [x] Needs to grab content in text area/input and appened to top of feed
-      [x] (NO) Enforce a # character limit?
-    [x] Comments in feed
-      [x] Comment will need to be updated with points total when page is loaded
-      [x] When voting, pull vote #, insert to DB, update points total
+  - [x] Profile page
+    - [x] Post new comment
+      - [x] Needs to grab content in text area/input and appened to top of feed
+      - [x] (NO) Enforce a # character limit?
+    - [x] Comments in feed
+      - [x] Comment will need to be updated with points total when page is loaded
+      - [x] When voting, pull vote #, insert to DB, update points total
 
 
 ## Extras
