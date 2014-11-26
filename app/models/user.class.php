@@ -104,9 +104,9 @@ sql;
 		
 		// Return a new instance of this user as an object
 		return new User($this->user_id);
-
 	}
 
+    //gets the total points of a user by looking up a user_id
     public function getUserPoints() {
 
         $userPoints =<<<sql
@@ -125,6 +125,7 @@ sql;
         return $total;
     }
 
+    //gets points of user (via user_id) and uses that criteria to pull in rank
     public function getUserRank() {
 
         $userPoints =<<<sql
@@ -170,9 +171,9 @@ sql;
         return $rank;
     }
 
+    //gets the user_name by using the user_id
     public function getUserName() {
 
-        //unable to access $this->user_id, so passing as param.
         $getUserName =<<<sql
         SELECT user_name
         FROM user
@@ -188,6 +189,7 @@ sql;
         return $user_name;
     }
 
+    //gets a list of votes the user has made in the past
     public function getVotes() {
 
         $getVotes =<<<sql
@@ -197,8 +199,7 @@ sql;
         WHERE user_id = {$this->user_id};
 sql;
 
-        $results = db::execute($getVotes);
-        return $results;
+        return db::execute($getVotes);
     }
 
 }

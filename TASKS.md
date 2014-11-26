@@ -5,7 +5,7 @@
 ## Priority
 - [x] ability to delete own comments (or user?)
 - [ ] when user accesses profile page w/o being logged in, they get an error.  Need to deal w/ in a user friendly way.
-- [ ] Rearrange files so folder structure makes sense.  Update routing accordingly.
+- [x] Rearrange files so folder structure makes sense.  Update routing accordingly.
 - [ ] (EXTRA) Upon refresh, go back to the comment the user updated 
 - [x] Comment totals will need to be updated when vote is done.
 - [x] cleanInput - increase understanding/fix.
