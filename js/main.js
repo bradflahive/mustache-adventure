@@ -78,14 +78,14 @@ $(function() {
 	* and sends and inserts that info to the man_point database via /update_points. On success, needs
 	* to update the value for the total amount in that comment.
 	*/
-	$('.post select').change(function( ) {
-		console.log('select changed:');
-		var points = $(this).val();
-		console.log('points: ' + $(this).val());
+	$('.post').on('click', '.points div', function( ) {
+		var points = $(this).attr('value');
 		var user_id = $(this).parents('.post').find("input[name = 'user_id']").val();
-		console.log('user_id: ' + user_id);
-		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
-		console.log('comment_id: ' + comment_id);
+		var comment_id = 
+      $(this)
+      .parents('.post')
+      .find("input[name = 'comment_id']")
+      .val();
 
 		
 		/*
