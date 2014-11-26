@@ -1,0 +1,377 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+	color: #FFFFF0;
+}
+
+.page {
+	width: 960px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+body {
+	background: url("/images/wood2.jpg");
+}
+
+/*PRIMARY HEADER*/
+
+header {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+header img {
+	height: 100px;
+	width: 100px;
+	float: left;
+	border-right: 2px solid black;
+	border-radius: 50%;
+}
+
+header h1 {
+	margin-bottom: 0;
+}
+
+header h1 a {
+	margin: 0 auto;
+	font-family: 'Orbitron', sans-serif;
+	padding-top: 35px;
+	padding-left: 10px;
+	color: rgb(237, 225, 208);
+	text-decoration: none;
+}
+
+.logout {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	margin: 10px;
+	color: rgb(237, 225, 208);
+	/*font-family: 'Orbitron', sans-serif;*/
+}
+
+p.scroll {
+	margin-top: 0;
+}
+
+.scroll a {
+	font-family: 'Orbitron', sans-serif;
+	padding-left: 85px;
+	margin: 0;
+	color: rgb(237, 225, 208);
+	text-decoration: none;
+}
+
+/*PRIMARY CONTENT*/
+
+.primary-content {
+	overflow: hidden;
+	padding: 10px;
+}
+
+/*USER INFO*/
+
+main {
+	width: 400px;
+	background-color: transparent;
+	float: left;
+	margin-top: 9px;
+	padding: 1px;
+	border-radius: 5px;
+}
+
+main .user {
+	background-color: rgb(44, 44, 48);
+	margin: 10px;
+	border: 2px solid rgb(23, 21, 21);
+	border-radius: 5px;
+	position: relative;
+}
+
+.user img {
+	height: 80px;
+	width: 80px;
+	float: right;
+	top: 5px;
+	right: 0;
+	margin: 0 10px;
+	border-radius: 5px;
+	position: absolute;
+}
+
+.user h3 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.profile-info p {
+	display: inline-block;
+	margin-bottom: 16px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 12pt;
+}
+
+.user > div {
+	background-color: rgb(44, 44, 48);
+	padding-left: 15px;
+}
+
+div.man-points {
+	padding-left: 15px;
+	border-top: 2px solid rgb(23, 21, 21);
+	background-color: rgb(40, 146, 217);
+	padding-bottom: 1px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 5px;
+}
+
+.man-points p {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 12pt;
+}
+
+/*THREAD*/
+
+aside {
+	margin-left: 430px;
+	background-color: transparent;
+	margin-top: 20px;
+	padding: 1px;
+}
+
+aside > * + * {
+	margin-top: 10px;
+}
+
+.compose {
+	background-color: rgb(44, 44, 48);
+	border: 2px solid black;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.compose > div {
+	margin-top: 10px;
+	text-align: right;
+}
+
+.compose textarea {
+	border-radius: 3px;
+	background-color: #FFFFF0;
+	display: block;
+	width: 100%;
+	padding: 4px;
+	resize: none;
+	height: 1.8em;
+	color: black;
+}
+
+.compose textarea:focus {
+	outline: none;
+}
+
+.compose button {
+	margin-top: 5px;
+	/*background-color: #FFFFF0;*/
+	border-color: transparent;
+	/*color: black;*/
+	/*border-radius: 5px;*/
+	/*border: 0;*/
+	padding: 0 3px;
+	border-radius: 4px;
+	background-color: rgb(40, 146, 217);
+	font-weight: 300;
+}
+
+/*POST*/
+
+.post {
+	background-color: rgb(44, 44, 48);
+	border: 2px solid black;
+	padding: 10px;
+	position: relative;
+	border-left: 3px solid rgb(40, 146, 217);
+	border-radius: 3px;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	padding-bottom: 20px;
+}
+
+.post > img {
+	float: left;
+	width: 60px;
+	height: 60px;
+	background-color: #eee;
+	border-radius: 4px;
+}
+
+.post .body {
+	margin-left: 60px;
+	padding-left: 10px;
+}
+
+.post .user_name {
+	font-weight: 700;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 12pt;
+}
+
+.post .message {
+	border-radius: 5px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	padding: 5px;
+	padding-left: 0;
+	margin: 3px;
+	margin-left: 0;
+	width: 350px;
+}
+
+.post .points {
+	right: -12px;
+	top: 0px;
+	position: absolute;
+	float: right;
+	margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid rgb(40, 146, 217);
+  border-left: 0;
+  border-top: 0;
+  border-bottom: 0;
+  height: 100%
+}
+
+.points._5 ._2, .points._5 ._1, .points._5 ._0, .points._5 ._3 , .points._5 ._4, .points._5 ._5 {
+	background-color: rgba(40, 146, 217, 0.6);
+}
+
+.points._4 ._2, .points._4 ._1, .points._4 ._0, .points._4 ._3 , .points._4 ._4 {
+	background-color: rgba(40, 146, 217, 0.5);
+}
+
+.points._3 ._2, .points._3 ._1, .points._3 ._0, .points._3 ._3 {
+	background-color: rgba(40, 146, 217, 0.4);
+}
+
+.points._2 ._2, .points._2 ._1, .points._2 ._0 {
+	background-color: rgba(40, 146, 217, 0.3);
+}
+
+.points._1 ._0, .points._1 ._1 {
+	background-color: rgba(40, 146, 217, 0.2);
+}
+
+.points._0 ._0 {
+	background-color: rgba(40, 146, 217, 0.1);
+}
+
+.post .points div {
+  height: 16.66%;
+  width: 12px;
+}
+
+.post .points div:hover {
+  background-color: rgb(40, 146, 217);
+}
+
+.post .remove {
+  	cursor: pointer;
+  	bottom: 10px;
+	padding: 0 3px;
+	border-radius: 4px;
+	background-color: rgb(40, 146, 217);
+	font-weight: 300;
+	position: absolute;
+	float: right;
+	margin-right: 10px;
+	right: 2px;
+	border-color: transparent;
+}
+
+.post button {
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.post .display-points {
+	min-width: 20px;
+	border-radius: 5px;
+	top: 5px;
+	right: 13px;
+	position: absolute;
+	text-align: center;
+	padding: 1px 5px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+.copyright {
+	text-align: center;
+	font-weight: 300;
+}
+
+/*LOGIN*/
+
+.login-content {
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 10px;
+	text-align: center;
+	border-top: 0;
+}
+
+.login-main {
+	width: 400px;
+	background-color: rgb(44, 44, 48);
+	padding: 1px;
+	float: none;
+	border: 2px solid black;
+	border-radius: 5px;
+	margin: 0 auto;
+	font-weight: 300;
+	padding-bottom: 20px;
+}
+
+.login-main h3 {
+	font-weight: 300;
+}
+
+.login-main .submit {
+	background-color: #FFFFF0;
+	color: black;
+	border: transparent;
+	padding: 5px 45px;
+}
+
+.login-main .sign-up {
+	background-color: #FFFFF0;
+	color: black;
+	padding: 5px 45px;
+	border: transparent;
+	border-bottom: 2px solid black;
+}
+
+.login-main input {
+	color: black;
+	border-color: transparent;
+	background-color: rgb(95, 96, 97);
+}
+
+/*Temp? fix until reptile forms issue is resolved */
+
+div.post > textarea {
+	width: 85%;
+	color: black;
+}
+
+
+
+
+
