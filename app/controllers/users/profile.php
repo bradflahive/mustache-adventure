@@ -61,6 +61,7 @@ extract($controller->view->vars);
 <i class="fa fa-instagram"></i>
 <i class="fa fa-twitter-square"></i>
 <i class="fa fa-facebook-square"></i>
+<i class="fa fa-reddit-square"></i>
 <a class="logout" href="/logout">Logout</a>
 <div class="primary-content">
 	<main>
