@@ -25,6 +25,7 @@
 		<?php echo $primary_header; ?>
 		<?php echo $main_content; ?>
 	</div>
+		<?php echo $primary_footer; ?>
 
 	<!-- Include Common Scripts -->
 	<script src="/bower_components/jquery/dist/jquery.js"></script>

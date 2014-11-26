@@ -6,9 +6,9 @@
 	var form = new ReptileForm('form');
 
 	// Do something before validation starts
-	// form.on('beforeValidation', function() {
+	form.on('beforeValidation', function() {
 	// 	$('body').append('<p>Before Validation</p>');
-	// });
+	});
 
 	// Do something when errors are detected.
 	// form.on('validationError', function(e, err) {
@@ -22,9 +22,9 @@
 	});
 
 	// // Do something after validation is successful, but before the form submits.
-	// form.on('beforeSubmit', function() {
+	form.on('beforeSubmit', function() {
 	// 	$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
-	// });
+	});
 
 	// Do something when the AJAX request has returned in success
 	form.on('xhrSuccess', function(e, data) {
@@ -35,7 +35,7 @@
 
 	// Do something when the AJAX request has returned with an error
 	form.on('xhrError', function(e, xhr, settings, thrownError) {
-		$('body').append('<p>Submittion Error</p>');
+		// $('body').append('<p>Submittion Error</p>');
 	});
 
 })();
@@ -49,12 +49,12 @@ $(function() {
 
 
 	for (var vote in votes){
-		console.log(vote);
-		console.log(votes[vote]);
+		// console.log(vote);
+		// console.log(votes[vote]);
 		var comment_id = votes[vote].comment_id;
-		console.log('comment id: ' + comment_id);
+		// console.log('comment id: ' + comment_id);
 		var points = votes[vote].points;
-		console.log('points: ' + points);
+		// console.log('points: ' + points);
 
 
 		// console.log(votes);
