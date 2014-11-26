@@ -20,13 +20,14 @@ extract($controller->view->vars);
             <input class="pword" type="password" name="password" data-exp-name="password" title="Password">
             <input class="email" type="email" name="email" data-exp-name="email" title="E-mail">
             <br>
-            <button class="sign-up">sign up</button><br>
-            <button class="submit">submit</button>
+            <button class="submit">submit</button><br>
+            <button class="sign-up">sign up</button>
         </form>
         <div class="errormsg"></div>
     </main>
 </div>
 <p class="copyright">&copy Mustache-Adventures Co.</p>
+<p class="copyright">The Worst (acting) Half of RockIT</p>
 
 
     

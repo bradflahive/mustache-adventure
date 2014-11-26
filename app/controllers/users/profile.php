@@ -8,7 +8,12 @@ class Controller extends AppController {
 
 		$user_id = UserLogin::getUserID();
 
-    $user = new User($user_id);
+		if (!$user_id){
+			header('Location: /');
+            exit();
+		}
+
+    	$user = new User($user_id);
 
 		//gets comments from the database
 		$results = Comment::getAll();
@@ -53,6 +58,9 @@ $controller = new Controller();
 extract($controller->view->vars);
 ?>
 
+<i class="fa fa-instagram"></i>
+<i class="fa fa-twitter-square"></i>
+<i class="fa fa-facebook-square"></i>
 <a class="logout" href="/logout">Logout</a>
 <div class="primary-content">
 	<main>
@@ -81,3 +89,4 @@ extract($controller->view->vars);
 	</aside>
 </div>
 <p class="copyright">&copy Mustache-Adventures Co.</p>
+<p class="copyright">The Worst (acting) Half of RockIT</p>

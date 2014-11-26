@@ -43,10 +43,28 @@ header h1 a {
 	text-decoration: none;
 }
 
+.fa-instagram {
+	position: absolute;
+	top: 10px;
+	right: 325px;
+}
+
+.fa-twitter-square {
+	position: absolute;
+	top: 10px;
+	right: 345px;
+}
+
+.fa-facebook-square {
+	position: absolute;
+	top: 10px;
+	right: 365px;
+}
+
 .logout {
 	position: absolute;
 	top: 10px;
-	right: 10px;
+	right: 85px;
 	margin: 10px;
 	color: rgb(237, 225, 208);
 	/*font-family: 'Orbitron', sans-serif;*/
@@ -235,7 +253,7 @@ aside > * + * {
 
 .post select {
 	right: 2px;
-	top: 30px;
+	top: 38px;
 	position: absolute;
 	float: right;
 	margin-right: 10px;
@@ -312,6 +330,7 @@ aside > * + * {
 	color: black;
 	border: transparent;
 	padding: 5px 45px;
+	border-bottom: 2px solid black;
 }
 
 .login-main .sign-up {
@@ -319,7 +338,6 @@ aside > * + * {
 	color: black;
 	padding: 5px 45px;
 	border: transparent;
-	border-bottom: 2px solid black;
 }
 
 .login-main input {

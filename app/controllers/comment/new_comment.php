@@ -5,10 +5,6 @@
  */
  class Controller extends AjaxController {
 
-	/**
-	 * The view for this controller will be an array and will be
-	 * converted to JSON upon render
-	 */
 	protected function init() {
 
     $user = new User(UserLogin::getUserID());
