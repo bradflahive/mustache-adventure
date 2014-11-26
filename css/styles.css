@@ -157,6 +157,7 @@ div.man-points {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	font-size: 12pt;
+	margin: 10px 0;
 }
 
 /*THREAD*/
@@ -261,7 +262,7 @@ aside > * + * {
 }
 
 span.point-number {
-	font-size: 18pt;
+	font-size: 28pt;
 	padding: 0 5px 0 20px;
 }
 
