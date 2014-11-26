@@ -6,9 +6,9 @@
 	var form = new ReptileForm('form');
 
 	// Do something before validation starts
-	form.on('beforeValidation', function() {
-	// 	$('body').append('<p>Before Validation</p>');
-	});
+	// form.on('beforeValidation', function() {
+	// // 	$('body').append('<p>Before Validation</p>');
+	// });
 
 	// Do something when errors are detected.
 	// form.on('validationError', function(e, err) {
@@ -18,13 +18,13 @@
 	// Do something when errors are detected.
 	form.on('validationError', function(e, err) {
 		// console.log(JSON.stringify(err));
-		$('.errormsg').html('<p>Unable to match the Username and Password.<br>Please check your entries and try again.</p>');
+		$('body').find('.errormsg').html('<p>Unable to match the Username and Password.<br>Please check your entries and try again.</p>');
 	});
 
 	// // Do something after validation is successful, but before the form submits.
-	form.on('beforeSubmit', function() {
-	// 	$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
-	});
+	// form.on('beforeSubmit', function() {
+	// // 	$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
+	// });
 
 	// Do something when the AJAX request has returned in success
 	form.on('xhrSuccess', function(e, data) {
@@ -43,8 +43,10 @@
 $(function() {
 
 	/*
-	* using payload to populate an object that can be looped over to select comment and already
-	* selected vote.  Will then add 'selected' attribute to the already chosen vote value.
+	* using payload to populate an object that can be looped over to 
+  * select comment and already
+	* selected vote.  Will then add 'selected' attribute to the 
+  * already chosen vote value.
 	*/
 	console.log(app.settings.votes);
 	var votes = app.settings.votes;
@@ -57,9 +59,12 @@ $(function() {
 		var points = votes[vote].points;
 		// console.log('points: ' + points);
 
-		//can't use votes.i...because it's a variable. Have to access is with [i]
-		$("div[data-comment-id='" + comment_id + "']").find("select option[value='" + points + "']").prop('selected', true);
-	}
+		// can't use votes.i...because it's a variable. 
+    // Have to access is with [i]
+		$("div[data-comment-id='" + comment_id + "']")
+      .find('.points')
+      .addClass('_'+points);
+  }
 
     // hides the e-mail input on load.
     $('.login-form .email').attr('hidden', '');
@@ -78,14 +83,14 @@ $(function() {
 	* and sends and inserts that info to the man_point database via /update_points. On success, needs
 	* to update the value for the total amount in that comment.
 	*/
-	$('.post select').change(function( ) {
-		console.log('select changed:');
-		var points = $(this).val();
-		console.log('points: ' + $(this).val());
+	$('.post').on('click', '.points div', function( ) {
+		var points = $(this).attr('value');
 		var user_id = $(this).parents('.post').find("input[name = 'user_id']").val();
-		console.log('user_id: ' + user_id);
-		var comment_id = $(this).parents('.post').find("input[name = 'comment_id']").val();
-		console.log('comment_id: ' + comment_id);
+		var comment_id = 
+      $(this)
+      .parents('.post')
+      .find("input[name = 'comment_id']")
+      .val();
 
 		
 		/*
@@ -100,8 +105,6 @@ $(function() {
 				data: {points: points, user_id: user_id, comment_id: comment_id},
 				// async: false,
 				success: function(data){
-					console.log('success');
-					console.log(data);
 					var points = data.points;
 					var comment_id = data.comment_id;
 					location.href = "/profile";

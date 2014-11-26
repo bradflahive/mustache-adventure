@@ -217,8 +217,8 @@ aside > * + * {
 	position: relative;
 	border-left: 3px solid rgb(40, 146, 217);
 	border-radius: 3px;
-	border-bottom-left-radius: 0;
-	border-top-left-radius: 0;
+	/*border-bottom-left-radius: 0;
+	border-top-left-radius: 0;*/
 	padding-bottom: 20px;
 }
 
@@ -254,15 +254,54 @@ aside > * + * {
 	width: 350px;
 }
 
-.post select {
-	right: 2px;
-	top: 38px;
+.post .points {
+	right: -12px;
+	top: 0px;
 	position: absolute;
 	float: right;
 	margin-right: 10px;
-	border-color: transparent;
-	background-color: #FFFFF0;
-	color: black;
+  	cursor: pointer;
+  	border: 2px solid rgb(40, 146, 217);
+  	border-left: 0;
+  	border-top: 0;
+  	border-bottom: 0;
+  	height: 100%
+}
+
+.points._5 ._2, .points._5 ._1, .points._5 ._0,
+.points._5 ._3 , .points._5 ._4, .points._5 ._5 {
+	background-color: rgba(40, 146, 217, 0.6);
+}
+
+.points._4 ._2, .points._4 ._1, .points._4 ._0,
+.points._4 ._3 , .points._4 ._4 {
+	background-color: rgba(40, 146, 217, 0.5);
+}
+
+.points._3 ._2, .points._3 ._1,
+.points._3 ._0, .points._3 ._3 {
+	background-color: rgba(40, 146, 217, 0.4);
+}
+
+.points._2 ._2, .points._2 ._1, .points._2 ._0 {
+	background-color: rgba(40, 146, 217, 0.3);
+}
+
+.points._1 ._0, .points._1 ._1 {
+	background-color: rgba(40, 146, 217, 0.2);
+}
+
+.points._0 ._0 {
+	background-color: rgba(40, 146, 217, 0.1);
+}
+
+.post .points div {
+  	height: 16.66%;
+  	width: 12px;
+}
+
+.post .points div:hover {
+  	background-color: rgb(40, 146, 217);
 }
 
 .post .remove {
@@ -278,6 +317,7 @@ aside > * + * {
 	right: 2px;
 	border-color: transparent;
 }
+
 
 .post button {
 	margin-right: 10px;

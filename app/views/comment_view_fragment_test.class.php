@@ -14,12 +14,12 @@ class CommentViewFragmentTest extends ViewFragment {
         <div class="message">{{message}}</div>
         <button class="remove" {{remove_hidden}} >Delete</button>
         <div class="points _3" {{points_hidden}} data-name="points_awarded">
-          <div class="_5" title="Give 5 points!"></div>
-          <div class="_4" title="Give 4 points!"></div>
-          <div class="_3" title="Give 3 points!"></div>
-          <div class="_2" title="Give 2 points!"></div>
-          <div class="_1" title="Give 1 point!"></div>
-          <div class="_0" title="Give 0 points!"></div>
+          <div class="_5" value="5" title="Give 5 points!"></div>
+          <div class="_4" value="4" title="Give 4 points!"></div>
+          <div class="_3" value="3" title="Give 3 points!"></div>
+          <div class="_2" value="2" title="Give 2 points!"></div>
+          <div class="_1" value="1" title="Give 1 point!"></div>
+          <div class="_0" value="0" title="Give 0 points!"></div>
         </div>
         <div class="display-points">{{total}}</div>
       </div>
