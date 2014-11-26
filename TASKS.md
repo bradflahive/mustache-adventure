@@ -3,17 +3,18 @@
 ## MVP
 
 ## Priority
+- [ ] Comment totals will need to be updated when vote is done.
+- [ ] ability to delete own comments (or user?)
 - [x] cleanInput - increase understanding/fix.
 - [x] main.js - append new comment to aside (may be working after cleanInput fix)
 - [x] main.js - Submit scores upon dropdown change
-- [ ] fix login (hash creation of new users) (and also creation of users)
+- [?] fix login (hash creation of new users) (and also creation of users)
 - [x] sort out issues with Ajax Controllers in returning non-objects.
 - [x] login and use of sessions
-- [ ] ability to delete own comments (or user?)
 - [x] fetch comments from DB that have 0 points
 - [x] Retrieve number of points total for user
-- [ ] can't vote on own post
-- [ ] keep track of past votes and have selected already in drop down.
+- [?] can't vote on own post
+- [x] keep track of past votes and have selected already in drop down.
 
 # HTML/CSS
 - [x] Home page/login/create account
@@ -60,18 +61,17 @@
       - [ ] ability to delete own post?
       - [x] AJAX to insert post to page and insert into DB
       - [x] Ability to update points given to someone for a post?
-      - [ ] Delete posts?
       - [x] Retrieve number of points that have been given to the post.
-    - [ ] Login helper
+    - [?] Login helper
       - [x] Get data
       - [x] Check against DB
       - [x] If correct, send to profile
       - [x] If incorrect, give prompt to user for correct info.
-    - [ ] Comments
+    - [x] Comments
       - [x] Pull in comments from DB and populate profile page
       - [x] ability to update points given to someone for a post.
-      - [ ] Show user what they've voted in the past
-      - [ ] Track already existing vote from the user
+      - [x] Show user what they've voted in the past
+      - [x] Track already existing vote from the user
 
 
  # View     
@@ -89,7 +89,7 @@
     [x] Post new comment
       [x] Needs to grab content in text area/input and appened to top of feed
       [ ] Enforce a # character limit?
-    [ ] Comments in feed
+    [x] Comments in feed
       [ ] Comment will need to be updated with points total when page is loaded
       [ ] When voting, pull vote #, insert to DB, update points total
 
