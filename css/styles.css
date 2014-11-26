@@ -31,11 +31,16 @@ header img {
 }
 
 header h1 {
+	margin-bottom: 0;
+}
+
+header h1 a {
 	margin: 0 auto;
 	font-family: 'Orbitron', sans-serif;
 	padding-top: 35px;
-	padding-left: 105px;
+	padding-left: 10px;
 	color: rgb(237, 225, 208);
+	text-decoration: none;
 }
 
 .logout {
@@ -44,14 +49,19 @@ header h1 {
 	right: 10px;
 	margin: 10px;
 	color: rgb(237, 225, 208);
-	font-family: 'Orbitron', sans-serif;
+	/*font-family: 'Orbitron', sans-serif;*/
 }
 
-.scroll {
+p.scroll {
+	margin-top: 0;
+}
+
+.scroll a {
 	font-family: 'Orbitron', sans-serif;
-	padding-left: 180px;
+	padding-left: 85px;
 	margin: 0;
 	color: rgb(237, 225, 208);
+	text-decoration: none;
 }
 
 /*PRIMARY CONTENT*/
@@ -113,7 +123,7 @@ main .user {
 div.man-points {
 	padding-left: 15px;
 	border-top: 2px solid rgb(23, 21, 21);
-	background-color: rgb(45, 52, 68);
+	background-color: rgb(40, 146, 217);
 	padding-bottom: 1px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 5px;
@@ -167,11 +177,15 @@ aside > * + * {
 
 .compose button {
 	margin-top: 5px;
-	background-color: #FFFFF0;
+	/*background-color: #FFFFF0;*/
 	border-color: transparent;
-	color: black;
-	border-radius: 5px;
-	border: 0;
+	/*color: black;*/
+	/*border-radius: 5px;*/
+	/*border: 0;*/
+	padding: 0 3px;
+	border-radius: 4px;
+	background-color: rgb(40, 146, 217);
+	font-weight: 300;
 }
 
 /*POST*/
@@ -219,7 +233,7 @@ aside > * + * {
 	width: 350px;
 }
 
-.post select, .post .remove {
+.post select {
 	right: 2px;
 	top: 30px;
 	position: absolute;
@@ -232,9 +246,16 @@ aside > * + * {
 
 .post .remove {
   	cursor: pointer;
-  	top: 45px;
+  	bottom: 10px;
 	padding: 0 3px;
 	border-radius: 4px;
+	background-color: rgb(40, 146, 217);
+	font-weight: 300;
+	position: absolute;
+	float: right;
+	margin-right: 10px;
+	right: 2px;
+	border-color: transparent;
 }
 
 .post button {
