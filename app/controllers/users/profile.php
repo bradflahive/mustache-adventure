@@ -36,8 +36,8 @@ class Controller extends AppController {
       $comments->message = htmlentities($comment['message']);
       $comments->total = htmlentities($comment['total']);
       $comments->user_id = $user_id;
-      $comments->remove_hidden = ''; //$isSameUser ? '' : 'hidden';
-      $comments->points_hidden = ''; // $isSameUser ? 'hidden' : '';
+      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
+      $comments->points_hidden = $isSameUser ? 'hidden' : '';
       $this->view->comments .= $comments->render();
 		}
 		$this->view->user_id = $user_id;
