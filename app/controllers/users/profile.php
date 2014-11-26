@@ -89,3 +89,4 @@ extract($controller->view->vars);
 	</aside>
 </div>
 <p class="copyright">&copy Mustache-Adventures Co.</p>
+<p class="copyright">The Worst (acting) Half of RockIT</p>

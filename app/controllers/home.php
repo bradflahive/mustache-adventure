@@ -27,6 +27,7 @@ extract($controller->view->vars);
     </main>
 </div>
 <p class="copyright">&copy Mustache-Adventures Co.</p>
+<p class="copyright">The Worst (acting) Half of RockIT</p>
 
 
     
