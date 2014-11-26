@@ -30,10 +30,10 @@ class Controller extends AppController {
 		$results = Comment::getAll();
 		while ($comment = $results->fetch_assoc()) {
 	      $isSameUser = ($user_id === $comment['user_id']);
-	      $comments->comment_id = htmlentities($comment['comment_id']);
-	      $comments->user_name = htmlentities($comment['user_name']);
-	      $comments->message = htmlentities($comment['message']);
-	      $comments->total = htmlentities($comment['total']);
+	      $comments->comment_id = xss::protection($comment['comment_id']);
+	      $comments->user_name = xss::protection($comment['user_name']);
+	      $comments->message = xss::protection($comment['message']);
+	      $comments->total = xss::protection($comment['total']);
 	      $comments->user_id = $user_id;
 	      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
 	      $comments->points_hidden = $isSameUser ? 'hidden' : '';
