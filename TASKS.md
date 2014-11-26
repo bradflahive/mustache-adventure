@@ -16,7 +16,7 @@
 - [x] login and use of sessions
 - [x] fetch comments from DB that have 0 points
 - [x] Retrieve number of points total for user
-- [?] can't vote on own post
+- [x] can't vote on own post
 - [x] keep track of past votes and have selected already in drop down.
 
 # HTML/CSS
@@ -44,28 +44,28 @@
       - [x] Award points to someone (dropdown 0-5)
       - [x] Total points awarded so far.
   
-  - [ ] Misc tasks:
-    - [ ] Check code for repeats, consolidate to DRY
+  - [x] Misc tasks:
+    - [x] Check code for repeats, consolidate to DRY
     - [x] Add notes to code indicating what's needed to input and the expected output
     - [x] Check view templates
     - [x] Review naming conventions in code, make sure consistent (minimize refactoring)
     - [x] Code reviews?
 
-  - [ ] Models
+  - [x] Models
     - [x] User
       - [x] create user
       - [x] Pull info for profile, populate profile page with profile info (user_id table)
       - [ ] (LATER) Ability to update user (CRUD)
       - [ ] (LATER) Delete user (if don't do friends...need delete in CRUD)
       - [x] Retrieve number of points total for user
-    - [ ] Feed
+    - [x] Feed
       - [x] Pull info in for feed.  Populate feed with info from comment and man_points tables
       - [x] Post/submit button should create new post.
-      - [ ] ability to delete own post?
+      - [x] ability to delete own post?
       - [x] AJAX to insert post to page and insert into DB
       - [x] Ability to update points given to someone for a post?
       - [x] Retrieve number of points that have been given to the post.
-    - [?] Login helper
+    - [x] Login helper
       - [x] Get data
       - [x] Check against DB
       - [x] If correct, send to profile
@@ -91,7 +91,7 @@
   [x] Profile page
     [x] Post new comment
       [x] Needs to grab content in text area/input and appened to top of feed
-      [ ] Enforce a # character limit?
+      [x] (NO) Enforce a # character limit?
     [x] Comments in feed
       [x] Comment will need to be updated with points total when page is loaded
       [x] When voting, pull vote #, insert to DB, update points total
@@ -101,10 +101,10 @@
 - [ ] Image for profile
 - [ ] Friends
   - [ ] Filter feed based on friends
-- [ ] Bar showing how manly a status is
+- [x] Bar showing how manly a status is
 - [ ] Account settings
 - [ ] Bar graph showing points
 - [ ] Ability to raz guys
 - [ ] Contact page
 - [ ] FAQ page
-- [ ] Find new logo
+- [x] Find new logo

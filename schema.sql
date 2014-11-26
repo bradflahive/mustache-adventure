@@ -82,7 +82,6 @@ INSERT INTO
         (3, 'Used a straight edge razor to shave while flying'),
         (2, 'Scaled mount everest in a speedo...'),
         (6, 'Made a spear and went fishing'),
-        (4, 'Watching the All Blacks game...on the field.'),
         (1, 'How many points can a WOman get on this forum!'),
         (3, 'Cut my toenails with a chainsaw'),
         (6, 'Just changed a tire without a car jack'),

@@ -27,5 +27,4 @@ extract($controller->view->vars);
     </main>
 </div>
 
-
     
