@@ -30,6 +30,9 @@
 	form.on('xhrSuccess', function(e, data) {
 		if(data.redirect){
 			location.href=data.redirect;
+		} else if (data.errormsg) {
+			var message = data.errormsg;
+			$("form.login-form").append('<br><BR>' + message);
 		}
 	});
 
