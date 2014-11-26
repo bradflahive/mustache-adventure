@@ -28,7 +28,8 @@ class Controller extends AppController {
 		while ($row = $votes_in_DB->fetch_assoc()){
 			$votes[] = ['comment_id'=>$row['comment_id'], 'points'=>$row['points']];
 		}
-		//pass the results to payload so that jQuery can use them to select the dropdowns.
+    //pass the results to payload so that jQuery can use them 
+    //to select the dropdowns.
 		Payload::add('votes', $votes);
 
 		//gets comments from the database

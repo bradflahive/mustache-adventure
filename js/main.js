@@ -43,8 +43,10 @@
 $(function() {
 
 	/*
-	* using payload to populate an object that can be looped over to select comment and already
-	* selected vote.  Will then add 'selected' attribute to the already chosen vote value.
+	* using payload to populate an object that can be looped over to 
+  * select comment and already
+	* selected vote.  Will then add 'selected' attribute to the 
+  * already chosen vote value.
 	*/
 	console.log(app.settings.votes);
 	var votes = app.settings.votes;
@@ -57,9 +59,12 @@ $(function() {
 		var points = votes[vote].points;
 		// console.log('points: ' + points);
 
-		//can't use votes.i...because it's a variable. Have to access is with [i]
-		$("div[data-comment-id='" + comment_id + "']").find("select option[value='" + points + "']").prop('selected', true);
-	}
+		// can't use votes.i...because it's a variable. 
+    // Have to access is with [i]
+		$("div[data-comment-id='" + comment_id + "']")
+      .find('.points')
+      .addClass('_'+points);
+  }
 
     // hides the e-mail input on load.
     $('.login-form .email').attr('hidden', '');
@@ -100,8 +105,6 @@ $(function() {
 				data: {points: points, user_id: user_id, comment_id: comment_id},
 				// async: false,
 				success: function(data){
-					console.log('success');
-					console.log(data);
 					var points = data.points;
 					var comment_id = data.comment_id;
 					location.href = "/profile";
