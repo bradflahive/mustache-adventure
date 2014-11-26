@@ -147,11 +147,12 @@ div.man-points {
 
 span.point-number {
 	font-size: 28pt;
-	padding: 1px 5px;
+	padding: 0 7px;
 	border-radius: 10px;
 	background-color: #FFFFF0;
 	color: rgb(40, 146, 217);
 	margin-left: 10px;
+	font-weight: bold;
 }
 
 /*THREAD*/
