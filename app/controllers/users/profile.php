@@ -8,7 +8,12 @@ class Controller extends AppController {
 
 		$user_id = UserLogin::getUserID();
 
-    $user = new User($user_id);
+		if (!$user_id){
+			header('Location: /');
+            exit();
+		}
+
+    	$user = new User($user_id);
 
 		//gets comments from the database
 		$results = Comment::getAll();
