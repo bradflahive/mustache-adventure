@@ -43,37 +43,13 @@ header h1 a {
 	text-decoration: none;
 }
 
-.fa-reddit-square {
-	position: absolute;
-	top: 10px;
-	right: 305px;
-}
-
-.fa-instagram {
-	position: absolute;
-	top: 10px;
-	right: 325px;
-}
-
-.fa-twitter-square {
-	position: absolute;
-	top: 10px;
-	right: 345px;
-}
-
-.fa-facebook-square {
-	position: absolute;
-	top: 10px;
-	right: 365px;
-}
-
 .logout {
 	position: absolute;
 	top: 10px;
-	right: 85px;
+	right: 10px;
 	margin: 10px;
 	color: rgb(237, 225, 208);
-	text-decoration: none;
+	/*font-family: 'Orbitron', sans-serif;*/
 }
 
 p.scroll {
@@ -201,7 +177,11 @@ aside > * + * {
 
 .compose button {
 	margin-top: 5px;
+	/*background-color: #FFFFF0;*/
 	border-color: transparent;
+	/*color: black;*/
+	/*border-radius: 5px;*/
+	/*border: 0;*/
 	padding: 0 3px;
 	border-radius: 4px;
 	background-color: rgb(40, 146, 217);
@@ -236,10 +216,9 @@ aside > * + * {
 }
 
 .post .user_name {
-	/*font-weight: 700;*/
-	font-family: 'PT Sans', sans-serif;
-	/*font-family: 'Lato', sans-serif;*/
-	/*font-weight: 300;*/
+	font-weight: 700;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	font-size: 12pt;
 }
 
@@ -254,15 +233,51 @@ aside > * + * {
 	width: 350px;
 }
 
-.post select {
-	right: 2px;
-	top: 38px;
+.post .points {
+	right: -12px;
+	top: 0px;
 	position: absolute;
 	float: right;
 	margin-right: 10px;
-	border-color: transparent;
-	background-color: #FFFFF0;
-	color: black;
+  cursor: pointer;
+  border: 2px solid rgb(40, 146, 217);
+  border-left: 0;
+  border-top: 0;
+  border-bottom: 0;
+  height: 100%
+}
+
+.points._5 ._2, .points._5 ._1, .points._5 ._0, .points._5 ._3 , .points._5 ._4, .points._5 ._5 {
+	background-color: rgba(40, 146, 217, 0.6);
+}
+
+.points._4 ._2, .points._4 ._1, .points._4 ._0, .points._4 ._3 , .points._4 ._4 {
+	background-color: rgba(40, 146, 217, 0.5);
+}
+
+.points._3 ._2, .points._3 ._1, .points._3 ._0, .points._3 ._3 {
+	background-color: rgba(40, 146, 217, 0.4);
+}
+
+.points._2 ._2, .points._2 ._1, .points._2 ._0 {
+	background-color: rgba(40, 146, 217, 0.3);
+}
+
+.points._1 ._0, .points._1 ._1 {
+	background-color: rgba(40, 146, 217, 0.2);
+}
+
+.points._0 ._0 {
+	background-color: rgba(40, 146, 217, 0.1);
+}
+
+.post .points div {
+  height: 16.66%;
+  width: 12px;
+}
+
+.post .points div:hover {
+  background-color: rgb(40, 146, 217);
 }
 
 .post .remove {
@@ -333,7 +348,6 @@ aside > * + * {
 	color: black;
 	border: transparent;
 	padding: 5px 45px;
-	border-bottom: 2px solid black;
 }
 
 .login-main .sign-up {
@@ -341,6 +355,7 @@ aside > * + * {
 	color: black;
 	padding: 5px 45px;
 	border: transparent;
+	border-bottom: 2px solid black;
 }
 
 .login-main input {
@@ -356,11 +371,7 @@ div.post > textarea {
 	color: black;
 }
 
-/*PRIMARY FOOTER*/
-footer {
-	width: 100%;
-	margin:50px 0;
-	text-align: center;
-}
+
+
 
 

@@ -26,5 +26,8 @@ extract($controller->view->vars);
         <div class="errormsg"></div>
     </main>
 </div>
+<footer>
+    <p class="copyright">&copy Mustache-Adventures Co.</p>
+</footer>
 
     

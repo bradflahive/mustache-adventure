@@ -6,7 +6,6 @@ class Controller extends AppController {
             header('Location: /profile');
             exit();
         }
-        
     }
 }
 

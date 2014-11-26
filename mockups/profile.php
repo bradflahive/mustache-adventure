@@ -2,24 +2,17 @@
 
 class Controller extends AppController {
 
-
-
 	protected function init() {
 
 		$user_id = UserLogin::getUserID();
 
-		if (!$user_id){
-			header('Location: /');
-            exit();
-		}
-
-    	$user = new User($user_id);
+    $user = new User($user_id);
 
 		//gets comments from the database
 		$results = Comment::getAll();
 
 		//processes comments and puts them into the view.
-		$comments = new CommentViewFragment();
+		$comments = new CommentViewFragmentTest();
 		$votes = [];
 		$i = 0;
 
@@ -57,11 +50,7 @@ $controller = new Controller();
 
 extract($controller->view->vars);
 ?>
-
-<i class="fa fa-instagram"></i>
-<i class="fa fa-twitter-square"></i>
-<i class="fa fa-facebook-square"></i>
-<i class="fa fa-reddit-square"></i>
+<link rel="stylesheet" href="/css/styles-test.css">
 <a class="logout" href="/logout">Logout</a>
 <div class="primary-content">
 	<main>
@@ -89,3 +78,4 @@ extract($controller->view->vars);
 
 	</aside>
 </div>
+<p class="copyright">&copy Mustache-Adventures Co.</p>

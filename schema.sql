@@ -77,11 +77,11 @@ INSERT INTO
     VALUES
         (1, 'I love manly men!'),
         (1, 'http://imgur.com/r/funny/RgTbcpr'),
+        (7, 'Functionally programming'),
         (5, 'Demoing the deck and putting in the hottub'),
         (3, 'Used a straight edge razor to shave while flying'),
         (2, 'Scaled mount everest in a speedo...'),
         (6, 'Made a spear and went fishing'),
-        (4, 'Watching the All Blacks game...on the field.'),
         (1, 'How many points can a WOman get on this forum!'),
         (3, 'Cut my toenails with a chainsaw'),
         (6, 'Just changed a tire without a car jack'),
@@ -96,7 +96,7 @@ INSERT INTO
 INSERT INTO
     man_point (user_id, comment_id, points)
     VALUES
-        (1, 3, 5), (1, 4, 5), (1, 1, 5), (2, 1, 5), (3, 2, 5), (6, 6, 5), (6, 7, 5), (6, 8, 5), (6, 9, 5), (6, 10, 5), (6, 11, 5), (6, 12, 5), (6, 13, 1000000), (6, 14, 5), (4, 5, 5);
+        (1, 3, 5), (1, 4, 5), (1, 1, 5), (2, 1, 5), (3, 2, 5), (6, 6, 5), (6, 7, 5), (6, 8, 5), (6, 9, 5), (6, 10, 5), (6, 11, 5), (6, 12, 5), (6, 13, 1000000), (6, 14, 5), (6, 15, 5), (4, 5, 5);
 
 REPLACE INTO
     man_point (user_id, comment_id, points)

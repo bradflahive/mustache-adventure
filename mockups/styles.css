@@ -43,37 +43,13 @@ header h1 a {
 	text-decoration: none;
 }
 
-.fa-reddit-square {
-	position: absolute;
-	top: 10px;
-	right: 305px;
-}
-
-.fa-instagram {
-	position: absolute;
-	top: 10px;
-	right: 325px;
-}
-
-.fa-twitter-square {
-	position: absolute;
-	top: 10px;
-	right: 345px;
-}
-
-.fa-facebook-square {
-	position: absolute;
-	top: 10px;
-	right: 365px;
-}
-
 .logout {
 	position: absolute;
 	top: 10px;
-	right: 85px;
+	right: 10px;
 	margin: 10px;
 	color: rgb(237, 225, 208);
-	text-decoration: none;
+	/*font-family: 'Orbitron', sans-serif;*/
 }
 
 p.scroll {
@@ -201,7 +177,11 @@ aside > * + * {
 
 .compose button {
 	margin-top: 5px;
+	/*background-color: #FFFFF0;*/
 	border-color: transparent;
+	/*color: black;*/
+	/*border-radius: 5px;*/
+	/*border: 0;*/
 	padding: 0 3px;
 	border-radius: 4px;
 	background-color: rgb(40, 146, 217);
@@ -236,10 +216,9 @@ aside > * + * {
 }
 
 .post .user_name {
-	/*font-weight: 700;*/
-	font-family: 'PT Sans', sans-serif;
-	/*font-family: 'Lato', sans-serif;*/
-	/*font-weight: 300;*/
+	font-weight: 700;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	font-size: 12pt;
 }
 
@@ -256,7 +235,7 @@ aside > * + * {
 
 .post select {
 	right: 2px;
-	top: 38px;
+	top: 30px;
 	position: absolute;
 	float: right;
 	margin-right: 10px;
@@ -333,7 +312,6 @@ aside > * + * {
 	color: black;
 	border: transparent;
 	padding: 5px 45px;
-	border-bottom: 2px solid black;
 }
 
 .login-main .sign-up {
@@ -341,6 +319,7 @@ aside > * + * {
 	color: black;
 	padding: 5px 45px;
 	border: transparent;
+	border-bottom: 2px solid black;
 }
 
 .login-main input {
@@ -356,11 +335,7 @@ div.post > textarea {
 	color: black;
 }
 
-/*PRIMARY FOOTER*/
-footer {
-	width: 100%;
-	margin:50px 0;
-	text-align: center;
-}
+
+
 
 
