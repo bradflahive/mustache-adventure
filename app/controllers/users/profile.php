@@ -19,11 +19,9 @@ class Controller extends AppController {
 		$i = 0;
 
 		//gets votes that user has made in the past
-		$votes_in_DB = $user->getVotes($user_id);
-		while ($row = $results->fetch_assoc()){
-			print_r($row);
+		$votes_in_DB = $user->getVotes();
+		while ($row = $votes_in_DB->fetch_assoc()){
 			$votes[] = ['comment_id'=>$row['comment_id'], 'points'=>$row['points']];
-			print_r($votes);
 		}
 		//pass the results to payload so that jQuery can use them to select the dropdowns.
 		Payload::add('votes', $votes);
