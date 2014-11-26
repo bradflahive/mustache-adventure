@@ -188,4 +188,17 @@ sql;
         return $user_name;
     }
 
+    public function getVotes() {
+
+        $getVotes =<<<sql
+        SELECT * 
+        FROM 
+        man_point 
+        WHERE user_id = {$this->user_id};
+sql;
+
+        $results = db::execute($getVotes);
+        return $results;
+    }
+
 }
