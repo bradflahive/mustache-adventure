@@ -12,16 +12,13 @@
 
 body {
 	background: url("/images/wood2.jpg");
-	/*background-color: rgb(163, 161, 161);*/
 }
 
 /*PRIMARY HEADER*/
 
 header {
-	/*background: url("/images/wood2.jpg");*/
 	width: 100%;
 	position: relative;
-	/*border: 2px solid black;*/
 	overflow: hidden;
 }
 
@@ -61,16 +58,12 @@ header h1 {
 
 .primary-content {
 	overflow: hidden;
-	/*background: url("/images/wood2.jpg");*/
 	padding: 10px;
-	/*border: 2px solid black;*/
-	/*border-top: 0;*/
 }
 
 /*USER INFO*/
 
 main {
-	/*height: 300px;*/
 	width: 400px;
 	background-color: transparent;
 	float: left;
@@ -229,13 +222,10 @@ aside > * + * {
 .post select, .post .remove {
 	right: 2px;
 	top: 30px;
-	/*bottom: 3px;*/
 	position: absolute;
 	float: right;
 	margin-right: 10px;
-	/*margin-top: 5px;*/
 	border-color: transparent;
-/*	margin-bottom: 5px;*/
 	background-color: #FFFFF0;
 	color: black;
 }
@@ -270,12 +260,10 @@ aside > * + * {
 
 .login-content {
 	overflow: hidden;
-	/*background: url("/images/wood2.jpg");*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 10px;
 	text-align: center;
-	/*border: 2px solid black;*/
 	border-top: 0;
 }
 
