@@ -8,11 +8,11 @@ Router::add('/', '/app/controllers/home.php');
 
 //Users
 Router::add('/profile', '/app/controllers/users/profile.php');
-Router::add('/update_points', '/app/controllers/update_points.php');
 
 // Comments
-Router::add('/new_comment', '/app/controllers/new_comment.php');
-Router::add('/delete_comment', '/app/controllers/delete_comment.php');
+Router::add('/update_points', '/app/controllers/comment/update_points.php');
+Router::add('/new_comment', '/app/controllers/comment/new_comment.php');
+Router::add('/delete_comment', '/app/controllers/comment/delete_comment.php');
 
 
 //Log In:
