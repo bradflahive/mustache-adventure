@@ -16,7 +16,8 @@ class Controller extends AppController {
 		
 		// Loop Rows
 		while ($row = $results->fetch_assoc()) {
-			$this->view->users .= '<p>' . htmlentities($row['first_name']) . '</p>';
+      $this->view->users .= 
+        '<p>'.xss::protection($row['first_name']).'</p>';
 		}
 
 	}

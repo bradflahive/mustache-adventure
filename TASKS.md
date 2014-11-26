@@ -3,8 +3,11 @@
 ## MVP
 
 ## Priority
-- [ ] Comment totals will need to be updated when vote is done.
 - [ ] ability to delete own comments (or user?)
+- [ ] when user accesses profile page w/o being logged in, they get an error.  Need to deal w/ in a user friendly way.
+- [ ] Rearrange files so folder structure makes sense.  Update routing accordingly.
+- [ ] (EXTRA) Upon refresh, go back to the comment the user updated 
+- [x] Comment totals will need to be updated when vote is done.
 - [x] cleanInput - increase understanding/fix.
 - [x] main.js - append new comment to aside (may be working after cleanInput fix)
 - [x] main.js - Submit scores upon dropdown change
@@ -43,10 +46,10 @@
   
   - [ ] Misc tasks:
     - [ ] Check code for repeats, consolidate to DRY
-    - [ ] Add notes to code indicating what's needed to input and the expected output
+    - [x] Add notes to code indicating what's needed to input and the expected output
     - [x] Check view templates
-    - [ ] Review naming conventions in code, make sure consistent (minimize refactoring)
-    - [ ] Code reviews?
+    - [x] Review naming conventions in code, make sure consistent (minimize refactoring)
+    - [x] Code reviews?
 
   - [ ] Models
     - [x] User
@@ -75,9 +78,9 @@
 
 
  # View     
-  - [ ] Output escaping (XSS)
-    - [ ] Writing of class/function.
-    - [ ] Implementation of class/function.
+  - [x] Output escaping (XSS)
+    - [x] Writing of class/function.
+    - [x] Implementation of class/function.
     
   - [x] Validation
     - [x] Utilize reptile forms to make sure that it's working as expected
@@ -90,8 +93,8 @@
       [x] Needs to grab content in text area/input and appened to top of feed
       [ ] Enforce a # character limit?
     [x] Comments in feed
-      [ ] Comment will need to be updated with points total when page is loaded
-      [ ] When voting, pull vote #, insert to DB, update points total
+      [x] Comment will need to be updated with points total when page is loaded
+      [x] When voting, pull vote #, insert to DB, update points total
 
 
 ## Extras

@@ -131,7 +131,10 @@ $(function() {
 					console.log('success');
 					console.log(data);
 					var points = data.points;
-
+					var comment_id = data.comment_id;
+					//issue with refresh is that it's not going back to where it was...anchors to top
+					//TODO
+					location.href = "/profile";
 					//not getting the value of the display points div.  Need TODO
 					//After that, can set the total points w/o a DB call. (Would in future?)
 					/*var total = $(this).parents('.post').find('.display-points').text();
@@ -184,7 +187,6 @@ $(function() {
 					$('form.compose').find('textarea').val('');
 					// $('aside').find('form').after(new_comment);
 					// $('aside').find('form').after(data.test_comment);
-					console.log(data.test_comment);
 
 				},
 				error: function(){
@@ -196,7 +198,37 @@ $(function() {
 
 	})
 
+	
+	//on click of remove button, removes the comment from DB.
+	$('aside').on('click', 'button.remove', function(){
+		var comment_id = $(this).parents('.post').find("input[name='comment_id']").val();
+		console.log("comment id: " + comment_id);
+		var user_id = $(this).parents('.post').find("input[name='user_id']").val();
+		console.log("user id: " + user_id);
 
+
+		$array = $.ajax({
+				url: '/delete_comment',
+				type: 'POST',
+				dataType: 'json',
+				cache: false,
+				data: {comment_id: comment_id, user_id:user_id},
+				// async: false,
+				success: function(data){
+					console.log('success');
+					console.log(data);
+					// var comment_id = data.comment_id;
+					location.href = "/profile";
+					//refresh page because comment has been deleted.
+				},
+				error: function(){
+					console.log('error');
+					console.log('data: ' + data);
+				}
+		});
+
+
+	})
 
 
 
