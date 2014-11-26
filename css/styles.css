@@ -43,37 +43,22 @@ header h1 a {
 	text-decoration: none;
 }
 
-.fa-reddit-square {
+span.font-awesome {
 	position: absolute;
 	top: 20px;
-	right: 305px;
+	font-size: 16pt;
+	right: 240px;
+	color: #FFFFF0;
 }
 
-.fa-instagram {
-	position: absolute;
-	top: 20px;
-	right: 325px;
+span.font-awesome > i {
+	padding: 0 3px;
 }
 
-.fa-twitter-square {
-	position: absolute;
-	top: 20px;
-	right: 345px;
-}
-
-.fa-facebook-square {
-	position: absolute;
-	top: 20px;
-	right: 365px;
-}
-
-.logout {
-	position: absolute;
-	top: 10px;
-	right: 85px;
-	margin: 10px;
-	color: rgb(237, 225, 208);
+span.font-awesome > a {
 	text-decoration: none;
+	font-size: 14pt;
+	padding-left: 15px;
 }
 
 p.scroll {
@@ -158,6 +143,15 @@ div.man-points {
 	font-weight: 300;
 	font-size: 12pt;
 	margin: 10px 0;
+}
+
+span.point-number {
+	font-size: 28pt;
+	padding: 1px 5px;
+	border-radius: 10px;
+	background-color: #FFFFF0;
+	color: rgb(40, 146, 217);
+	margin-left: 10px;
 }
 
 /*THREAD*/
@@ -261,10 +255,6 @@ aside > * + * {
   	height: 100%;
 }
 
-span.point-number {
-	font-size: 28pt;
-	padding: 0 5px 0 20px;
-}
 
 .points._5 ._2, .points._5 ._1, .points._5 ._0,
 .points._5 ._3 , .points._5 ._4, .points._5 ._5 {

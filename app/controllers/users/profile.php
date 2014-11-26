@@ -59,11 +59,13 @@ $controller = new Controller();
 extract($controller->view->vars);
 ?>
 
-<i class="fa fa-instagram"></i>
-<i class="fa fa-twitter-square"></i>
-<i class="fa fa-facebook-square"></i>
-<i class="fa fa-reddit-square"></i>
-<a class="logout" href="/logout">Logout</a>
+<span class="font-awesome">
+	<i class="fa fa-instagram"></i>
+	<i class="fa fa-twitter-square"></i>
+	<i class="fa fa-facebook-square"></i>
+	<i class="fa fa-reddit-square"></i>
+	<a class="logout" href="/logout">Logout</a>
+</span>
 <div class="primary-content">
 	<main>
 		<div class="user">
@@ -73,7 +75,7 @@ extract($controller->view->vars);
 				<p>Mustache Level: <?php echo $user_rank ?></p>
 			</div>
 			<div class="man-points">
-				<p>MY MAN-POINTS: <span class="points"><span class="point-number"><?php echo $totalpoints ?></span> Points</span></p>
+				<p>MY MAN-POINTS: <span class="points"><span class="point-number"><?php echo $totalpoints ?></span></span></p>
 			</div>
 		</div>
 
