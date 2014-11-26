@@ -281,8 +281,8 @@ aside > * + * {
 }
 
 .post .remove {
-  	cursor: pointer;
-  	bottom: 10px;
+  cursor: pointer;
+  bottom: 10px;
 	padding: 0 3px;
 	border-radius: 4px;
 	background-color: rgb(40, 146, 217);
