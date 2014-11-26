@@ -40,7 +40,7 @@ class Controller extends AppController {
 	      $comments->user_name = xss::protection($comment['user_name']);
 	      $comments->message = xss::protection($comment['message']);
 	      $comments->total = xss::protection($comment['total']);
-	      $comments->user_id = $user_id;
+	      $comments->user_id = xss::protection($comment['user_id']);
 	      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
 	      $comments->points_hidden = $isSameUser ? 'hidden' : '';
 	      $this->view->comments .= $comments->render();
