@@ -39,8 +39,6 @@ class Controller extends AppController {
       $comments->remove_hidden = ''; //$isSameUser ? '' : 'hidden';
       $comments->points_hidden = ''; // $isSameUser ? 'hidden' : '';
       $this->view->comments .= $comments->render();
-      print_r($this->view->comments);
-      exit();
 		}
 		$this->view->user_id = $user_id;
 
