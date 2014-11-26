@@ -20,9 +20,8 @@
 
       $comment = new Comment($comment_id);
 
-      $comment->deleteComment($comment_id);
+      $comment->deleteComment();
       
-      echo "deleted";
       
 			
 	}

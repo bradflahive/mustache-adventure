@@ -170,21 +170,21 @@ sql;
 
     //takes a comment id and removes all data tied to that comment_id
     //TODO look to see if anything needs to be changed for this to work.
-    public function deleteComment($input) {
+    public function deleteComment() {
 
-        $cleanedInput = $this->cleanInput(
-            ['comment_id'],
-            $input
-        );
+        // $cleanedInput = $this->cleanInput(
+        //     ['comment_id'],
+        //     $input
+        // );
 
-        if (is_string($cleanedInput)) return null;
+        // if (is_string($cleanedInput)) return null;
 
         // have to remove from this table first because it uses comment_id as a foreign key
         $remove_from_man_point =<<<sql
                     DELETE
                     FROM 
                     man_point
-                    WHERE comment_id = {$cleanedInput['comment_id']};
+                    WHERE comment_id = {$this->comment_id};
 sql;
         
         $results = db::execute($remove_from_man_point);
@@ -197,7 +197,7 @@ sql;
             DELETE 
             FROM 
             comment
-            WHERE comment_id = {$cleanedInput['comment_id']}
+            WHERE comment_id = {$this->comment_id}
             LIMIT 1;
 sql;
         $results = db::execute($remove_from_comment);
