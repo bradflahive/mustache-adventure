@@ -30,6 +30,7 @@ header img {
 	width: 100px;
 	float: left;
 	border-right: 2px solid black;
+	border-radius: 50%;
 }
 
 header h1 {
