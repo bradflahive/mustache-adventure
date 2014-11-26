@@ -6,9 +6,9 @@
 	var form = new ReptileForm('form');
 
 	// Do something before validation starts
-	form.on('beforeValidation', function() {
-	// 	$('body').append('<p>Before Validation</p>');
-	});
+	// form.on('beforeValidation', function() {
+	// // 	$('body').append('<p>Before Validation</p>');
+	// });
 
 	// Do something when errors are detected.
 	// form.on('validationError', function(e, err) {
@@ -18,13 +18,13 @@
 	// Do something when errors are detected.
 	form.on('validationError', function(e, err) {
 		// console.log(JSON.stringify(err));
-		$('.errormsg').html('<p>Unable to match the Username and Password.<br>Please check your entries and try again.</p>');
+		$('body').find('.errormsg').html('<p>Unable to match the Username and Password.<br>Please check your entries and try again.</p>');
 	});
 
 	// // Do something after validation is successful, but before the form submits.
-	form.on('beforeSubmit', function() {
-	// 	$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
-	});
+	// form.on('beforeSubmit', function() {
+	// // 	$('body').append('<p>Sending Values: ' + JSON.stringify(this.getValues()) + '</p>');
+	// });
 
 	// Do something when the AJAX request has returned in success
 	form.on('xhrSuccess', function(e, data) {

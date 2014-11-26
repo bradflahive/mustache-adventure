@@ -14,7 +14,7 @@ extract($controller->view->vars);
 <div class="login-content">
     <main class="login-main">
 
-        <h3>LOGIN</h3>
+        <h3>Forgot Password</h3>
         <form action="/login" method="POST" class="login-form">
             <input class="uname" type="text" name="user_name" title="Username">
             <input class="pword" type="password" name="password" data-exp-name="password" title="Password">
@@ -26,8 +26,3 @@ extract($controller->view->vars);
         <div class="errormsg"></div>
     </main>
 </div>
-<footer>
-    <p class="copyright">&copy Mustache-Adventures Co.</p>
-</footer>
-
-    
