@@ -111,9 +111,10 @@ sql;
 
         $userPoints =<<<sql
         SELECT SUM(points) AS total
-        FROM man_point
-        WHERE user_id = {$this->user_id}
-        GROUP BY user_id;
+        FROM comment
+          JOIN (man_point) USING(comment_id)
+        WHERE comment.user_id = {$this->user_id}
+        GROUP BY comment.user_id;
 sql;
 
         $results = db::execute($userPoints);

@@ -85,7 +85,10 @@ $(function() {
 	*/
 	$('.post').on('click', '.points div', function( ) {
 		var points = $(this).attr('value');
-		var user_id = $(this).parents('.post').find("input[name = 'user_id']").val();
+		var user_id = $(this)
+      .parents('.post')
+      .find("input[name='user_id']")
+      .val();
 		var comment_id = 
       $(this)
       .parents('.post')
