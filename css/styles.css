@@ -217,8 +217,8 @@ aside > * + * {
 	position: relative;
 	border-left: 3px solid rgb(40, 146, 217);
 	border-radius: 3px;
-	border-bottom-left-radius: 0;
-	border-top-left-radius: 0;
+	/*border-bottom-left-radius: 0;
+	border-top-left-radius: 0;*/
 	padding-bottom: 20px;
 }
 
@@ -260,12 +260,12 @@ aside > * + * {
 	position: absolute;
 	float: right;
 	margin-right: 10px;
-  cursor: pointer;
-  border: 2px solid rgb(40, 146, 217);
-  border-left: 0;
-  border-top: 0;
-  border-bottom: 0;
-  height: 100%
+  	cursor: pointer;
+  	border: 2px solid rgb(40, 146, 217);
+  	border-left: 0;
+  	border-top: 0;
+  	border-bottom: 0;
+  	height: 100%
 }
 
 .points._5 ._2, .points._5 ._1, .points._5 ._0,
@@ -296,17 +296,17 @@ aside > * + * {
 }
 
 .post .points div {
-  height: 16.66%;
-  width: 12px;
+  	height: 16.66%;
+  	width: 12px;
 }
 
 .post .points div:hover {
-  background-color: rgb(40, 146, 217);
+  	background-color: rgb(40, 146, 217);
 }
 
 .post .remove {
-  cursor: pointer;
-  bottom: 10px;
+  	cursor: pointer;
+  	bottom: 10px;
 	padding: 0 3px;
 	border-radius: 4px;
 	background-color: rgb(40, 146, 217);
