@@ -45,25 +45,25 @@ header h1 a {
 
 .fa-reddit-square {
 	position: absolute;
-	top: 10px;
+	top: 20px;
 	right: 305px;
 }
 
 .fa-instagram {
 	position: absolute;
-	top: 10px;
+	top: 20px;
 	right: 325px;
 }
 
 .fa-twitter-square {
 	position: absolute;
-	top: 10px;
+	top: 20px;
 	right: 345px;
 }
 
 .fa-facebook-square {
 	position: absolute;
-	top: 10px;
+	top: 20px;
 	right: 365px;
 }
 
@@ -258,6 +258,11 @@ aside > * + * {
 	margin-right: 10px;
   	cursor: pointer;
   	height: 100%;
+}
+
+span.point-number {
+	font-size: 18pt;
+	padding: 0 5px 0 20px;
 }
 
 .points._5 ._2, .points._5 ._1, .points._5 ._0,

@@ -73,7 +73,7 @@ extract($controller->view->vars);
 				<p>Mustache Level: <?php echo $user_rank ?></p>
 			</div>
 			<div class="man-points">
-				<p>MY MAN-POINTS: <span class="points">*<?php echo $totalpoints ?> Points*</span></p>
+				<p>MY MAN-POINTS: <span class="points"><span class="point-number"><?php echo $totalpoints ?></span> Points</span></p>
 			</div>
 		</div>
 
