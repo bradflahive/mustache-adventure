@@ -18,33 +18,29 @@ class Controller extends AppController {
 		$votes = [];
 		$i = 0;
 
-		$sql = "SELECT * FROM man_point where user_id = '{$user_id}'";
-		$results = db::execute($sql);
+		//gets votes that user has made in the past
+		$votes_in_DB = $user->getVotes($user_id);
 		while ($row = $results->fetch_assoc()){
 			$votes[] = ['comment_id'=>$row['comment_id'], 'points'=>$row['points']];
-
-			/*$votes[$comment['comment_id']] = $row['comment_id'];
-			$votes[$comment['points']] = $row['points'];*/
 		}
+		//pass the results to payload so that jQuery can use them to select the dropdowns.
+		Payload::add('votes', $votes);
 
 		//gets comments from the database
 		$results = Comment::getAll();
 		while ($comment = $results->fetch_assoc()) {
-      $isSameUser = ($user_id === $comment['user_id']);
-      $comments->comment_id = htmlentities($comment['comment_id']);
-      $comments->user_name = htmlentities($comment['user_name']);
-      $comments->message = htmlentities($comment['message']);
-      $comments->total = htmlentities($comment['total']);
-      $comments->user_id = $user_id;
-      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
-      $comments->points_hidden = $isSameUser ? 'hidden' : '';
-      $this->view->comments .= $comments->render();
+	      $isSameUser = ($user_id === $comment['user_id']);
+	      $comments->comment_id = htmlentities($comment['comment_id']);
+	      $comments->user_name = htmlentities($comment['user_name']);
+	      $comments->message = htmlentities($comment['message']);
+	      $comments->total = htmlentities($comment['total']);
+	      $comments->user_id = $user_id;
+	      $comments->remove_hidden = $isSameUser ? '' : 'hidden';
+	      $comments->points_hidden = $isSameUser ? 'hidden' : '';
+	      $this->view->comments .= $comments->render();
 		}
 		$this->view->user_id = $user_id;
 
-
-		//pass the results to payload so that jQuery can use them to select the dropdowns.
-		Payload::add('votes', $votes);
 
 		$this->view->totalpoints = $user->getUserPoints();
 		$this->view->user_name = $user->getUserName();
