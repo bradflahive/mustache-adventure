@@ -20,6 +20,8 @@ Router::add('/login', '/app/controllers/login/login.php');
 Router::add('/account', '/app/contollers/login/account.php');
 Router::add('/logout', '/app/controllers/login/logout.php');
 
+//Test
+Router::add('/profile/test', '/mockups/profile.php');
 
 // Issue Route
 Router::route();
